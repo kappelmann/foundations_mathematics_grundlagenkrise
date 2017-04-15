@@ -4,6 +4,6 @@ Seminar paper and presentation about the foundations of mathematics and the foun
 This work is licensed under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
 
 ### Contact
-Kevin Kappelmann
-E-mail: kevin@kappelmann.me
-Website: https://kappelmann.me
+Kevin Kappelmann  
+E-mail: kevin@kappelmann.me  
+Website: https://kappelmann.me  
