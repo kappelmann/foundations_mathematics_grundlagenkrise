@@ -190,20 +190,23 @@
     ,every axis x label/.style={at={(current axis.right of origin)},anchor=north west}
     ,every axis y label/.style={at={(current axis.above origin)},anchor=north east}
     }
-\setlength{\parindent}{0pt}
-
-% Title of document
-\title{Foundations of Mathematics - Grundlagenkrise}
-% Author
-\author{Kevin Kappelmann\\
-  \multicolumn{1}{p{.7\textwidth}}{\centering\emph{Chair for Logic and Verification,\\
-  Technical University of Munich}}}  
 
 % Custom commands
 \newcommand{\mx}{\mathcal{X}}
 \newcommand{\fromto}[2]{\{#1,\ldots,#2\}}
 
 \pagestyle{plain}
+
+%Title page settings
+\usepackage[affil-it]{authblk}
+
+% Title of document
+\title{\textbf{Foundations of Mathematics - Grundlagenkrise}}
+% Author
+\author{Kevin Kappelmann}
+\affil{Chair for Logic and Verification,\\ Technical University of Munich}
+\date{\today}
+
 
 %------------------------------------------------------------------------------
 \begin{document}
@@ -212,12 +215,73 @@
 
 \maketitle
 \newpage
+\section*{Preface}
+Although - or maybe even because - mathematics is likely the most well-conceived and exact science of mankind, it has not been free of scepticism and controversies. In its heart, mathematics is dealing with the discovery of unchangeable, sempiternal truths. For this, we are using rigorous proofs. But what is it that we call a proof? 
+
+One might define a proof as a coherent chain of logical arguments leading from a set of premises to a conclusion. This definition, however, raises many new questions. What deserves to be called coherent? When is an argument logical? Do all humans follow the same rules of logic?
+
+Some of these difficult questions were essential during a heated phase in the beginning of the 20th century: the foundational crisis of mathematics (in German ``Grundlagenkrise der Mathematik''). In this period, some of the greatest mathematicians tried to give different explanations about many of named questions. As a result of longstanding debates and rigorous work, we received the sophisticated foundations of modern mathematics.
+
+Owing to this achievements, contemporary mathematicians are able to focus on the extension of mathematics rather than paying attention to its foundations. However, due to the invention of the computer in the late 20th century, a new field of proof theory arose. Computer scientists and mathematicians began to develope proof assistants and automated theorem provers. While former is designed to verify proofs typed by humans, latter acts on a fully automatic basis.
+
+In particular automatic theorem provers gave raise to new questions regarding mathematical proofs. Does a computer generated proof have the same credibility as a proof written by a person? What is a proof and how can I persuade somebody that I am right? Does it suffice to understand every step of it, or do I need to understand it in its entirety? Must it be accepted by some, a few, or even just one person? Are we experiencing a new foundational crisis?
+
+While I am convinced that proof assistants can greatly reduce human errors, I am sceptical to a proof solely created by a computer. An incomprehensible proof taking up hundreds of megabytes may not be worth more than an unintelligible proof stretching thousands of pages written by a human. As long as there is no certainty and validation, I cannot acknowledge the conclusion.
+
+Nevertheless, these controversial questions are not focused in this paper, but rather they are subjects for debate in the seminar ``Formal Proof in Mathematics and Computer Science'' offered by the Chair for Logic and Verification at the Technical University of Munich in 2017. This paper shall start off the seminar by giving a brief overview on the foundations of mathematics with a focus on the foundational crisis in the 20th century.
+\newpage
+
 \tableofcontents 
 \listoffigures 
 \listoftables 
 \newpage
 
 \pagenumbering{arabic}
-Text
+\section{Introduction}
+In 
+Mathematics did not suddenly emerge but has been a human activity for thousands of years that even before the discovery of the first mathematical tablet
+
+
+Begin: First Grunadlagenkrise in ancien greek or infinite small calculus.
+
+But real crisis began around 1850\\
+discovery of non-euclidian geometry -> pay attention to axioms and system.\\
+Peano axiomatised arithmetic of natural numbers and Moritz Pasch and Hilbert Geometry (modern form); while Gottlob Frege tried to build foundation solely using logic for mathematics (no math.\ symbols) (``Grundgesetze der Arithmetik'') -> Logicism. But inconsistencies destroyed dreams (Russel antinomy 1902) -> Frege stopped its undertakings.
+Many did not pay much attention to that problem but those who were interested understood its difficulty (Cantors set theory as a foundation of mathematics was also affected).
+The set of all sets that do not contain itself was not contradictory to Cantor's set theory but with logic proofed by Russell -> better to use axiomses instead of relying on regarding mathematical objects as immaterial truths without limitation and reflections.\\
+
+Three schools: Logicism, Intuitionism, Formalism\\
+
+Logicism:
+Russel and Whitehead. Principia Mathematica (1910-1913) mathematics was an extension of logic. Try to avoid antinomies by using fine grained incremental steps (type theory of Russell). But steps were widely critised as they did not seem to be logical evident but contained an ontological claim of validity (axiom of infinity, reducibility axiom). Hence, the movement failed.\\
+
+Formalism:\\
+Supported the autonomy of mathematics in contrast to logicism. Math is based on symbols and will be conducted by using axioms. It does not have to justify the existence of its objects, but its use ist justified by its success. Only restriction: Operations are not allowed to lead to a cotradiction -> proof system consistent. This needs a new field of studies: meta-mathematic. Hilbertprogram ist necessary (justfied by anomalies like Russel's). Hilbert axiomatised geometry, Zermelo axiomatised Cantor's set theory (which was not regarded as a foundation of mathematics at first as Zermelo said that its consistency proof is a distant prospect; after extensions from Fraenkel and Skolem this changed and replaced Princ.\ Math.\ as foundation).  \\
+
+Intutionism:\\
+Math is not just made of symbols, and it is not existent in a world idependent of mankind, but it is only existent in humans' minds produced by intuition. That creation process is neither of a symbolic kind nor is it reducible to pure logic. Symbols and logic are merely representations used for these mental creations. Formalism is a void game without meaning and mathematical operations (transfinite set theory? Ugh\ldots potential vs.\ actual infinities).\\
+Important restriction: No law of excluded middle! (use example \url{https://en.wikipedia.org/wiki/Law\_of\_excluded\_middle#example}). Main advocate was Brouwer who developed a set theory without named law. (more accepted after world war??)\\
+
+In 1922 Weyl published a paper (after meeting Brouwer) which stated ``Brouwer - this is revolution''. Weyl was a student of Hilbert. Hilbert was not amused and compared Brouwer's and Weyl's intentions as an attempted coup that will fail. Hilbert then resumed his meta-mathematical work which he had paused.\\
+
+The following years were characterised by many articles which spread the dispute between the both schools of thought. Intuitionism was hard to define (spreaded across many papers from Brouwer and written in dutch) and formalism was not fully developed yet but still under development. Hilbert's followers were extremly active and gained many supporters. 1925 proof by Ackermann (student of Hilbert) about the consistency of law of excluded middle. Confidence in formalism grew. Meanwhile, criticism for Intuitionism grew as its limitations would harm the applicability of mathematics. Even Weyl agreed to that in 1924.\\
+
+In 1928 German mathematicans were allowed to attend the international congress for the first time after WW1. However, they were not allowed to vote and Bouwer solidarised with them and called on the Germans to boycott the congress. Nevertheless, most Germans attended the congress including Hilbert. He presented his foundational programm and Bouwer was not able to discount Hilbert as he did not attended the congress. A few days afterwards, Hilbert as one of the major publishers of the prestigous mathematical magazine ``Mathematischen Annalen'' decided to exclude Brouwer as a co-publisher without conducting a referendum. This lead to confusion and disputes but in the end Hilbert's wish came true and Brouwer was excluded. After this incident, Brouwer stopped publishing articles dealing with Intuitionism. As a result, intutionism lost its public attention. \\
+
+Formalism seemed to be the winner. Goedel's incompleteness theorem destroyed the hope of a proofed consistent formal system. Nevertheless, modern mathematics is build on formalism. What axioms do I need at least in order to proof this theorem are current questions of formalism. The justification of the axioms are often regarded philosophical work and are often not regarded by mathematicians.
+\\
+
+
+
+Topic overview:\\
+At the beginning of the 20th century it became clear that mathematics needed formal foundations, which was partly caused by discovering various paradoxes. A couple of solutions were proposed including Hilbert's program of formalism. The crisis was partially solved by adopting the new foundations of set theory although Hilbert's ambitions were not completely fulfilled due to Gödel. The student should cover main events and players from this story and accompany the presentation by the most important technical details.
+
+
+Quotes: 
+\begin{itemize}
+\item „Aus dem Paradies, das Cantor uns geschaffen, soll uns niemand vertreiben können.“ -– David Hilbert: Über das Unendliche, Mathematische Annalen 95 (1926), S. 170 
+\item Dieses Tertium non datur (satz ausgeschlossenem dritten) dem Mathematiker zu nehmen, waere etwa, wie wenn man dem Astronomen das Fernrohr oder dem Boxer den Gebrauch der Faeuste untersagen wollte.“ – David Hilbert: Die Grundlagen der Mathematik, Abhandlungen aus dem mathematischen Seminar der Hamburgischen Universität, 6. Band (1928), S. 80
+\end{itemize}
+
 
 \end{document}
