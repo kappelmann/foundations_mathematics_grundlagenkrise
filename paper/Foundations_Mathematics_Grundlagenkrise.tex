@@ -19,136 +19,6 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
-% Algorithms
-\usepackage{algorithm}
-\usepackage[noend]{algpseudocode}
-\newcommand\Let[2]{\State #1 $\gets$ #2}
-\algrenewcomment[1]{\(\qquad \triangleright\) #1}
-\newcommand\Blet[2]{\State \textbf{let} #1 \textbf{be} #2}
-\errorcontextlines\maxdimen
-% begin vertical rule patch for algorithmicx
-% borrowing from http://tex.stackexchange.com/questions/41956/marking-conditional-versions-with-line-in-margin
-% see http://tex.stackexchange.com/questions/110431/ploblems-with-vertical-lines-in-algorithmicx
-\RequirePackage{zref-abspage}
-\RequirePackage{zref-user}
-\RequirePackage{tikz}
-\RequirePackage{atbegshi}
-\usetikzlibrary{calc}
-\RequirePackage{tikzpagenodes}
-\RequirePackage{etoolbox}
-\makeatletter
-\newcommand*\ALG@lastblockb{b}
-\newcommand*\ALG@lastblocke{e}
-\apptocmd{\ALG@beginblock}{%
-    %\typeout{beginning block, nesting level \theALG@nested, line \arabic{ALG@line}}%
-    \ifx\ALG@lastblock\ALG@lastblockb
-        \ifnum\theALG@nested>1\relax\expandafter\@firstoftwo\else\expandafter\@secondoftwo\fi{\ALG@tikzborder}{}%
-    \fi
-    \let\ALG@lastblock\ALG@lastblockb%
-}{}{\errmessage{failed to patch}}
-
-\pretocmd{\ALG@endblock}{%
-    %\typeout{ending block, nesting level \theALG@nested, line \arabic{ALG@line}}%
-    \ifx\ALG@lastblock\ALG@lastblocke
-        \addtocounter{ALG@nested}{1}%
-        \addtolength\ALG@tlm{\csname ALG@ind@\theALG@nested\endcsname}%
-        \ifnum\theALG@nested>1\relax\expandafter\@firstoftwo\else\expandafter\@secondoftwo\fi{\endALG@tikzborder}{}%
-        \addtolength\ALG@tlm{-\csname ALG@ind@\theALG@nested\endcsname}%
-        \addtocounter{ALG@nested}{-1}%
-    \fi
-    \let\ALG@lastblock\ALG@lastblocke%
-}{}{\errmessage{failed to patch}}
-\tikzset{ALG@tikzborder/.style={line width=0.5pt,black}}
-\newcommand*\currenttextarea{current page text area}
-\newcommand*{\updatecurrenttextarea}{%
-    \if@twocolumn
-        \if@firstcolumn
-            \renewcommand*{\currenttextarea}{current page column 1 area}%
-        \else
-            \renewcommand*{\currenttextarea}{current page column 2 area}%
-        \fi
-    \else
-        \renewcommand*\currenttextarea{current page text area}%
-    \fi
-}
-\newcounter{ALG@tikzborder}
-\newcounter{ALG@totaltikzborder}
-\newenvironment{ALG@tikzborder}[1][]{%
-    % Allow user to overwrite the used style locally
-    \ifx&#1&\else
-        \tikzset{ALG@tikzborder/.style={#1}}%
-    \fi
-    \stepcounter{ALG@totaltikzborder}%
-    \expandafter\edef\csname ALG@ind@border@\theALG@nested\endcsname{\theALG@totaltikzborder}%
-    \setcounter{ALG@tikzborder}{\csname ALG@ind@border@\theALG@nested\endcsname}%
-    %\typeout{begin ALG border nesting level=\theALG@nested, tikzborder=\theALG@tikzborder, tlm=\the\ALG@tlm}%
-    \tikz[overlay,remember picture] \coordinate (ALG@tikzborder-\theALG@tikzborder);% node {\theALG@tikzborder};% Modified \tikzmark macro
-    \zlabel{ALG@tikzborder-begin-\theALG@tikzborder}%
-    % Test if end-label is at the same page and draw first half of border if not, from start place to the end of the page
-    \ifnum\zref@extract{ALG@tikzborder-begin-\theALG@tikzborder}{abspage}=\zref@extract{ALG@tikzborder-end-\theALG@tikzborder}{abspage} \else
-        \updatecurrenttextarea
-        \ALG@drawvline{[shift={(0pt,.5\ht\strutbox)}]ALG@tikzborder-\theALG@tikzborder}{\currenttextarea.south east}{\ALG@thistlm}%
-        % If it spreads over more than two pages:
-        \newcounter{ALG@tikzborderpages\theALG@tikzborder}%
-        \setcounter{ALG@tikzborderpages\theALG@tikzborder}{\numexpr-\zref@extract{ALG@tikzborder-begin-\theALG@tikzborder}{abspage}+\zref@extract{ALG@tikzborder-end-\theALG@tikzborder}{abspage}}%
-        \ifnum\value{ALG@tikzborderpages\theALG@tikzborder}>1
-            \edef\nextcmd{\noexpand\AtBeginShipoutNext{\noexpand\ALG@tikzborderpage{\theALG@tikzborder}{\the\ALG@thistlm}}}%some pages need a border on the whole page
-            \nextcmd
-        \fi
-    \fi
-}{%
-    \setcounter{ALG@tikzborder}{\csname ALG@ind@border@\theALG@nested\endcsname}%
-    %\typeout{end ALG border nesting level=\theALG@nested, tikzborder=\theALG@tikzborder, tlm=\the\ALG@tlm}%
-    \tikz[overlay,remember picture] \coordinate (ALG@tikzborder-end-\theALG@tikzborder);% node {\theALG@tikzborder};% Modified \tikzmark macro
-    \zlabel{ALG@tikzborder-end-\theALG@tikzborder}%
-    % Test if begin-label is at the same page and draw whole border if so, from start place to end place
-    \updatecurrenttextarea
-    \ifnum\zref@extract{ALG@tikzborder-begin-\theALG@tikzborder}{abspage}=\zref@extract{ALG@tikzborder-end-\theALG@tikzborder}{abspage}\relax
-        \ALG@drawvline{[shift={(0pt,.5\ht\strutbox)}]ALG@tikzborder-\theALG@tikzborder}{ALG@tikzborder-end-\theALG@tikzborder}{\ALG@thistlm}%
-    % Otherwise draw second half of border, from the top of the page to the end place
-    \else
-        %\settextarea
-        \ALG@drawvline{\currenttextarea.north west}{ALG@tikzborder-end-\theALG@tikzborder}{\ALG@thistlm}%
-    \fi
-}
-\newcommand*{\ALG@drawvline}[3]{%#1=from, #2=to, #3=value of \ALG@tlm/\ALG@thisthm
-    \begin{tikzpicture}[overlay,remember picture]
-        \draw [ALG@tikzborder]
-            let \p0 = (\currenttextarea.north west), \p1=(#1), \p2 = (#2)
-             in
-            (#3+\fboxsep+.5\pgflinewidth+\x0,\y1+\fboxsep+.5\pgflinewidth)%-\fboxsep-.5\pgflinewidth
-             --
-            (#3+\fboxsep+.5\pgflinewidth+\x0,\y2-\fboxsep-.5\pgflinewidth)
-            %node[midway,anchor=east] {\ALG@tikzbordertext}
-        ;
-    \end{tikzpicture}%
-}
-\newcommand{\ALG@tikzborderpage}[2]{%the whole page gets a border, #1=value of \theALG@tikzborder, #2=value of \ALG@tlm/\ALG@thistlm
-    \updatecurrenttextarea
-    \setcounter{ALG@tikzborder}{#1}%
-    \ALG@drawvline{\currenttextarea.north west}{\currenttextarea.south east}{#2}%
-    \addtocounter{ALG@tikzborderpages\theALG@tikzborder}{-1}%
-    \ifnum\value{ALG@tikzborderpages\theALG@tikzborder}>1
-        \AtBeginShipoutNext{\ALG@tikzborderpage{#1}{#2}}%
-    \fi
-    \vspace{-0.5\baselineskip}% Compensate for the generated extra space at begin of the page. No idea why exactly this happens.
-}
-\def\ALG@tikzbordertext{\the\ALG@tlm}
-\makeatother
-% end vertical rule patch for algorithmicx
-
-% continuation indent patch, slightly extended from http://tex.stackexchange.com/questions/78776/forced-indentation-in-algorithmicx to support multiple paragraphs in one block
-\RequirePackage{etoolbox}
-\makeatletter
-\newlength{\ALG@continueindent}
-\setlength{\ALG@continueindent}{2em}
-\newcommand*{\ALG@customparshape}{\parshape 2 \leftmargin \linewidth \dimexpr\ALG@tlm+\ALG@continueindent\relax \dimexpr\linewidth+\leftmargin-\ALG@tlm-\ALG@continueindent\relax}
-\newcommand*{\ALG@customparshapex}{\parshape 1 \dimexpr\ALG@tlm+\ALG@continueindent\relax \dimexpr\linewidth+\leftmargin-\ALG@tlm-\ALG@continueindent\relax}
-\apptocmd{\ALG@beginblock}{\ALG@customparshape\everypar{\ALG@customparshapex}}{}{\errmessage{failed to patch}}
-\makeatother
-% end continuation indent patch
-\usepackage{mathtools}
-
 % Proof system
 \usepackage{amsthm}
 \theoremstyle{plain}
@@ -208,6 +78,7 @@
 \date{\today}
 
 
+\usepackage[parfill]{parskip}
 %------------------------------------------------------------------------------
 \begin{document}
 
@@ -220,7 +91,7 @@ Although - or maybe even because - mathematics is likely the most well-conceived
 
 One might define a proof as a coherent chain of logical arguments leading from a set of premises to a conclusion. This definition, however, raises many new questions. What deserves to be called coherent? When is an argument logical? Do all humans follow the same rules of logic? Which premises are there to begin with?
 
-Some of these difficult questions were essential during a heated phase in the beginning of the 20th century: the foundational crisis of mathematics (in German ``Grundlagenkrise der Mathematik''). In this period, some of the greatest mathematicians tried to give different explanations for many of named questions. As a result of longstanding debates and rigorous work, we received the sophisticated foundations of modern mathematics.
+Some of these difficult questions were essential during a heated phase in the beginning of the 20th century: the foundational crisis of mathematics. In this period, some of the greatest mathematicians tried to give different explanations for many of named questions. As a result of longstanding debates and rigorous work, we received the sophisticated foundations of modern mathematics.
 
 Owing to this achievements, contemporary mathematicians are able to concentrate on the extension of mathematics rather than paying attention to its foundations. However, due to the invention of the computer in the late 20th century, a new field of proof theory has arisen. Computer scientists and mathematicians began to develop proof assistants and automated theorem provers. While former is designed to verify proofs typed by humans, latter acts on a fully automatic basis.
 
@@ -229,7 +100,7 @@ In particular automatic theorem provers gave raise to new questions regarding ma
 
 While I am convinced that proof assistants can greatly reduce human errors, I am sceptical to a proof solely created by a computer. An incomprehensible proof taking up hundreds of megabytes is just as valuable as an unintelligible proof stretching thousands of pages written by a human. As long as there is no certainty and validation, I cannot acknowledge the conclusion.
 
-Nevertheless, these controversies are not focused by this paper, but rather they are subjects for debate in the seminar ``Formal Proof in Mathematics and Computer Science'' offered by the Chair for Logic and Verification at the Technical University of Munich in 2017. This paper shall start off the seminar by giving a brief overview on the foundations of mathematics with a focus on the foundational crisis in the 20th century.
+Nevertheless, these controversies are not focused by this paper, but rather they are subjects for debate in the seminar ``Formal Proof in Mathematics and Computer Science'' offered by the Chair for Logic and Verification at the Technical University of Munich in 2017. This paper shall start off the seminar by giving a brief overview of the foundations of mathematics with a focus on the foundational crisis in the 20th century.
 \newpage
 
 \tableofcontents 
@@ -239,9 +110,24 @@ Nevertheless, these controversies are not focused by this paper, but rather they
 
 \pagenumbering{arabic}
 \section{Introduction}
-In 
-Mathematics did not suddenly emerge but has been a human activity for thousands of years that even before the discovery of the first mathematical tablet
+While one might think that mathematics as a subject about absolute certainty ought to be free of controversies, history taught us otherwise. In fact, it has been subjected to fiery disputations since ancient greece. Before diving into the most famous controversy in the history of mathematics, the foundational crisis (in German \textit{Grundlagenkrise}), we want to give a brief historical overview focusing on the foundations and some of the most well-known controversies of mathematics.
 
+The history of mathematics is coined by a series of abstractions which probably began with the conception of numbers.
+Add two apples to three other apples, and you get five apples. Add two bananas to three other bananas, and you get five bananas. We abstract our results and derive: two plus three equals five. First evidence for more complex mathematics date back to around 2400 BC\@. Egyptians and Babylonians used basic arithmetics and geometry for trading, taxation, building and construction, and land measurement. Mathematics by this time, however, was just regarded as an applied tool to solve practical problems rather than an exact science. Heuristics, pictures and vague analogies justified the use of given formulas rather than rigorous proofs.
+
+The idea of demonstrating conclusions using coherent arguments, and thereby the development of the notion of a proof, was one of the great achievements in ancient Greek.
+%In fact, ancient Greek mathematicians accomplished an intriguing progress with . 
+Beginning with Thales in 600 BC, mathematics as a means for the exploration of perpetual truths began to raise. To no surprise, proofs where focused on arithmetics and geometry, which both seemed to consist of unquestionable truths.
+
+In 500 BC the Pythagoreans did not only invent one of the most famous theorems in mathematic, but to our larger interest experienced the first noteworthy mathematical controversy. The Pythagoreans were in firm belief that all numbers were commensurable; that is, for every pair of non-zero numbers $a$ and $b$, the ratio $\frac{a}{b}$ is a rational number. It allegedly was the work of Hippasus who dismissed this ideal by proofing the existence of irrational numbers. Legend has it that Hippasus was sentenced to death by drowning for the discovery of this unbearable truth. What remains as a fact, however, is that Pythagorean mathematics changed drastically after this discovery.
+
+Meanwhile, the Greek philosopher Zeno of Elea posed four paradoxes, now commonly known as Zeno's paradoxes. The first, known as Achilles and the tortoise, can be recounted as follows:
+Imagine a race between 
+\begin{quote}
+	``In a race, the quickest runner can never overtake the slowest, since the pursuer must first reach the point whence the pursued started, so that the slower must always hold a lead.'' - as recounted by Aristotle, Physics 
+\end{quote}
+These paradoxes layed the foundation for a disputation in the 19th century, which we shall say more about later.
+\\
 
 Begin: First Grunadlagenkrise in ancien greek or infinite small calculus.
 
@@ -284,5 +170,7 @@ Quotes:
 \item Dieses Tertium non datur (satz ausgeschlossenem dritten) dem Mathematiker zu nehmen, waere etwa, wie wenn man dem Astronomen das Fernrohr oder dem Boxer den Gebrauch der Faeuste untersagen wollte.“ – David Hilbert: Die Grundlagen der Mathematik, Abhandlungen aus dem mathematischen Seminar der Hamburgischen Universität, 6. Band (1928), S. 80
 \end{itemize}
 
-
+\newpage
+\bibliographystyle{plain}
+\bibliography{sources}
 \end{document}
