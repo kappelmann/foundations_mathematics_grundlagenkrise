@@ -78,6 +78,17 @@
 \date{\today}
 
 
+% Quotes with author
+\def\signed #1{{\leavevmode\unskip\nobreak\hfill\penalty50\hskip2em
+  \hbox{}\nobreak\\\hfill \raggedleft--- #1%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quote}}
+  {\signed{\usebox\mybox}\end{quote}}
+
+% Line breaks after paragraph
 \usepackage[parfill]{parskip}
 %------------------------------------------------------------------------------
 \begin{document}
@@ -117,7 +128,7 @@ Add two apples to three other apples, and you get five apples. Add two bananas t
 
 First evidence for more complex mathematics date back to around 2400 BC\@. Egyptians and Babylonians used basic arithmetics and geometry for trading, taxation, building and construction, and land measurement. Mathematics by this time, however, was just regarded as an applied tool to solve practical problems rather than an exact science. Heuristics, pictures and vague analogies justified the use of given formulas rather than rigorous proofs.
 
-The idea of demonstrating conclusions using coherent arguments, and thereby the development of the notion of a proof, was one of the great achievements in ancient Greek.
+The idea of demonstrating conclusions using coherent arguments, and thereby the development of the notion of a proof, was one of the great achievements in ancient Greece.
 %In fact, ancient Greek mathematicians accomplished an intriguing progress with . 
 Beginning with Thales in 600 BC, mathematics as a means for the exploration of perpetual truths began to raise. To no surprise, proofs where focused on arithmetics and geometry, which both seemed to consist of unquestionable truths.
 
@@ -127,7 +138,13 @@ Meanwhile, the Greek philosopher Zeno of Elea posed four paradoxes, now commonly
 \begin{quote}
 Achilles and the Tortoise want to conduct a race. Achilles gives the Tortoise a head start since he clearly is the faster runner. But by the time Achilles has reached the point where the Tortoise started, the slow individual will have moved on a few steps to a new position. When Achilles again reaches this new position, the labouring Tortoise will have moved on again. Each time Achilles reaches the point where the Tortoise was, the cunning reptile will always have moved a little way ahead; hence it will always hold a lead.
 \end{quote}
-These paradoxes layed the foundation for a disputation in the 19th century, which we shall say more about later.
+A reader familiar with the foundations of analysis may already be able to refute this paradox. Zeno's paradoxes indeed played an important role in the development of modern analysis, which we shall say more about later.
+
+Finally, we shall name the most influential mathematical work of ancient Greece if not even of all time\footnote{Up to the middle of the 19th century, Euclid's Elements is said to had been having a wide circulation rivaled only by the bible.}: Euclid's Elements. The collection, consisting of 13 books, was written around 300 BC by the Greek mathematician Euclid in Alexandria. The books cover Euclidian geometry (``the geometry of our world'') as well as elementary number theory. The intriguing thing, besides its exceptional volume, is its sophisticated axiomatic deductive treatment of mathematics. To this day, mathematicians most commonly use systems axiomatised in the same fashion as Euclid did over 2000 thousand years ago.
+\begin{aquote}{Bertrand Russell}
+	``At the age of eleven, I began Euclid, with my brother as tutor. This was one of the great events of my life, as dazzling as first love. I had not imagined there was anything so delicious in the world.''
+\end{aquote}
+TODO non-euclidian.
 \\
 
 Begin: First Grunadlagenkrise in ancien greek or infinite small calculus.
