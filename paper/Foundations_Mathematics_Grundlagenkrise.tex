@@ -16,6 +16,7 @@
 \usepackage{enumerate}
 % Math packages
 \usepackage{amsmath}
+\usepackage{mathtools}
 \usepackage{amssymb}
 
 % Proof system
@@ -185,21 +186,29 @@ While all these efforts certainly consolidated the trust in given systems, there
 One idea of a universal foundation was given by Georg Cantor around 1880. He introduced a non-formalized kind of set theory, now referred to as naive set theory, in which sets and operations on sets are described with natural language. 
 
 \begin{quote}[Georg Cantor]
-``A set is a gathering together into a whole of definite, distinct objects of our perception or of our thought—which are called elements of the set''\cite{cantor_set}
+``A set is a gathering together into a whole of definite, distinct objects of our perception or of our thought—which are called elements of the set.''\cite{cantor_set}
 \end{quote}
 
 Evidently, such an informal description is not adequate for a study of consistency as it leaves room for ambiguities. Nontheless, many mathematicians took pleasure in Cantor's set theory and used it as a foundation for different systems.
 
-Frege tried to address the issue of a consistent, universal system in his ``Grundgesetze der Arithmetik'' (German for ``fundamental laws of arithmetics''). He was trying to give a common foundation by reducing all of mathematics, in particular Cantor's set theory, to pure logic, removing all mathematical symbolism. His first efforts had not been well received; however, it caught the attention of Bertrand Russell. Just as Frege was finishing his final work on his \textit{Grundgesetze}, he received a letter from Russell, which should consequently pose the origin of the foundational crisis. Cantor's set theory as well as Frege's work were casualties of \textit{Russell's paradox}.
-
-In 1901 Russell discovered the paradox as he attempted to detect a flaw in Cantor's proof that there is no greatest cardinal\footnote{This result is also known as \textit{Cantor's paradox}. It does not, however, contradict with Cantor's set theory but merely appears counterintuitive.}. According to Cantor's definition of a set, it is completely valid for a set to be member of itself. Russell then validly defined ``the set of all sets that are not members of themselves'' and questioned whether this set would also be a member of itself.
-
-
-But inconsistencies destroyed dreams (Russel antinomy 1902) -> Frege stopped its undertakings.
-Many did not pay much attention to that problem but those who were interested understood its difficulty (Cantors set theory as a foundation of mathematics was also affected).
-The set of all sets that do not contain itself was not contradictory to Cantor's set theory but with logic proofed by Russell -> better to use axiomses instead of relying on regarding mathematical objects as immaterial truths without limitation and reflections.\\
-
-Three schools: Logicism, Intuitionism, Formalism\\
+Frege tried to address the issue of a consistent, universal system in his ``Grundgesetze der Arithmetik'' (German for ``fundamental laws of arithmetics''). He was trying to give a common foundation by reducing all of mathematics, in particular Cantor's set theory, to pure logic, removing all mathematical symbolism. His first efforts had not been well received; however, it caught the attention of Bertrand Russell. Just as Frege was finishing his final work on his \textit{Grundgesetze}, he received a letter from Russell, which should consequently pose the origin of the foundational crisis. Cantor's set theory as well as Frege's work were casualties of \textit{Russell's paradox} discovered in 1901.
+\begin{quote}
+Let us consider the, by Cantor's definition, well-defined set $R$ as ``the set of all sets that are not members of themselves'':
+\begin{equation*}
+	R\coloneqq\{X\mid X\notin X\}
+\end{equation*}
+We are interested in whether R is a member of itself, that is if $R\in R$ holds.
+Let us assume that this is indeed the case. Then, by definition of $R$, it follows that $R$ must not be a member of itself, i.e.\ $R\notin R$, which contradicts our assumption. Now, assume the contrary, namely $R\notin R$. Then, again by definition of $R$, we observe that $R$ must be a member of itself, i.e\ $R\in R$. Hence, we conclude
+\begin{equation*}
+		R\in R\iff R\notin R
+\end{equation*}
+which clearly is a contradiction and thus shows the inconsistency of Cantor's set theory.
+\end{quote}
+Frege's work did not contain a definition of sets, but it was not difficult for Russell to transfer the paradox to the system constructed by Frege. At the last minute, Frege hastily wrote an appendix in which he explained the issue and proposed a solution by restricting the antinomy-causing axioms of the system; however, this was to no avail and consequently caused Frege utter dismay.
+\begin{quote}[Gottlob Frege]
+``Hardly anything more unfortunate can befall a scientific writer than to have one of the foundations of his edifice shaken after the work is finished. This was the position I was placed in by a letter of Mr. Bertrand Russell, just when the printing of this volume was nearing its completion.''\cite{frege_appendix}
+\end{quote}
+It was beyond all doubt that Frege's life work was dismissed and, even more shocking, the established foundation of mathematics, Cantor's naive set theory, was shattered; mathematics was broken at its heart. A new, consistent foundation had to be found; a Herculean task as it turned out.
 
 \subsection{Logicism --- a foundation made of logic}
 
