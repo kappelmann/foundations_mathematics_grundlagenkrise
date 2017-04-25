@@ -110,7 +110,7 @@ Nevertheless, these controversies are not focused by this paper, but rather they
 
 \pagenumbering{arabic}
 \section{Historical introduction and controversies}
-While one might think that mathematics as a subject about absolute certainty ought to be free of controversies, history taught us otherwise. In fact, it has been subjected to fiery disputations since ancient greece. Before diving into the most famous controversy in the history of mathematics, namely the \textit{foundational crisis} (in German \textit{Grundlagenkrise}), we want to give a brief historical overview focusing on the foundations and some of the most well-known controversies\footnote{We emphasise the smaller extent and impact of various mathematical disputations by using the word \textit{controversy} as opposed to \textit{crisis}.} of mathematics.
+While one might think that mathematics as a subject about absolute certainty ought to be free of controversies, history taught us otherwise. In fact, it has been subjected to fiery disputations since ancient Greece. Before diving into the most famous controversy in the history of mathematics, namely the \textit{foundational crisis} (in German \textit{Grundlagenkrise}), we want to give a brief historical overview focusing on the foundations and some of the most well-known controversies\footnote{We emphasise the smaller extent and impact of various mathematical disputations by using the word \textit{controversy} as opposed to \textit{crisis}.} of mathematics.
 
 \subsection{Ancient mathematics}
 
@@ -120,10 +120,9 @@ Add two apples to three other apples, and you get five apples. Add two bananas t
 First evidence for more complex mathematics dates back to around 2400 BC\@. Egyptians and Babylonians used basic arithmetics and geometry for trading, taxation, building and construction, and land measurement. Mathematics by this time, however, was just regarded as an applied tool to solve practical problems rather than an exact science. Heuristics, pictures and vague analogies justified the use of given formulas rather than rigorous proofs.
 
 The idea of demonstrating conclusions using coherent arguments, and thereby the development of the notion of a proof, was one of the great achievements in ancient Greece.
-%In fact, ancient Greek mathematicians accomplished an intriguing progress with . 
-Beginning with Thales in 600 BC, mathematics as a means for the exploration of perpetual truths began to raise. To no surprise, proofs where focused on arithmetics and geometry, which both seemed to consist of unquestionable truths.
+Beginning with Thales in 600 BC, mathematics as a means of the exploration of perpetual truths began to raise. To no surprise, proofs where focused on arithmetics and geometry, which both seemed to consist of unquestionable truths.
 
-In 500 BC the Pythagoreans did not only invent one of the most famous theorems in mathematic, but to our larger interest experienced the first noteworthy mathematical controversy. They were in firm belief that all numbers were commensurable; that is, for every pair of non-zero numbers $a$ and $b$, the ratio $\frac{a}{b}$ is a rational number. It allegedly was the work of Hippasus who dismissed this ideal by proofing the existence of irrational numbers. Legend has it that Hippasus was sentenced to death by drowning for the discovery of this unbearable truth. What remains as a fact, however, is that Pythagorean mathematics changed drastically after this discovery.
+In 500 BC the Pythagoreans did not only invent one of the most famous theorems in mathematics, but to our larger interest experienced the first noteworthy mathematical controversy. They were in firm belief that all numbers were commensurable; that is, for every pair of non-zero numbers $a$ and $b$, the ratio $\frac{a}{b}$ is a rational number. It allegedly was the work of Hippasus who dismissed this ideal by proofing the existence of irrational numbers. Legend has it that Hippasus was sentenced to death by drowning for the discovery of this unbearable truth. What remains as a fact, however, is that Pythagorean mathematics changed drastically after this discovery.
 
 Meanwhile, the Greek philosopher Zeno of Elea devised four paradoxes, now commonly known as Zeno's paradoxes, which mainly deal with the illusion of motion. The first paradox, referred to as Achilles and the tortoise, can be recounted as follows:
 \begin{quote}\label{zeno_paradox}
@@ -152,8 +151,8 @@ In addition to this uncertainty, when Newton and Leibniz first published their r
 \section{The foundational crisis}
 While controversies like that of the Pythagoreans or the infinitesimal calculus certainly influenced the development of modern mathematics, they do not deserve to be called a proper crisis, since they were restricted to a small tract of mathematics or did not cause an exceptional impact on mathematical foundations.
 
-The foundational crisis of mathematics started in 1902 with Russell's antinomy and ended in 1931 with an astonishing twist by Kurt Gödel and his incompleteness theorems.
-We will firstly examine the causes that lead to this milestone of mathematics and then proceed to chronologically discuss involved persons, their representated movements, and important events by providing philosophical as well as mathematical background and details.
+The foundational crisis of mathematics started in 1902 with Russell's paradox and ended in 1931 with an intriguing twist by Kurt Gödel and his incompleteness theorems.
+We will firstly examine the causes that lead to this milestone of mathematics and then proceed to chronologically discuss involved persons, their representated schools of thought, and important events.
 
 \subsection{Causes}\label{ssec_causes}
 In 19th century, Euclid's Elements had been established as a mathematical showcase for more than 2000 years due to its axiomatic, deductive treatment of mathematics. The first book began with his five postulates\footnote{Euclid used the word \textit{postulate} instead of \textit{axiom}.} of geometry:
@@ -208,15 +207,24 @@ Frege's work did not contain a definition of sets, but it was not difficult for 
 \begin{quote}[Gottlob Frege]
 ``Hardly anything more unfortunate can befall a scientific writer than to have one of the foundations of his edifice shaken after the work is finished. This was the position I was placed in by a letter of Mr. Bertrand Russell, just when the printing of this volume was nearing its completion.''\cite{frege_appendix}
 \end{quote}
-It was beyond all doubt that Frege's life work was dismissed and, even more shocking, the established foundation of mathematics, Cantor's naive set theory, was shattered; mathematics was broken at its heart. A new, consistent foundation had to be found; a Herculean task as it turned out.
+It was beyond all doubt that Frege's undertaking was dismissed and, even more shocking, the established foundation of mathematics, Cantor's naive set theory, was shattered; mathematics was broken at its core. A new, consistent foundation had to be found; a Herculean task, as it turned out, which was tackled by three different schools of thought which we shall discuss next.
 
 \subsection{Logicism --- a foundation made of logic}
+Mathematics as an extension of logic. This is the central idea of logicism. Although Frege retracted from his endeavours, his pursued idea, the reduction of mathematics to pure logic, was subsequently revisited from Russell and Alfred Whitehead in their famous three-volume work \textit{Principia Mathematica} published in 1910--1913.
+
+After the discovery of his paradox, Russell began to study the causes that lead to those kind of antinomies\footnote{There were found antinomies similar to Russel's at the same time which we are not going to discuss (such as the Burali-Forti paradox or Richard's paradox).\cite{russell_self_referentiality}}. This was an important task because Russell needed to shelter his future work to avoid the bitter fate as experienced by Frege. He concluded that ``In all the contradictions there is a common characteristic, which we may describe as self-reference or reflexiveness''\cite[p. 224]{russell_self_referentiality}. As a means of defence, he invented the idea of type theories. 
+
+In general, a type theory is an extension of a formal system which assigns every object a type. Operations on objects can then be restricted in dependency on involved types.\footnote{For instance, in type-safe programming languages, such as Standard ML or Java, it is not permitted to compare values of different types (e.g.\ integers and strings).} In simple terms, the type theory in Principia Mathematica uses natural numbers as types. A set of type $n$ is then only allowed to contain members of types at most $n-1$. 
+
+Naturally, this system is not susceptible to antinomies like Russell's as it completely eliminates self-referentiality. Nevertheless, Russell recognised that this type theory caused major limitations which made the logical system incapable of representing all of mathematics. In addition, Russell's and Whitehead's attempts in proving the existence of an infinite object using their logical framework failed. They subsequently decided to patch up their system by introducing the \textit{axiom of infinity} as well as the \textit{axiom of reducibility}.
+
+As an effect of its extremly fine-grained, incremental definitions and its rather unusual syntactical notations, the books have been described as ``the outstanding example of an unreadable masterpiece''\cite{math_experience}.
 
 \subsection{Formalism --- mathematics as a symbol modifier}
 
 \subsection{Constructivism --- proofs with real evidence}
 
-\subsection{The end of the crisis --- Gödel's incompleteness theorems}
+\subsection{The end of the crisis --- Gödel's incompleteness theorems}\label{ssec_end_crisis}
 
 \section{Aftermath and prospects}
 
