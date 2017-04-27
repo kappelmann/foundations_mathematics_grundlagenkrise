@@ -190,35 +190,39 @@ One idea of a universal foundation was given by Georg Cantor around 1880. He int
 
 Evidently, such an informal description is not adequate for a study of consistency as it leaves room for ambiguities. Nontheless, many mathematicians took pleasure in Cantor's set theory and used it as a foundation for different systems.
 
-Frege tried to address the issue of a consistent, universal system in his ``Grundgesetze der Arithmetik'' (German for ``fundamental laws of arithmetics''). He was trying to give a common foundation by reducing all of mathematics, in particular Cantor's set theory, to pure logic, removing all mathematical symbolism. His first efforts had not been well received; however, it caught the attention of Bertrand Russell. Just as Frege was finishing his final work on his \textit{Grundgesetze}, he received a letter from Russell, which should consequently pose the origin of the foundational crisis. Cantor's set theory as well as Frege's work were casualties of \textit{Russell's paradox} discovered in 1901.
+Frege tried to address the issue of a consistent, universal system in his ``Grundgesetze der Arithmetik'' (German for ``fundamental laws of arithmetics''). He was trying to give a common foundation by reducing all of mathematics, in particular Cantor's set theory, to pure logic, removing all mathematical symbolism. His first efforts had not been well received; however, it caught the attention of Bertrand Russell. Just as Frege was finishing his final work on his \textit{Grundgesetze}, he received a letter from Russell, which should consequently pose the origin of the foundational crisis. Cantor's set theory as well as Frege's work were casualties of \textit{Russell's paradox} discovered in 1901:
 \begin{quote}
-Let us consider the, by Cantor's definition, well-defined set $R$ as ``the set of all sets that are not members of themselves'':
+Let us consider \textit{the set of all sets that are not members of themselves} denoted by R. In formal notation:
 \begin{equation*}
 	R\coloneqq\{X\mid X\notin X\}
 \end{equation*}
-We are interested in whether R is a member of itself, that is if $R\in R$ holds.
-Let us assume that this is indeed the case. Then, by definition of $R$, it follows that $R$ must not be a member of itself, i.e.\ $R\notin R$, which contradicts our assumption. Now, assume the contrary, namely $R\notin R$. Then, again by definition of $R$, we observe that $R$ must be a member of itself, i.e\ $R\in R$. Hence, we conclude
+By Cantor's definition, R is indeed a well-defined set.
+We are now interested in whether R is a member of itself, that is if $R\in R$ holds.
+Let us assume that this is indeed the case. Then, by definition of $R$, it follows that $R$ must not be a member of itself, i.e.\ $R\notin R$, which contradicts our assumption. Now, let us assume the contrary, namely $R\notin R$. Then, again by definition of $R$, we observe that $R$ must be a member of itself, i.e\ $R\in R$. Hence, we conclude
 \begin{equation*}
 		R\in R\iff R\notin R
 \end{equation*}
 which clearly is a contradiction and thus shows the inconsistency of Cantor's set theory.
 \end{quote}
-Frege's work did not contain a definition of sets, but it was not difficult for Russell to transfer the paradox to the system constructed by Frege. At the last minute, Frege hastily wrote an appendix in which he explained the issue and proposed a solution by restricting the antinomy-causing axioms of the system; however, this was to no avail and consequently caused Frege utter dismay.
+Though, Frege's work did not contain a definition of sets, it was not difficult for Russell to transfer the paradox to the system constructed by Frege. At the last minute, Frege hastily wrote an appendix in which he explained the issue and proposed a solution by restricting the antinomy-causing axioms of the system; however, this was to no avail and consequently caused Frege utter dismay.
 \begin{quote}[Gottlob Frege]
 ``Hardly anything more unfortunate can befall a scientific writer than to have one of the foundations of his edifice shaken after the work is finished. This was the position I was placed in by a letter of Mr. Bertrand Russell, just when the printing of this volume was nearing its completion.''\cite{frege_appendix}
 \end{quote}
 It was beyond all doubt that Frege's undertaking was dismissed and, even more shocking, the established foundation of mathematics, Cantor's naive set theory, was shattered; mathematics was broken at its core. A new, consistent foundation had to be found; a Herculean task, as it turned out, which was tackled by three different schools of thought which we shall discuss next.
 
 \subsection{Logicism --- a foundation made of logic}
-Mathematics as an extension of logic. This is the central idea of logicism. Although Frege retracted from his endeavours, his pursued idea, the reduction of mathematics to pure logic, was subsequently revisited from Russell and Alfred Whitehead in their famous three-volume work \textit{Principia Mathematica} published in 1910--1913.
+Mathematics as an extension of logic; this is the central idea of logicism. Although Frege backed up from his endeavours, his pursued idea, the reduction of mathematics to pure logic, was subsequently revisited from Russell and Alfred Whitehead in their famous three-volume work \textit{Principia Mathematica} published in 1910--1913.
 
-After the discovery of his paradox, Russell began to study the causes that lead to those kind of antinomies\footnote{There were found antinomies similar to Russel's at the same time which we are not going to discuss (such as the Burali-Forti paradox or Richard's paradox).\cite{russell_self_referentiality}}. This was an important task because Russell needed to shelter his future work to avoid the bitter fate as experienced by Frege. He concluded that ``In all the contradictions there is a common characteristic, which we may describe as self-reference or reflexiveness''\cite[p. 224]{russell_self_referentiality}. As a means of defence, he invented the idea of type theories. 
+After the discovery of his paradox, Russell began to study the causes that lead to those kind of antinomies\footnote{There were found antinomies similar to Russel's at the same time, which we are not going to discuss (such as the Burali-Forti paradox or Richard's paradox).\cite{russell_self_referentiality}}. This was an important task because Russell needed to protect his future work to avoid the bitter fate as experienced by Frege. He concluded that ``In all the contradictions there is a common characteristic, which we may describe as self-reference or reflexiveness''\cite[p. 224]{russell_self_referentiality}. As a means of defence, he invented the idea of type theories. 
 
 In general, a type theory is an extension of a formal system which assigns every object a type. Operations on objects can then be restricted in dependency on involved types.\footnote{For instance, in type-safe programming languages, such as Standard ML or Java, it is not permitted to compare values of different types (e.g.\ integers and strings).} In simple terms, the type theory in Principia Mathematica uses natural numbers as types. A set of type $n$ is then only allowed to contain members of types at most $n-1$. Naturally, this system is not susceptible to antinomies like Russell's as it completely eliminates self-referentiality. 
 
-Russell, however, recognised that this type theory caused major limitations which made the logical system incapable of representing all of mathematics. In addition, Russell's and Whitehead's attempts in proving the existence of an infinite object using their logical framework failed. They subsequently decided to patch up their system by introducing the \textit{axiom of infinity} and the \textit{axiom of reducibility}.
+Russell, however, recognised that his type theory caused major limitations which made the logical system incapable of representing all of mathematics. In addition, Russell's and Whitehead's attempts in proving the existence of an infinitude of objects using their logical framework failed. Thus, they decided to patch up their system by introducing the \textit{axiom of reducibility} and the \textit{axiom of infinity}; however, these two axioms arguably do not fit the bill.
 
-While Russell's and Whitehead's general intention had been widely advocated, Principia Mathematica was exposed to ever-growing criticisms. Most importantly, mentioned axioms do not seem logically evident and hence contradict with logicism's central idea. Further, albeit posing a perfection of coherency and precision, the books were known as being illegible due to extremly fine-grained, incremental definitions and rather unusual syntactical notations.
+The former overcomes the limitations caused by Russell's type theory in a fairly specific and technical way. As a result, it was widely critised that the axiom is too ad hoc and stipulated just in order to attain a desired result.
+The latter axiom, on the other hand, guarantees the existence of an infinite amount of objects; but what makes this a logical necessity? Is the universe infinite? Are there an infinite number of atoms?
+
+While Russell's and Whitehead's general intention had been widely advocated, Principia Mathematica was exposed to ever-growing criticisms due to mentioned axioms. They do not seem to be logically self-evident and hence contradict with logicism's central idea. Furthermore, albeit posing a perfection of coherency and precision, the books were known as being illegible due to extremly fine-grained, incremental definitions and rather unusual syntactical notations and have been accepted as ``the outstanding example of an unreadable masterpiece''\cite{math_experience}.
 
 \begin{figure}[h]
 	\centering
@@ -226,8 +230,7 @@ While Russell's and Whitehead's general intention had been widely advocated, Pri
 	\caption{Principia Mathematica's infamous proof of $1+1=2$.}
 \end{figure}
 
-Nontheless, the critiques did not completely dismiss Russell's and Whitehead's work, but some adopted their work as a new mathematical foundation. Others, however, were fairly dissatisfied. 
-
+Nontheless, the critiques did not completely dismiss Russell's and Whitehead's work, but some adopted it as a new mathematical foundation. Others, however, were fairly dissatisfied. Among them were the advocates of formalism which we shall describe next.
 
 \subsection{Formalism --- mathematics as a symbol modifier}
 
