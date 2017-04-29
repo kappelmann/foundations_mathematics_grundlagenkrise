@@ -54,6 +54,9 @@
 \usetikzlibrary{calc,arrows.meta,positioning}
 \usepackage{subfig}
 
+% multiple colums
+\usepackage{multicol}
+
 % Custom commands
 \newcommand{\mx}{\mathcal{X}}
 \newcommand{\fromto}[2]{\{#1,\ldots,#2\}}
@@ -100,7 +103,7 @@ Some of these difficult questions were essential during a heated phase in the be
 
 Owing to this achievements, contemporary mathematicians are able to concentrate on the extension of mathematics rather than paying attention to its foundations. However, due to the invention of the computer in the late 20th century, a new field of proof theory has arisen. Computer scientists and mathematicians began to develop proof assistants and automated theorem provers. While former is designed to verify proofs typed by humans, latter acts on a fully automatic basis.
 
-In particular automatic theorem provers gave raise to new questions regarding mathematical proofs. Does a computer generated proof have the same credibility as a proof written by a person? What is a proof and how can I persuade somebody that I am right? Does it suffice to understand every isolated step of it, or do I need to understand its holistic idea? Must it be accepted by some, a few, or even just one person? It seems like we are facing a new foundational crisis.
+In particular automatic theorem provers gave rise to new questions regarding mathematical proofs. Does a computer generated proof have the same credibility as a proof written by a person? What is a proof and how can I persuade somebody that I am right? Does it suffice to understand every isolated step of it, or do I need to understand its holistic idea? Must it be accepted by some, a few, or even just one person? It seems like we are facing a new foundational crisis.
 
 Nevertheless, these controversies are not focused by this paper, but rather they are subjects for debate in the seminar ``Formal Proof in Mathematics and Computer Science'' offered by the Chair for Logic and Verification at the Technical University of Munich in 2017. This paper shall start off the seminar by giving a brief overview of the foundations of mathematics with a focus on the foundational crisis in the 20th century.
 \newpage
@@ -142,7 +145,7 @@ Euclid's Elements was manifested as a work of timeless certainty. Nobody could d
 The Greeks, albeit discussing the possibility of the continuum, conducted a ``static'' way of mathematics in the sense that subjects of interest were mainly those that deal with stationary objects, e.g.\ arithmetic and geometry. In addition, it was widely belived that objects, in particular time and space, were only finitely divisible. This kind of mathematics, however, is incapable of finding adequate answers to Zeno's paradoxes (see section~\ref{zeno_paradox}).
 It was not until the middle of the 17th century that Leibniz as well as Newton independently developed the tools for infinitesimal calculus capable of solving the mistery of infinite divisibilty.
 
-Infinitesimal calculus, these days simply known as calculus, is the study of continuous change. Although Leibniz and Newton were able to calculate the derivatives and integrals of functions using a notion of ``infinite small quantities'', they were not able to deliver an elaborated foundation for their used methods. Rather, they used heuristic principles, such as the law of continuity\footnote{the principle that "whatever succeeds for the finite, also succeeds for the infinite"}, as justification which gave raise to valid scepticism and critques most notably by Bishop Berkeley in 1734. He addressed the uncertainty and ominosity of the calculus derived by Leibniz and Newton in his book ``The Analyst''. For this, he satirically compared the use of ``infinite small quantities'' and its vague justification with critiques common to religion. His book subtitled:
+Infinitesimal calculus, these days simply known as calculus, is the study of continuous change. Although Leibniz and Newton were able to calculate the derivatives and integrals of functions using a notion of ``infinite small quantities'', they were not able to deliver an elaborated foundation for their used methods. Rather, they used heuristic principles, such as the law of continuity\footnote{the principle that "whatever succeeds for the finite, also succeeds for the infinite"}, as justification which gave rise to valid scepticism and critques most notably by Bishop Berkeley in 1734. He addressed the uncertainty and ominosity of the calculus derived by Leibniz and Newton in his book ``The Analyst''. For this, he satirically compared the use of ``infinite small quantities'' and its vague justification with critiques common to religion. His book subtitled:
 \begin{quote}
 	``A DISCOURSE Addressed to an Infidel MATHEMATICIAN\@. WHEREIN It is examined whether the Object, Principles, and Inferences of the modern Analysis are more distinctly conceived, or more evidently deduced, than Religious Mysteries and Points of Faith''
 \end{quote}
@@ -197,7 +200,7 @@ Let us consider \textit{the set of all sets that are not members of themselves} 
 	R\coloneqq\{X\mid X\notin X\}
 \end{equation*}
 By Cantor's definition, R is indeed a well-defined set.
-We are now interested in whether R is a member of itself, that is if $R\in R$ holds.
+We are now interested in whether R is a member of itself, that is, if $R\in R$ holds.
 Let us assume that this is indeed the case. Then, by definition of $R$, it follows that $R$ must not be a member of itself, i.e.\ $R\notin R$, which contradicts our assumption. Now, let us assume the contrary, namely $R\notin R$. Then, again by definition of $R$, we observe that $R$ must be a member of itself, i.e\ $R\in R$. Hence, we conclude
 \begin{equation*}
 		R\in R\iff R\notin R
@@ -210,7 +213,7 @@ Though, Frege's work did not contain a definition of sets, it was not difficult 
 \end{quote}
 It was beyond all doubt that Frege's undertaking was dismissed and, even more shocking, the established foundation of mathematics, Cantor's naive set theory, was shattered; mathematics was broken at its core. A new, consistent foundation had to be found; a Herculean task, as it turned out, which was tackled by three different schools of thought which we shall discuss next.
 
-\subsection{Logicism --- a foundation made of logic}
+\subsection{Logicism --- a foundation made of logic}\label{ssec_logicism}
 Mathematics as an extension of logic; this is the central idea of logicism. Although Frege backed up from his endeavours, his pursued idea, the reduction of mathematics to pure logic, was subsequently revisited from Russell and Alfred Whitehead in their famous three-volume work \textit{Principia Mathematica} published in 1910--1913.
 
 After the discovery of his paradox, Russell began to study the causes that lead to those kind of antinomies\footnote{There were found antinomies similar to Russel's at the same time, which we are not going to discuss (such as the Burali-Forti paradox or Richard's paradox).\cite{russell_self_referentiality}}. This was an important task because Russell needed to protect his future work to avoid the bitter fate as experienced by Frege. He concluded that ``In all the contradictions there is a common characteristic, which we may describe as self-reference or reflexiveness''\cite[p. 224]{russell_self_referentiality}. As a means of defence, he invented the idea of type theories. 
@@ -239,11 +242,38 @@ Mathematics should be solely based on symbols and axioms that describe syntactic
 Spearheaded by Hilbert, formalism began to flourish during the period of rigorous axiomatisation in the late 19th century (see section~\ref{ssec_causes}). 
 In 1900, Hilbert listed the proof of the consistency of the axioms of arithmetic in his famous \textit{Hilbert's problems}: a list of 23 unsolved fundamental questions which mathematicians should attack during the coming century. As Hilbert was one of the most renowned mathematicians of given time, this was a driving force behind the study of axiomatic systems.
 
-One of his fellows was Ernst Zermelo. In 1908, Zermelo published his axiomatic set theory on which he had worked for 3 years. It was supposed to solve the problems of Cantor's naive set thoery that had arisen by Russell's paradox, but Zermelo was not able to proof the consistency of his system and stated that the proof of its consistency is a distant prospect. This may was one of the reasons, his work was not accepted as a foundation of mathematics up to 1922 when Adolf Fraenkel and Thoralf Skolem independently improved Zermelo's axiom system. 
+One of his fellows was Ernst Zermelo. In 1908, Zermelo published his axiomatic set theory on which he had worked for 3 years. It was supposed to solve the problems of Cantor's naive set thoery that had arisen by Russell's paradox, but Zermelo was not able to proof the consistency of his system and stated that the proof is a distant prospect. This may was one of the reasons his work was not accepted as a foundation of mathematics up to 1922 when Adolf Fraenkel and Thoralf Skolem independently improved Zermelo's axiom system. 
 
-This new, improved axiom system, known as \textit{Zermelo-Fraenkel set theory}, was able to replace the logical system derived in Principia Mathematica and still poses the foundations of modern mathematics. Using modern mathematicial notation, the axioms can be given as follows:
- 
-
+This new, improved axiom system, known as \textit{Zermelo-Fraenkel set theory}, was able to replace the logical system derived in Principia Mathematica and still poses the foundations of mathematics. Using modern mathematicial notation, some of the nine axioms can be formulated as follows:
+\scriptsize
+\begin{enumerate}
+    \item \textbf{Axiom of regularity:} Every non-empty set $X$ contains a member $y$ such that $X$ and $y$ are disjoint.
+\begin{equation*}
+\forall X [\exists a ( a \in X) \rightarrow \exists y ( y \in X \land \lnot \exists z (z \in y \land z \in X))]
+\end{equation*}
+In particular, this implies that no set is an element of itself.
+    \item \textbf{Axiom of specification:} For every predicate $P(\cdot)$ and every set $A$ there exists a set $B$ containing only the elements of $A$ satisfying $P$.
+\begin{equation*}
+\forall A\,\exists B\,\forall x[x\in B \leftrightarrow \bigl(x\in A \land P(x)\bigr)]
+\end{equation*}
+This allows us to write $B=\{x\in A\mid P(x)\}$. Further, it can be used to prove the existence of the empty set using some existing set A:
+\begin{equation*}
+\emptyset\coloneqq\{z\in A\mid (z\in z)\land(z\notin z)\}
+\end{equation*}
+In fact, the axiom of scheme is an \textit{axiom schema}, that is, an infinite series of axioms, since for every predicate $P(\cdot)$ we get a different statement.
+    \item \textbf{Axiom of infinity:} There exists an inductive set $X$ (having infinitely many members).
+\begin{equation*}
+\exists X \left [\emptyset \in X \land \forall y (y \in X \rightarrow y\cup\{y\}  \in X)\right]
+\end{equation*}
+Note that the axiom has not been exposed to the same extend of critisism as the same-named axiom of Principia Mathematica (see~\ref{ssec_logicism}), for formalists did not have to justify the meaning of their axioms as they are of a pure syntacic nature.
+    \item \textbf{Axiom of choice:} For any set $X$ of nonempty sets, there exists a choice function $f$ defined on $X$. 
+\begin{equation*}
+\forall X \left[ \emptyset \notin X \rightarrow \exists f\,\forall A(A\in X\rightarrow f(A) \in A ) \right]
+\end{equation*}
+This axiom is the root of many seemingly paradoxic results such as the Banach–Tarski paradox, and it was proofed being logically independent of the other eight axioms. Nevertheless, it has been accepted by most mathematicians as it is an integral part of many important theorems (e.g.\ every vector space has a basis).
+\end{enumerate}
+\normalsize
+We want to stress that formalists do not assign any semantics to their axioms in principal. The meanings of the axioms (as above) are given simply for a better understanding of the reader.
 \subsection{Intuitionism --- proofs with real evidence}
 
 \subsection{The end of the crisis --- Gödel's incompleteness theorems}\label{ssec_end_crisis}
@@ -265,11 +295,6 @@ In 1928 German mathematicans were allowed to attend the international congress f
 
 Formalism seemed to be the winner. Goedel's incompleteness theorem destroyed the hope of a proofed consistent formal system. Nevertheless, modern mathematics is build on formalism. What axioms do I need at least in order to proof this theorem are current questions of formalism. The justification of the axioms are often regarded philosophical work and are often not regarded by mathematicians.
 \\
-
-Topic overview:\\
-At the beginning of the 20th century it became clear that mathematics needed formal foundations, which was partly caused by discovering various paradoxes. A couple of solutions were proposed including Hilbert's program of formalism. The crisis was partially solved by adopting the new foundations of set theory although Hilbert's ambitions were not completely fulfilled due to Gödel. The student should cover main events and players from this story and accompany the presentation by the most important technical details.
-
-
 
 Quotes: 
 \begin{itemize}
