@@ -212,7 +212,7 @@ Let us consider \textit{the set of all sets that are not members of themselves} 
 \end{equation*}
 By Cantor's definition, R is indeed a well-defined set.
 We are now interested in whether R is a member of itself, that is, if $R\in R$ holds.
-Let us assume that this is indeed the case. Then, by definition of $R$, it follows that $R$ must not be a member of itself, i.e.\ $R\notin R$, which contradicts our assumption. Now, let us assume the contrary, namely $R\notin R$. Then, again by definition of $R$, we observe that $R$ must be a member of itself, i.e\ $R\in R$. Hence, we conclude
+Let us assume that this is indeed the case. Then, by definition of $R$, it follows that $R$ must not be a member of itself, i.e.\ $R\notin R$, which contradicts our assumption. Now, let us assume the contrary, namely $R\notin R$. Then, again by definition of $R$, we observe that $R$ must be a member of itself, i.e.\ $R\in R$. Hence, we conclude
 \begin{equation*}
 		R\in R\iff R\notin R
 \end{equation*}
@@ -236,7 +236,7 @@ Russell, however, recognised that his type theory caused major limitations which
 The former overcomes the limitations caused by Russell's type theory in a fairly specific and technical way. As a result, it was widely critisised that the axiom is too ad hoc and stipulated just in order to attain a desired result.
 The latter axiom, on the other hand, guarantees the existence of an infinite amount of objects; but what makes this a logical necessity? Is the universe infinite? Are there an infinite number of atoms?
 
-While Russell's and Whitehead's general intention had been widely advocated, Principia Mathematica was exposed to ever-growing criticisms due to mentioned axioms. They do not seem to be logically self-evident and hence contradict with logicism's central idea. Furthermore, albeit posing a perfection of coherency and precision, the books were known as being illegible due to extremly fine-grained, incremental definitions and rather unusual syntactical notations and have been described as ``the outstanding example of an unreadable masterpiece''\cite{math_experience}.
+While Russell's and Whitehead's general intention had been widely advocated, Principia Mathematica was exposed to ever-growing criticisms due to mentioned axioms. They do not seem to be logically self-evident and hence contradict with logicism's central idea. Furthermore, albeit posing a perfection of coherency and precision, the books were known as being illegible due to extremly fine-grained, incremental definitions and rather unusual syntactical notations and have been described as ``the outstanding example of an unreadable masterpiece''\cite[p.~154]{math_experience}.
 
 Nonetheless, the criticisms did not completely debase Russell's and Whitehead's work, but many adopted it as a new mathematical foundation up to 1931 --- the time Gödel once and for all dismissed Russell's and Whitehead's intentions. Others, however, were fairly dissatisfied. Among them were the advocates of formalism which we shall discuss next.
 
@@ -256,7 +256,7 @@ In 1900, Hilbert listed the proof of the consistency of the axioms of arithmetic
 One of his fellows was Ernst Zermelo. In 1908, Zermelo published his axiomatic set theory on which he had worked for 3 years. It was supposed to solve the problems of Cantor's naive set thoery that had arisen by Russell's paradox, but Zermelo was not able to proof the consistency of his system and stated that the proof is a distant prospect. This arguably was one of the reasons his work was not accepted as a foundation of mathematics up to 1922 when Adolf Fraenkel and Thoralf Skolem independently improved Zermelo's axiom system. 
 
 This new, improved axiom system, known as \textit{Zermelo-Fraenkel set theory}, was able to replace the logical system derived in Principia Mathematica and still poses the foundations of mathematics. Using modern mathematicial notation, some of the nine axioms can be formulated as follows:
-\scriptsize
+\small
 \begin{enumerate}
     \item \textbf{Axiom of regularity:} Every non-empty set $X$ contains a member $y$ such that $X$ and $y$ are disjoint.
 \begin{equation*}
@@ -329,10 +329,23 @@ In 1928, the foundational crisis reached its peak. Brouwer boycotted the Interna
 
 A few days after, Hilbert as one of the major publishers of the prestigous mathematical magazine ``Mathematischen Annalen'' decided to exclude Brouwer as a co-publisher without conducting a referendum. This lead to confusion and fierce disputes, but in the end Hilbert's wish came true and Brouwer was excluded. Brouwer, in a state of frustration and despair, subsequently stopped publishing articles concerning his intuitionistic ideas; as a result, intutionism lost its public attention.  
 
-The risen optimism for a complete and consistent formal foundation of mathematics, however, was surprisingly crushed 1931 by Gödel's incompleteness theorems. 
+The risen optimism for a complete and consistent formal foundation of mathematics, however, was surprisingly crushed 1931 by Gödel's two incompleteness theorems.
+
+\begin{quote}
+\underline{First Incompleteness Theorem:} Any consistent formal system F rich enough to contain a formalisation of recursive arithmetic is incomplete, i.e.\ there are statements of the language of F which can neither be proved nor disproved in F.
+
+\underline{Second Incompleteness Theorem:} Any consistent formal system F rich enough to contain a formalisation of recursive arithmetic cannot prove its own consistency.\footnote{These theorems are the improved versions by John Barkley Rosser. Gödel's original theorems were slightly weaker in that they only applied to $\omega$-consistent systems.\cite[pp.~293--320]{fraenkel_incompleteness}}
+\end{quote}
+
+These theorems tell us that there cannot exist a consistent and complete formal system which is able to prove all of mathematics and thus dismiss Hilbert's aspirations. Ironically, the proof of the theorems is based on self-referentiality within formal systems; something that Hilbert tried to avoid by depriving semantics from mathematics.
+We want to give a short sketch of a proof:
+\begin{quote}
+
+\end{quote}
+
 
 \section{Aftermath and prospects}
-Despite Gödel's incompleteness theorems, Hilbert's program was a large success: formalism to this day poses the foundation of modern mathematics. Contemporary formalists do not longer worry about the foundations of all of mathematics, but rather they are interested in questions like, ``Which axioms do I need at least in order to proof this certain theorem?''. The justification of the axioms itself are regarded philosophical work and are often not regarded by mathematicians.
+Despite Gödel's incompleteness theorems, Hilbert's program was a large success: formalism to this day poses the foundation of modern mathematics. Contemporary formalists do not longer worry about the foundations of mathematics, but rather they are interested in questions like ``Which axioms do I need at least in order to proof this certain theorem?''. The justification of the axioms itself is regarded philosophical work and is often not regarded by mathematicians.
 
 
 \newpage
