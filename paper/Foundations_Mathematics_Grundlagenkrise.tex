@@ -47,7 +47,7 @@
 %\makeatother
 
 % paper margins
-\usepackage[margin=1.5in]{geometry}
+\usepackage[tmargin=1.5in,lmargin=1in,rmargin=1in,bmargin=2in]{geometry}
 % citations
 \usepackage{cite}
 % Graphs
@@ -68,7 +68,7 @@
 \usepackage[affil-it]{authblk}
 
 % Title of document
-\title{\textbf{Foundations of Mathematics - Grundlagenkrise}}
+\title{\textbf{Foundations of Mathematics\\and the Foundational Crisis}}
 % Author
 \author{Kevin Kappelmann}
 \affil{Chair for Logic and Verification,\\ Technical University of Munich}
@@ -90,13 +90,23 @@
 \usepackage[parfill]{parskip}
 %------------------------------------------------------------------------------
 \begin{document}
-
 \pagenumbering{gobble}
-
 \maketitle
+\vfill
+\hfill
+\mbox{
+\begin{minipage}{0.27\textwidth}
+	\textit{Young man, seek no longer,\\
+	for what I have found\\
+	is the only everlasting verity,\\
+	in that there is no certainty\\
+	and by this, no truth.}
+\end{minipage}
+}
+\newgeometry{margin=1.5in}
 \newpage
 \section*{Preface}
-Although --- or maybe even because --- mathematics is likely the most well-conceived and exact science of mankind, it has not been free of scepticism and controversies. In its heart, mathematics is dealing with the discovery of unchangeable, sempiternal truths. For this, we are using rigorous proofs. But what is it that we call a proof? 
+Although --- or maybe even because --- mathematics is likely the most well-conceived and exact science of mankind, it has not been free of scepticism and controversies. In its heart, mathematics is dealing with the discovery of unchangeable, everlasting truths. For this, we are using rigorous proofs. But what is it that we call a proof? 
 
 One might define a proof as a coherent chain of logical arguments leading from a set of premises to a conclusion. This definition, however, raises many new questions. What deserves to be called coherent? When is an argument logical? Do all humans follow the same rules of logic? Which premises are there to begin with?
 
@@ -124,7 +134,7 @@ Add two apples to three other apples, and you get five apples. Add two bananas t
 First evidence for more complex mathematics dates back to around 2400 BC\@. Egyptians and Babylonians used basic arithmetic and geometry for trading, taxation, building and construction, and land measurement. Mathematics by that time, however, was just regarded as an applied tool to solve practical problems rather than an exact science. Heuristics, pictures and vague analogies justified the use of given formulas rather than rigorous proofs.
 
 The idea of demonstrating conclusions using coherent arguments, and thereby the development of the notion of a proof, was one of the great achievements in ancient Greece.
-Beginning with Thales in 600 BC, mathematics as a means of the exploration of perpetual truths began to raise. To no surprise, proofs where focused on arithmetic and geometry, which both seemed to consist of unquestionable truths.
+Beginning with Thales in 600 BC, mathematics as a means of the exploration of everlasting truths began to raise. To no surprise, proofs where focused on arithmetic and geometry, which both seemed to consist of unquestionable truths.
 
 In 500 BC the Pythagoreans did not only invent one of the most famous theorems in mathematics, but to our larger interest experienced the first noteworthy mathematical controversy. They were in firm belief that all numbers were commensurable; that is, for every pair of non-zero numbers $a$ and $b$, the ratio $\frac{a}{b}$ is a rational number. It allegedly was the work of Hippasus who dismissed this ideal by proving the existence of irrational numbers. Legend has it that Hippasus was sentenced to death by drowning for the discovery of this unbearable truth. What remains as a fact, however, is that Pythagorean mathematics changed drastically after this discovery.
 
@@ -311,15 +321,18 @@ This proof relies on the statement ``either $\sqrt{2}^{\sqrt{2}}$ is rational or
 \end{quote}
 
 \subsection{The peak and the end of the crisis}\label{ssec_end_crisis}
-The years after Weyl's change of sides and the consequent initiation of Hilbert's program (see section~\ref{ssec_formalism}) were characterised by many articles which spread the dispute between the formalistic and intuitionistic schools of thought. Intuitionism was hard to define because its ideas and foundations had been spread across many papers from Brouwer written only in dutch. On the other hand, the Hilbert's program was not fully developed yet but still under construction.
+The years after Weyl's change of sides and the consequent initiation of Hilbert's program (see section~\ref{ssec_formalism}) were characterised by many articles which spread the dispute between the formalistic and intuitionistic schools of thought. On the one hand, intuitionism was critisied being hard to define because its ideas and foundations had been spread across many papers from Brouwer written only in dutch. On the other hand, Hilbert's program was not fully developed yet but still under construction.
+
+Many mathematicians, however, agreed with Hilbert's warning of the far-reaching limitations of intuitionistic logic. Together with Hilbert's popularity, this caused many scholars to join Hilbert's program. His prolific fellows achieved many important results, notably the proof of consistency of the law of excluded middle by Wilhelm Ackermann in 1925 which largely strengthened confidence in formalism.
+
+In 1928, the foundational crisis reached its peak. Brouwer boycotted the International Congress of Mathematicians because he solidarised with German mathematicians whose right of co-determination was dismissed as a result of the first world war. Nevertheless, most Germans still attended the congress including Hilbert. He consequently was able to present his programme without Brouwer being able to discount his ideas.
+
+A few days after, Hilbert as one of the major publishers of the prestigous mathematical magazine ``Mathematischen Annalen'' decided to exclude Brouwer as a co-publisher without conducting a referendum. This lead to confusion and fierce disputes, but in the end Hilbert's wish came true and Brouwer was excluded. Brouwer, in a state of frustration and despair, subsequently stopped publishing articles concerning his intuitionistic ideas; as a result, intutionism lost its public attention.  
+
+The risen optimism for a complete and consistent formal foundation of mathematics, however, was surprisingly crushed 1931 by Gödel's incompleteness theorems. 
 
 \section{Aftermath and prospects}
- Hilbert's followers were extremly active and gained many supporters. 1925 proof by Ackermann (student of Hilbert) about the consistency of law of excluded middle. Confidence in formalism grew. Meanwhile, criticism for Intuitionism grew as its limitations would harm the applicability of mathematics. Even Weyl agreed to that in 1924.\\
-
-In 1928 German mathematicans were allowed to attend the international congress for the first time after WW1. However, they were not allowed to vote and Bouwer solidarised with them and called on the Germans to boycott the congress. Nevertheless, most Germans attended the congress including Hilbert. He presented his foundational programm and Bouwer was not able to discount Hilbert as he did not attended the congress. A few days afterwards, Hilbert as one of the major publishers of the prestigous mathematical magazine ``Mathematischen Annalen'' decided to exclude Brouwer as a co-publisher without conducting a referendum. This lead to confusion and disputes but in the end Hilbert's wish came true and Brouwer was excluded. After this incident, Brouwer stopped publishing articles dealing with Intuitionism. As a result, intutionism lost its public attention. \\
-
-Formalism seemed to be the winner. Goedel's incompleteness theorem destroyed the hope of a proofed consistent formal system. Nevertheless, modern mathematics is build on formalism. What axioms do I need at least in order to proof this theorem are current questions of formalism. The justification of the axioms are often regarded philosophical work and are often not regarded by mathematicians.
-\\
+Despite Gödel's incompleteness theorems, Hilbert's program was a large success: formalism to this day poses the foundation of modern mathematics. Contemporary formalists do not longer worry about the foundations of all of mathematics, but rather they are interested in questions like, ``Which axioms do I need at least in order to proof this certain theorem?''. The justification of the axioms itself are regarded philosophical work and are often not regarded by mathematicians.
 
 
 \newpage
