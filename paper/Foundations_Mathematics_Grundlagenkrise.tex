@@ -18,6 +18,7 @@
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{amssymb}
+\usepackage{mathpartir}
 
 % Proof system
 \usepackage{amsthm}
@@ -99,9 +100,9 @@ Although --- or maybe even because --- mathematics is likely the most well-conce
 
 One might define a proof as a coherent chain of logical arguments leading from a set of premises to a conclusion. This definition, however, raises many new questions. What deserves to be called coherent? When is an argument logical? Do all humans follow the same rules of logic? Which premises are there to begin with?
 
-Some of these difficult questions were essential during a heated phase in the beginning of the 20th century: the foundational crisis of mathematics. In this period, some of the greatest mathematicians tried to give different explanations for many of named questions. As a result of longstanding debates and rigorous work, we received the sophisticated foundations of modern mathematics.
+Some of these difficult questions were essential during a heated phase in the beginning of the 20th century: the foundational crisis of mathematics. In that period, some of the greatest mathematicians tried to give different explanations for many of named questions. As a result of longstanding debates and rigorous work, we received the sophisticated foundations of modern mathematics.
 
-Owing to this achievements, contemporary mathematicians are able to concentrate on the extension of mathematics rather than paying attention to its foundations. However, due to the invention of the computer in the late 20th century, a new field of proof theory has arisen. Computer scientists and mathematicians began to develop proof assistants and automated theorem provers. While former is designed to verify proofs typed by humans, latter acts on a fully automatic basis.
+Owing to these achievements, contemporary mathematicians are able to concentrate on the extension of mathematics rather than paying attention to its foundations. However, due to the invention of the computer in the late 20th century, a new field of proof theory has arisen. Computer scientists and mathematicians began to develop proof assistants and automated theorem provers. While former is designed to verify proofs typed by humans, latter acts on a fully automatic basis.
 
 In particular automatic theorem provers gave rise to new questions regarding mathematical proofs. Does a computer generated proof have the same credibility as a proof written by a person? What is a proof and how can I persuade somebody that I am right? Does it suffice to understand every isolated step of it, or do I need to understand its holistic idea? Must it be accepted by some, a few, or even just one person? It seems like we are facing a new foundational crisis.
 
@@ -120,7 +121,7 @@ While one might think that mathematics as a subject about absolute certainty oug
 The history of mathematics is coined by a series of abstractions.
 Add two apples to three other apples, and you get five apples. Add two bananas to three other bananas, and you get five bananas. We abstract our results and derive: two plus three equals five. The concept of numbers might be the first mathematical abstraction in history. Unsurprisingly, arithmetic and geometry - owing to their inuitive nature - were the first developed branches of mathematics.
 
-First evidence for more complex mathematics dates back to around 2400 BC\@. Egyptians and Babylonians used basic arithmetic and geometry for trading, taxation, building and construction, and land measurement. Mathematics by this time, however, was just regarded as an applied tool to solve practical problems rather than an exact science. Heuristics, pictures and vague analogies justified the use of given formulas rather than rigorous proofs.
+First evidence for more complex mathematics dates back to around 2400 BC\@. Egyptians and Babylonians used basic arithmetic and geometry for trading, taxation, building and construction, and land measurement. Mathematics by that time, however, was just regarded as an applied tool to solve practical problems rather than an exact science. Heuristics, pictures and vague analogies justified the use of given formulas rather than rigorous proofs.
 
 The idea of demonstrating conclusions using coherent arguments, and thereby the development of the notion of a proof, was one of the great achievements in ancient Greece.
 Beginning with Thales in 600 BC, mathematics as a means of the exploration of perpetual truths began to raise. To no surprise, proofs where focused on arithmetic and geometry, which both seemed to consist of unquestionable truths.
@@ -235,7 +236,7 @@ Nonetheless, the criticisms did not completely debase Russell's and Whitehead's 
 	\caption{Principia Mathematica's infamous proof of $1+1=2$. It was not until page 379 that this proof was possible.}
 \end{figure}
 
-\subsection{Formalism --- mathematics as a symbol modifier}
+\subsection{Formalism --- mathematics as a symbol modifier}\label{ssec_formalism}
 In contrast to logicists, formalists strongly support the autonomy of mathematics. 
 Mathematics should be solely based on symbols and axioms that describe syntactical operations on them. It does not need to justify the existence of its objects, as its objects are just shapes free of any meaning unless they are given an interpretation which, however, is not part of mathematics according to formalism.
 
@@ -275,57 +276,51 @@ This axiom is the root of many seemingly paradoxic results such as the Banach–
 \normalsize
 We want to stress that formalists do not assign any semantics to their axioms in principal. The meanings of the axioms (as above) are just given for a better understanding.
 
-Hilbert himself did not focus in finding a new mathematical foundation until 1921 when Hermann Weyl, a former student of Hilbert and formalist, published his paper ``Über die neue Grundlagenkrise der Mathematik'' (German for ``about mathematic's new foundational crisis''). In his paper, Weyl greatly sympathised with Luitzen Brouwer's ideas of intuitionistic mathematics (see section~\ref{ssec_intuitionism}) and, to Hilbert's surprise, critisised the pursuit of complete formalisation. Hilbert was dismayed by Weyl's sudden change of stand. He called the intuitionistic idea a ``coup attempt'' which would mutigate mathematics and threaten its most valuable treasures.\cite{hilbert_coup}
+Hilbert himself did not focus in finding a new mathematical foundation until 1921 when Hermann Weyl, a former student of Hilbert and formalist, published his paper ``Über die neue Grundlagenkrise der Mathematik'' (German for ``about mathematic's new foundational crisis''). In his paper, Weyl greatly sympathised with Luitzen Brouwer's ideas of intuitionistic mathematics (see section~\ref{ssec_intuitionism}) and, to Hilbert's surprise, critisised the pursuit of complete formalisation. Hilbert was dismayed by Weyl's sudden change of stand. He called the intuitionistic idea a ``coup attempt'' which would mutigate mathematics and threaten its most valuable treasures\footnote{This is because intuitionists refute some laws of logic important for modern mathematics. See section~\ref{ssec_intuitionism}}.\cite{hilbert_coup}
 \begin{quote}[David Hilbert]
 ``No one shall expel us from the paradise that Cantor has created.''\cite{hilbert_paradise}
 \end{quote}
 Consequently, Hilbert initiated a research programme called the \textit{Hilbert's program} to defend his formalistic approach of mathematics. He proposed to clarify the foundations of mathematics using a two-step process: first, a formal system has to be constructed from whose axioms all of mathematics can be derived purely syntactically. The system needs to only use its axioms which describe permitted syntactic operations on terms of the system. In particular, the system needs to contain rules for logical terms and deduction rules. This complete formalisation goes beyond the kind of formalisation as provided in former formal axiomatics, which are satisfied with a listing of assumptions of their specific area of interest. Thereby, mathematics becomes a purely mechanical process whose proofs can be verified by an algorithm.
 
-In the second step, it has to be showed that given axioms never lead to formal inconsistency, e.g.\ that there exists a proof to derive the term ``$0=1$''. This validation needs to be carried out outside the system using a metamathemtical proof. Hilbert proposed that this proof must be of such an elementary character that no one could doubt its soundness so that even intuitionistics must accept it. However, neither Hilbert nor anyone else was able to fulfil this wish. Not because of a lack of ingenuity, but as it turned out to be unattainable (see section~\ref{ssec_goedel}).
+In the second step, it has to be showed that given axioms never lead to formal inconsistency, e.g.\ that there exists a proof to derive the term ``$0=1$''. This validation needs to be carried out outside the system using a metamathemtical proof. Hilbert proposed that this proof must be of such an elementary character that no one could doubt its soundness so that even intuitionistics must accept it. However, neither Hilbert nor anyone else was able to fulfil this wish; not because of a lack of ingenuity, but as it turned out to be unattainable (see section~\ref{ssec_end_crisis}).
 
 \subsection{Intuitionism --- proofs with real evidence}\label{ssec_intuitionism}
-As opposed to formalism, intuitionism strongly rejects the idea of mechanic mathematics that deals with pure syntactic objects. Mathematics is not made of symbols, and it is not existent in a world independent of mankind, but rather it is regarded as the result of constructive mental acitivities of humans and thereby only existent in humans' minds. In other words, mathematics is based on and conducted by humans' intuition.
+As opposed to formalism, intuitionism strongly rejects the idea of a mathematics that deals with pure syntactic objects. Mathematics is not made of symbols, and it is not existent in a world independent of mankind, but rather it is regarded as the result of constructive mental acitivities of humans and thereby only existent in humans' minds. In other words, mathematics is based on and conducted by human intuition.
 
-According to Brouwer, the founder of intuitionism, the existence of any mathematical object is equivalent to the possibility of its construction.
-This stands in great constrast with classical approaches in whose the existence of an object can also be proved by refuting its non-existence. As a consequence, intuitionists reject the validity of some assumptions of classical logic such as the law of excluded middle:
-\[
-\inferrule*[left=(APP)]{
-	\inferrule*[left=(GD)]
-	{
-		{f=f_0}
-	}
-	{f\Rightarrow f_0}
-	\inferrule*[left=(PM)]
-	{
-		{[]\Rightarrow[]\equiv[]}\\
-		{0\Rightarrow 0}
-	}
-	{e_0[[]/l]\Rightarrow 0}
-}
-{f\ []\Rightarrow 0}
-\]
+According to Brouwer, the founder of intuitionism, the existence of any mathematical object is equivalent to the possibility of its construction. 
+This concstruction process is neither of a symbolic kind, nor is it reducible to pure logic. Symbols and logic are merely representations used for these mental creations. 
+This stands in great constrast with classical approaches in whose the existence of an object can also be proved by refuting its non-existence. As a consequence, intuitionists reject the validity of some assumptions of classical logic such as the law of excluded middle.
+\begin{quote}
+\underline{Law of exluded middle:} ``For any proposition P, either P or its negation is true.''\\ 
+In logical notation: $\vdash P\lor\lnot P$
+\end{quote}
+While intuitionistic mathematics is certainly secure from Russell's paradox --- one simply cannot construct such a paradoxical set --- this security comes with a high price as many theorems, in particular those dealing with infinity, rely on laws rejected by intuitionists. For example, let us consider the following statement:
+\begin{quote}
+There exists two irrational numbers $a$ and $b$ such that $a^b$ is rational.
+\end{quote}
+Using the law of excluded middle, we can prove the statement as follows:
+\begin{quote}
+\begin{proof}
+	It is known that $\sqrt{2}$ is irrational. Let us consider the number $\sqrt{2}^{\sqrt{2}}$. If it is rational, our statement is proved. If it is irrational, $(\sqrt{2}^{\sqrt{2}})^{\sqrt{2}}=2$ proves our statement.
+\end{proof}
+\end{quote}
+This proof relies on the statement ``either $\sqrt{2}^{\sqrt{2}}$ is rational or it is irrational'' --- an instance of the law of exluded middle --- thus, it is non-constructive and rejected by intuitionists, which seek for more clearity by proving that $\sqrt{2}^{\sqrt{2}}$ is in fact rational (or irrational). Complications like this are the reason the number of scholars who adhere to intuitionism has been staying fairly small.
 
-\subsection{The end of the crisis --- Gödel's incompleteness theorems}\label{ssec_end_crisis}\label{ssec_goedel}
+\begin{quote}[David Hilbert]
+``Taking this Tertium non datur (law of excluded middle) from the mathematician would be the same as, say, denying the astronomer his telescope and the boxer the use of his fists.''\cite{hilbert_tertium_non_datur}
+\end{quote}
+
+\subsection{The peak and the end of the crisis}\label{ssec_end_crisis}
+The years after Weyl's change of sides and the consequent initiation of Hilbert's program (see section~\ref{ssec_formalism}) were characterised by many articles which spread the dispute between the formalistic and intuitionistic schools of thought. Intuitionism was hard to define because its ideas and foundations had been spread across many papers from Brouwer written only in dutch. On the other hand, the Hilbert's program was not fully developed yet but still under construction.
 
 \section{Aftermath and prospects}
-
-Formalism:\\
-Only restriction: Operations are not allowed to lead to a cotradiction -> proof system consistent. This needs a new field of studies: meta-mathematic. Hilbertprogram ist necessary (justfied by anomalies like Russel's).\\
-
-Intutionism:\\
-Math is not just made of symbols, and it is not existent in a world idependent of mankind, but it is only existent in humans' minds produced by intuition. That creation process is neither of a symbolic kind nor is it reducible to pure logic. Symbols and logic are merely representations used for these mental creations. Formalism is a void game without meaning and mathematical operations (transfinite set theory? Ugh\ldots potential vs.\ actual infinities).\\
-Important restriction: No law of excluded middle! (use example \url{https://en.wikipedia.org/wiki/Law\_of\_excluded\_middle#example}). Main advocate was Brouwer who developed a set theory without named law. (more accepted after world war??)\\
-
-
-The following years were characterised by many articles which spread the dispute between the both schools of thought. Intuitionism was hard to define (spreaded across many papers from Brouwer and written in dutch) and formalism was not fully developed yet but still under development. Hilbert's followers were extremly active and gained many supporters. 1925 proof by Ackermann (student of Hilbert) about the consistency of law of excluded middle. Confidence in formalism grew. Meanwhile, criticism for Intuitionism grew as its limitations would harm the applicability of mathematics. Even Weyl agreed to that in 1924.\\
+ Hilbert's followers were extremly active and gained many supporters. 1925 proof by Ackermann (student of Hilbert) about the consistency of law of excluded middle. Confidence in formalism grew. Meanwhile, criticism for Intuitionism grew as its limitations would harm the applicability of mathematics. Even Weyl agreed to that in 1924.\\
 
 In 1928 German mathematicans were allowed to attend the international congress for the first time after WW1. However, they were not allowed to vote and Bouwer solidarised with them and called on the Germans to boycott the congress. Nevertheless, most Germans attended the congress including Hilbert. He presented his foundational programm and Bouwer was not able to discount Hilbert as he did not attended the congress. A few days afterwards, Hilbert as one of the major publishers of the prestigous mathematical magazine ``Mathematischen Annalen'' decided to exclude Brouwer as a co-publisher without conducting a referendum. This lead to confusion and disputes but in the end Hilbert's wish came true and Brouwer was excluded. After this incident, Brouwer stopped publishing articles dealing with Intuitionism. As a result, intutionism lost its public attention. \\
 
 Formalism seemed to be the winner. Goedel's incompleteness theorem destroyed the hope of a proofed consistent formal system. Nevertheless, modern mathematics is build on formalism. What axioms do I need at least in order to proof this theorem are current questions of formalism. The justification of the axioms are often regarded philosophical work and are often not regarded by mathematicians.
 \\
 
-Quotes: 
-Dieses Tertium non datur (satz ausgeschlossenem dritten) dem Mathematiker zu nehmen, waere etwa, wie wenn man dem Astronomen das Fernrohr oder dem Boxer den Gebrauch der Faeuste untersagen wollte.“ – David Hilbert: Die Grundlagen der Mathematik, Abhandlungen aus dem mathematischen Seminar der Hamburgischen Universität, 6. Band (1928), S. 80
 
 \newpage
 \bibliographystyle{plain}
