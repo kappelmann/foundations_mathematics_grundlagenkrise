@@ -22,28 +22,8 @@
 
 % Proof system
 \usepackage{amsthm}
-\theoremstyle{plain}
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{lem}[thm]{Lemma}
-\newtheorem{prop}[thm]{Proposition}
-\theoremstyle{definition}
-\newtheorem{defn}[thm]{Definition}
-\newtheorem{exmpl}[thm]{Example}
-\newtheoremstyle{rem} % name
-    {\topsep}                    % Space above
-    {\topsep}                    % Space below
-    {}                   % Body font
-    {}                           % Indent amount
-    {\bf}                   % Theorem head font
-    {:}                          % Punctuation after theorem head
-    {.5em}                       % Space after theorem head
-    {}  % Theorem head spec (can be left empty, meaning ‘normal’)
-\theoremstyle{rem}
-\newtheorem*{remark}{Note}
 %\usepackage{xpatch}
 \makeatletter
-%% Remove last point from definitions, theorems, etc.
-%\xpatchcmd{\@thm}{\thm@headpunct{.}}{\thm@headpunct{\\}}{}{}
 %\makeatother
 
 % paper margins
@@ -52,14 +32,12 @@
 \usepackage{cite}
 % Graphs
 \usepackage{tikz}
-\usetikzlibrary{calc,arrows.meta,positioning}
-\usepackage{subfig}
 
 % multiple colums
 \usepackage{multicol}
 
 % Custom commands
- \newcommand*\vtick{\textsc{\char13}}
+\newcommand*\vtick{\textsc{\char13}}
 
 \pagestyle{plain}
 
@@ -72,7 +50,6 @@
 \author{Kevin Kappelmann}
 \affil{Chair for Logic and Verification,\\ Technical University of Munich}
 \date{\today}
-
 
 % Quotes with author
 \usepackage{xparse}
