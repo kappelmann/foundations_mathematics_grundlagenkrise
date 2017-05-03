@@ -1,5 +1,5 @@
 BUILD_DIR=build
-TARGET=Foundations_Mathematics_Grundlagenkrise
+TARGET=Foundations_Mathematics_Foundational_Crisis
 
 .PHONY: all clean watch
 
