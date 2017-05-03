@@ -105,7 +105,10 @@ Some of the greatest mathematicians intensively debated some of these questions 
 However, due to the invention of the computer in the late 20th century, a new field of proof theory has arisen. Computer scientists and mathematicians began to develop proof assistants and automated theorem provers. While former is designed to verify proofs typed by humans, latter acts on a fully automatic basis.
 
 In particular automatic theorem provers gave rise to new questions regarding mathematical proofs. Does a computer generated proof have the same credibility as a proof written by a person? How can I persuade somebody that my proof is indeed valid? Does it suffice to understand every isolated step of the proof, or do I need to understand its holistic idea? Must it be accepted by some, a few, or even just one person? 
+%TODO?
+%Mathematicians will need to find a consensus; otherwise, we may run the risk of facing a new crisis of mathematics.
 
+%Moreover,
 These new questions and controversies are subjects for debate in the seminar ``Formal Proof in Mathematics and Computer Science'' offered by the Chair for Logic and Verification at the Technical University of Munich in 2017. This paper shall start off the seminar by giving a brief overview of the foundations of mathematics with a focus on the foundational crisis in the 20th century. Interested readers are able to find further papers from the seminar at \url{https://www21.in.tum.de/teaching/proof21/SS17/}.
 \newpage
 
@@ -298,9 +301,9 @@ Note that the axiom has not been exposed to the same extend of criticism as the 
 This axiom is the root of many seemingly paradoxic results, such as the Banach–Tarski paradox, and it was proven being logically independent of the other eight axioms. Nevertheless, it has been accepted by most mathematicians as it is an integral part of many important theorems (e.g.\ every vector space has a basis).
 \end{enumerate}
 \normalsize
-We want to stress that formalists do not assign any fixed semantics to their axioms in principal. The meanings of the axioms (as above) are just given for a better understanding.
+We want to stress that formalists do not assign any semantics to their axioms in principal. The meanings of the axioms (as above) are just given for a better understanding.
 
-Hilbert himself did not focus in finding a new mathematical foundation until 1921 when Hermann Weyl, a former student of Hilbert and formalist, published his paper ``Über die neue Grundlagenkrise der Mathematik'' (German for ``about mathematic's new foundational crisis''). In his paper, Weyl greatly sympathised with Luitzen Brouwer's ideas of intuitionistic mathematics (see section~\ref{ssec_intuitionism}) and, to Hilbert's surprise, criticised the pursuit of complete formalisation. Hilbert was dismayed by Weyl's sudden change of stance. He called the intuitionistic idea a ``coup attempt'' which would mitigate mathematics and threaten its most valuable treasures\footnote{This is because intuitionists refute some laws of logic which are important for modern mathematics (see section~\ref{ssec_intuitionism}).}, such as the foundations of set theory.\cite{hilbert_coup}
+Hilbert himself did not focus in finding a new mathematical foundation until 1921 when Hermann Weyl, a former student of Hilbert and formalist, published his paper ``Über die neue Grundlagenkrise der Mathematik'' (German for ``about mathematic's new foundational crisis''). In his paper, Weyl greatly sympathised with Luitzen Brouwer's ideas of intuitionistic mathematics (see section~\ref{ssec_intuitionism}) and, to Hilbert's surprise, criticised the pursuit of complete formalisation. Hilbert was dismayed by Weyl's sudden change of stance. He called the intuitionistic idea a ``coup attempt'' which would mitigate mathematics and threaten its most valuable treasures\footnote{This is because intuitionists refute some laws of logic important for modern mathematics (see section~\ref{ssec_intuitionism}).}, such as the foundations of set theory.\cite{hilbert_coup}
 \begin{quote}[David Hilbert]
 ``No one shall expel us from the paradise that Cantor has created.''\cite{hilbert_paradise}
 \end{quote}
@@ -338,11 +341,11 @@ The years after Weyl's change of sides and the consequent initiation of Hilbert'
 
 Many mathematicians, however, agreed with Hilbert's warning of the far-reaching limitations of intuitionistic logic. Together with Hilbert's popularity, this caused many scholars to join Hilbert's program. His prolific fellows achieved many important results, notably the proof of consistency of the law of excluded middle by Wilhelm Ackermann in 1925, which largely strengthened confidence in formalism.
 
-The peak of the foundational crisis was reached in 1928. Brouwer boycotted the International Congress of Mathematicians because he solidarised with German mathematicians, whose right of co-determination was dismissed as a result of the first world war. Nevertheless, most Germans still attended the congress, including Hilbert. He consequently was able to present his programme without Brouwer being able to discount his ideas.
+In 1928, the foundational crisis reached its peak. Brouwer boycotted the International Congress of Mathematicians because he solidarised with German mathematicians, whose right of co-determination was dismissed as a result of the first world war. Nevertheless, most Germans still attended the congress, including Hilbert. He consequently was able to present his programme without Brouwer being able to discount his ideas.
 
 A few days after, Hilbert as one of the major publishers of the prestigious mathematical magazine ``Mathematischen Annalen'' decided to exclude Brouwer as a co-publisher without conducting a referendum. This lead to confusion and fierce disputes, but in the end Hilbert's wish came true and Brouwer was expelled. Brouwer, in a state of frustration and despair, subsequently stopped publishing articles concerning his intuitionistic ideas; as a result, intuitionism lost its public attention.  
 
-On the other hand, optimism for a complete and consistent formal foundation of mathematics rose; nonetheless, it surprisingly was crushed in 1931 by Gödel's incompleteness theorems.
+On the other hand, optimism for a complete and consistent formal foundation of mathematics rose; nonetheless, it surprisingly was crushed 1931 by Gödel's two incompleteness theorems.
 
 \begin{quote}
 \underline{First Incompleteness Theorem:} Any consistent formal system F rich enough to contain a formalisation of recursive arithmetic is incomplete, i.e.\ there are statements of the language of F which can neither be proved nor disproved in F.
@@ -362,7 +365,7 @@ Let F be a formal system. It is possible to assign every symbol and statement of
 \hline
 \end{tabular}
 \end{center}
-For instance, the unique Gödel number of the statement $(p\land p\vtick)\lor \top$ would then be $83534961$. Using the unique prime factorisation of natural numbers, such a numbering is always possible, as shown by Gödel.\cite{goedel_incompleteness}
+For instance, the unique Gödel number of the statement $(p\land p\vtick)\lor \top$ would then be $83534961$. Using the unique prime factorisation of natural numbers, such a numbering is always possible, as shown by Gödel.%TODO Referenz
 
 We can then derive a formula within the system that says ``The statement with Gödel number $x$ is not provable''. Using a diagonalisation argument, we can show that there is a substitution $n$ for $x$ such that the statement with number $n$ translates to ``The statement with Gödel number $n$ is not provable''; in other words, $n$ states ``I am not provable''. We now want to decide whether n is provable in F.
 
@@ -372,12 +375,12 @@ Now assume the negation of $n$ is provable in F. As F is assumed to be consisten
 \end{quote}
 
 \section{Aftermath and prospects}
-In 1936, Alonzo Church and Alan Turing independently proved the existence of uncomputable functions and the impossibility of a general solution for Hilbert's \textit{Entscheidungspro\-blem}\footnote{The problem asks for an algorithm that decides whether an input is a valid first-order formula or not.} (German for ``decision problem'') in a similar way as Gödel proved his incompleteness theorems. This shows us that the foundations of computability theory is restricted in the same fashion as the foundations of mathematics and thus sets the limits of computer systems.
-
 Despite Gödel's incompleteness theorems, Hilbert's program was a large success: formalism to this day poses the foundation of modern mathematics, in particular the Zermelo-Fraenkel set theory whose consistency is undoubted by most contemporary mathematicians.  
-Formalists do not longer worry about the foundations of mathematics, but rather they are interested in questions like ``Which axioms do I need at least in order to proof this certain theorem?''. The justification of the axioms itself is regarded philosophical work and is usually not regarded by mathematicians. In fact, most modern mathematicians do not even deal with the foundations of mathematics anymore; instead, mathematicians are getting more and more specialised in one single field of subject in order to extend its limits.
+Formalists do not longer worry about the foundations of mathematics, but rather they are interested in questions like ``Which axioms do I need at least in order to proof this certain theorem?''. The justification of the axioms itself is regarded philosophical work and is often not regarded by mathematicians.
 
-While the last few decades have been comparatively free of controversies, we are currently part of the ongoing digitalisation of mathematics, doubtfully seen by many mathematicians. Proofs and calculations by computers are either regarded an inevitable enrichment or faced with large distrust. It remains to be seen if both parties will be able to concur, or if we shall witness the next controversy of mathematics.
+In 1936, Alonzo Church and Alan Turing independently proved the existence of uncomputable functions and the impossibility of a general solution for Hilbert's \textit{Entscheidungspro\-blem}\footnote{The problem asks for an algorithm that decides whether an input is a valid in first-order logic or not.} (German for ``decision problem'') in a similar way as Gödel proved his incompleteness theorems.
+
+While the last few decades have been comparatively free of controversies, we are currently part of the ongoing digitalisation of mathematics, doubtfully seen by many mathematicians. Proofs and calculations by computers are either regarded an inevitable enrichment or faced with large scepticism. It remains to be seen if both parties will be able to concur, or if we shall witness the next controversy of mathematics.
 
 \newpage
 \bibliographystyle{plain}
