@@ -85,7 +85,7 @@
 \newpage
 \section*{Preface}
 %\vspace{-1.8em}
-Although --- or maybe even because --- mathematics is likely the most well-conceived and exact science of mankind, it has not been free of scepticism and controversies. In its heart, mathematics is dealing with the discovery of unchangeable, everlasting truths. For this, we are using rigorous proofs. But what is it that we call a proof? 
+Although --- or maybe even because --- mathematics is likely the most well-conceived and exact science of mankind, it has not been free of scepticism and controversies. In its heart, mathematics is dealing with the discovery of unchangeable, everlasting truths. For this, we are using rigorous proofs. But what is it that we call a proof?
 
 One might define a proof as a coherent chain of logical arguments leading from a set of premises to a conclusion. This definition, however, raises many new questions. What deserves to be called coherent? When is an argument logical? Do all humans follow the same rules of logic? Which premises are there to begin with?
 
@@ -93,9 +93,12 @@ Some of the greatest mathematicians intensively debated some of these questions 
 
 However, due to the invention of the computer in the late 20th century, a new field of proof theory has arisen. Computer scientists and mathematicians began to develop proof assistants and automated theorem provers. While former is designed to verify proofs typed by humans, latter acts on a fully automatic basis.
 
-In particular automatic theorem provers gave rise to new questions regarding mathematical proofs. Does a computer generated proof have the same credibility as a proof written by a person? How can I persuade somebody that my proof is indeed valid? Does it suffice to understand every isolated step of the proof, or do I need to understand its holistic idea? Must it be accepted by some, a few, or even just one person? Mathematicians will need to find a consensus; otherwise, we may run the risk of facing a new crisis of mathematics.
+In particular automatic theorem provers gave rise to new questions regarding mathematical proofs. Does a computer generated proof have the same credibility as a proof written by a person? How can I persuade somebody that my proof is indeed valid? Does it suffice to understand every isolated step of the proof, or do I need to understand its holistic idea? Must it be accepted by some, a few, or even just one person? 
+%TODO?
+%Mathematicians will need to find a consensus; otherwise, we may run the risk of facing a new crisis of mathematics.
 
-Moreover, these new questions and controversies are subjects for debate in the seminar ``Formal Proof in Mathematics and Computer Science'' offered by the Chair for Logic and Verification at the Technical University of Munich in 2017. This paper shall start off the seminar by giving a brief overview of the foundations of mathematics with a focus on the foundational crisis in the 20th century. Interested readers are able to find further papers from the seminar at \url{https://www21.in.tum.de/teaching/proof21/SS17/}.
+%Moreover,
+These new questions and controversies are subjects for debate in the seminar ``Formal Proof in Mathematics and Computer Science'' offered by the Chair for Logic and Verification at the Technical University of Munich in 2017. This paper shall start off the seminar by giving a brief overview of the foundations of mathematics with a focus on the foundational crisis in the 20th century. Interested readers are able to find further papers from the seminar at \url{https://www21.in.tum.de/teaching/proof21/SS17/}.
 \newpage
 
 \tableofcontents 
@@ -108,16 +111,16 @@ While one might think that mathematics as a subject about absolute certainty oug
 \subsection{Ancient mathematics}
 
 The history of mathematics is coined by a series of abstractions.
-Add two apples to three other apples, and you get five apples. Add two bananas to three other bananas, and you get five bananas. We abstract our results and infer: two plus three equals five. The concept of numbers might be the first mathematical abstraction in history. Unsurprisingly, arithmetic and geometry --- owing to their intuitive nature --- were the first developed branches of mathematics.
+Add two apples to three other apples, and you get five apples. Add two bananas to three other bananas, and you get five bananas. We abstract our results and infer: two plus three equals five. The concept of numbers might be the first mathematical abstraction in history. Consequently, arithmetic together with geometry were unsurprisingly the first developed branches of mathematics, owing to their intuitive nature.
 
 First evidence for more complex mathematics dates back to around 2400 BC\@. Egyptians and Babylonians used basic arithmetic and geometry for trading, taxation, building and construction, and land measurement. Nonetheless, mathematics by that time was just regarded as an applied tool to solve practical problems rather than an exact science. Heuristics, pictures and vague analogies justified the use of given formulas as opposed to rigorous proofs.
 
 The idea of demonstrating conclusions using coherent arguments, and thereby the development of the notion of a proof, was one of the great achievements in ancient Greece.
-Beginning with Thales in 600 BC, mathematics as a means of the exploration of everlasting truths began to rise. To no surprise, proofs where focused on arithmetic and geometry; both which seemed to consist of unquestionable truths.
+Beginning with Thales in 600 BC, mathematics as a means of the exploration of everlasting truths began to rise. Again, to no surprise, proofs where focused on arithmetic and geometry; both which seemed to consist of unquestionable vertities.
 
-In 500 BC, the Pythagoreans did not only find one of the most famous theorems in mathematics --- the Pythagorean theorem --- but to our larger interest experienced the first noteworthy mathematical controversy. They were in firm belief that all numbers were commensurable; that is, for every pair of non-zero numbers $a$ and $b$, the ratio $\frac{a}{b}$ is a rational number. It allegedly was the work of Hippasus who dismissed this ideal by proving the existence of irrational numbers. Legend has it that Hippasus was sentenced to death by drowning for the discovery of this unbearable truth. What remains as a fact is that Pythagorean mathematics changed drastically after this discovery.
+In 500 BC, the Pythagoreans did not only discover one of the most famous theorems in mathematics $TODO$, but to our larger interest experienced the first noteworthy mathematical controversy. They were in firm belief that all numbers were commensurable; that is, for every pair of non-zero numbers $a$ and $b$, the ratio $\frac{a}{b}$ is a rational number. It allegedly was the work of Hippasus who dismissed this ideal by proving the existence of irrational numbers. Legend has it that Hippasus was sentenced to death by drowning for the discovery of this unbearable truth. What remains as a fact is that Pythagorean mathematics changed drastically after this discovery.
 
-Meanwhile, the Greek philosopher Zeno of Elea devised four paradoxes, now commonly known as Zeno's paradoxes, which mainly deal with the illusion of motion. The first paradox, referred to as Achilles and the tortoise, can be recounted as follows:
+Meanwhile, the Greek philosopher Zeno of Elea devised four paradoxes, now commonly known as Zeno's paradoxes, which mainly deal with the illusion of motion. The first paradox, referred to as \textit{Achilles and the Tortoise}, can be recounted as follows:
 \begin{quote}\label{zeno_paradox}
 Achilles and the Tortoise want to conduct a race. As he clearly is the faster runner, Achilles gives the Tortoise a head start. But by the time Achilles has reached the point where the Tortoise started, the slow individual will have moved on a few steps to a new position. When Achilles again reaches this new position, the labouring Tortoise will have moved on again. Each time Achilles reaches the point where the Tortoise was, the cunning reptile will always have moved a little way ahead; hence, it will always hold a lead.
 \end{quote}
@@ -126,7 +129,7 @@ Readers that took a foundational calculus class may already be able to refute th
 We want to forestall that paradoxes indeed turned out to not only pose a fruitful, philosophical subject of conversation but also play an important part in the history of mathematics. Paradoxes question the truth of the seemingly indisputable and hence offer the possibility to reveal the inconsistency of a mathematical system at its core, of which we shall see many examples later on.
 
 Finally, we ought to name the most influential mathematical work of ancient Greece if not even of all time: ``Euclid's Elements''\footnote{Up to the middle of the 19th century, Euclid's Elements was said to have had a wide circulation rivaled only by the bible.}. 
-The collection, consisting of 13 books, was written around 300 BC by the Greek mathematician Euclid in Alexandria. The books cover Euclidean geometry (``the geometry of our world'') as well as elementary number theory, although not in an algebraic but geometric way. The intriguing thing, besides its exceptional volume, is its axiomatic, deductive treatment of mathematics. To this day, mathematicians most commonly use systems axiomatised in the same fashion as Euclid did over 2000 thousand years ago. In fact, reading a proof from Euclid's Elements feels surprisingly similar to reading a proof from a modern textbook. Many famous scientists like Isaac Newton, Galileo Galilei, Johannes Kepler, and Bertrand Russell were influenced by the Elements.
+The collection, consisting of 13 books, was written around 300 BC by the Greek mathematician Euclid in Alexandria. The books cover Euclidean geometry (``the geometry of our world'') as well as elementary number theory, although not in an algebraic but geometric way. The intriguing thing, besides its exceptional volume, is its axiomatic, deductive treatment of mathematics. To this day, mathematicians most commonly use systems axiomatised in the same fashion as Euclid did over 2000 thousand years ago. In fact, reading a proof from Euclid's Elements feels surprisingly similar to reading a proof from a modern textbook. Moreover, many famous scientists like Isaac Newton, Galileo Galilei, Johannes Kepler, and Bertrand Russell were influenced by the Elements.
 \begin{quote}[Bertrand Russell]
 	``At the age of eleven, I began Euclid, with my brother as tutor. This was one of the great events of my life, as dazzling as first love. I had not imagined there was anything so delicious in the world.''\cite{russell_autobiography}
 \end{quote}
@@ -134,7 +137,7 @@ Euclid's Elements was manifested as a work of timeless certainty. Nobody could d
 
 \subsection{An infinitely small crisis}
 The Greeks, albeit discussing the possibility of the continuum, conducted a ``static'' way of mathematics in the sense that subjects of interest were mainly those that deal with stationary objects, e.g.\ arithmetic and geometry. In addition, it was widely believed that objects, in particular time and space, were only finitely divisible. This kind of mathematics, however, is incapable of finding adequate answers to Zeno's paradoxes (see section~\ref{zeno_paradox}).
-It was not until the middle of the 17th century that Leibniz as well as Newton independently developed the tools for infinitesimal calculus capable of solving the mystery of infinite divisibility.
+It was not until the middle of the 17th century that Leibniz as well as Newton independently developed the tools for infinitesimal calculus apt to solve the mystery of infinite divisibility.
 
 Infinitesimal calculus, these days simply known as calculus, is the study of continuous change. Although Leibniz and Newton were able to calculate the derivatives and integrals of functions using a notion of ``infinite small quantities'', they were not able to deliver an elaborated foundation for their used methods. Rather, they used heuristic principles, such as the law of continuity\footnote{the principle that "whatever succeeds for the finite, also succeeds for the infinite"}, as justification which gave rise to valid scepticism and critiques most notably by Bishop Berkeley in 1734. He addressed the uncertainty and ominosity of the calculus derived by Leibniz and Newton in his book ``The Analyst''. For this, he satirically compared the use of ``infinite small quantities'' and its vague justification with criticisms common to religion. His book subtitled:
 \begin{quote}
@@ -300,15 +303,15 @@ This proof relies on the statement ``either $\sqrt{2}^{\sqrt{2}}$ is rational or
 \end{quote}
 
 \subsection{The peak and the end of the crisis}\label{ssec_end_crisis}
-The years after Weyl's change of sides and the consequent initiation of Hilbert's program (see section~\ref{ssec_formalism}) were characterised by many articles which spread the dispute between the formalistic and intuitionistic schools of thought. On the one hand, intuitionism was criticised being hard to define because its ideas and foundations had been spread across many papers from Brouwer written only in dutch. On the other hand, Hilbert's program was not fully developed yet but still under construction.
+The years after Weyl's change of sides and the consequent initiation of Hilbert's program (see section~\ref{ssec_formalism}) were characterised by many articles which spread the dispute between the formalistic and intuitionistic schools of thought. On the one hand, intuitionism was criticised being hard to define because its ideas and foundations had been distributed across many papers from Brouwer written only in dutch. On the other hand, Hilbert's program was not fully developed yet but still under construction.
 
-Many mathematicians, however, agreed with Hilbert's warning of the far-reaching limitations of intuitionistic logic. Together with Hilbert's popularity, this caused many scholars to join Hilbert's program. His prolific fellows achieved many important results, notably the proof of consistency of the law of excluded middle by Wilhelm Ackermann in 1925 which largely strengthened confidence in formalism.
+Many mathematicians, however, agreed with Hilbert's warning of the far-reaching limitations of intuitionistic logic. Together with Hilbert's popularity, this caused many scholars to join Hilbert's program. His prolific fellows achieved many important results, notably the proof of consistency of the law of excluded middle by Wilhelm Ackermann in 1925, which largely strengthened confidence in formalism.
 
-In 1928, the foundational crisis reached its peak. Brouwer boycotted the International Congress of Mathematicians because he solidarised with German mathematicians whose right of co-determination was dismissed as a result of the first world war. Nevertheless, most Germans still attended the congress including Hilbert. He consequently was able to present his programme without Brouwer being able to discount his ideas.
+In 1928, the foundational crisis reached its peak. Brouwer boycotted the International Congress of Mathematicians because he solidarised with German mathematicians, whose right of co-determination was dismissed as a result of the first world war. Nevertheless, most Germans still attended the congress, including Hilbert. He consequently was able to present his programme without Brouwer being able to discount his ideas.
 
-A few days after, Hilbert as one of the major publishers of the prestigious mathematical magazine ``Mathematischen Annalen'' decided to exclude Brouwer as a co-publisher without conducting a referendum. This lead to confusion and fierce disputes, but in the end Hilbert's wish came true and Brouwer was excluded. Brouwer, in a state of frustration and despair, subsequently stopped publishing articles concerning his intuitionistic ideas; as a result, intuitionism lost its public attention.  
+A few days after, Hilbert as one of the major publishers of the prestigious mathematical magazine ``Mathematischen Annalen'' decided to exclude Brouwer as a co-publisher without conducting a referendum. This lead to confusion and fierce disputes, but in the end Hilbert's wish came true and Brouwer was expelled. Brouwer, in a state of frustration and despair, subsequently stopped publishing articles concerning his intuitionistic ideas; as a result, intuitionism lost its public attention.  
 
-The risen optimism for a complete and consistent formal foundation of mathematics, however, was surprisingly crushed 1931 by Gödel's two incompleteness theorems.
+On the other hand, optimism for a complete and consistent formal foundation of mathematics rose; nonetheless, it surprisingly was crushed 1931 by Gödel's two incompleteness theorems.
 
 \begin{quote}
 \underline{First Incompleteness Theorem:} Any consistent formal system F rich enough to contain a formalisation of recursive arithmetic is incomplete, i.e.\ there are statements of the language of F which can neither be proved nor disproved in F.
@@ -316,7 +319,7 @@ The risen optimism for a complete and consistent formal foundation of mathematic
 \underline{Second Incompleteness Theorem:} Any consistent formal system F rich enough to contain a formalisation of recursive arithmetic cannot prove its own consistency.\footnote{These theorems are the improved versions by John Barkley Rosser. Gödel's original theorems were slightly weaker in that they only applied to $\omega$-consistent systems.\cite[pp.~293--320]{fraenkel_incompleteness}}
 \end{quote}
 
-These theorems tell us that there cannot exist a consistent and complete formal system which is able to prove all of mathematics and thus dismiss Hilbert's aspirations and ultimately end the foundational crisis. Ironically, the proof of the theorems is based on self-referentiality within formal systems; something that Hilbert tried to avoid by depriving semantics from mathematics.
+These theorems show us that there cannot exist a consistent and complete formal system which is able to prove all of mathematics and thus dismiss Hilbert's aspirations and ultimately end the foundational crisis. Ironically, the proof of the theorems is based on self-referentiality within formal systems; something that Hilbert tried to avoid by depriving semantics from mathematics.
 We want to give a short sketch of a proof for the first theorem:
 \begin{quote}
 Let F be a formal system. It is possible to assign every symbol and statement of F a unique number (called Gödel number). For example, let $\Sigma=\{\top,\bot,p,\vtick,\land,\lor,\lnot,(,)\}$ be the alphabet of a formal system for propositional logic in which every variable is of the form $p\vtick^{\ldots}\vtick$, i.e.\ $p,p\vtick,p\vtick\vtick,\ldots$ are variables of the system. We can assign each symbol a unique number using the following mapping:
@@ -328,9 +331,9 @@ Let F be a formal system. It is possible to assign every symbol and statement of
 \hline
 \end{tabular}
 \end{center}
-For example, the unique Gödel number of the statement $(p\land p\vtick)\lor \top$ would then be $83534961$. Using the unique prime factorisation of natural numbers, such a numbering is always possible, as shown by Gödel.
+For instance, the unique Gödel number of the statement $(p\land p\vtick)\lor \top$ would then be $83534961$. Using the unique prime factorisation of natural numbers, such a numbering is always possible, as shown by Gödel.%TODO Referenz
 
-We can then derive a formula within the system that says ``The statement with Gödel number $x$ is not provable''. Using a diagonalisation argument, we can show that there is a substitution $n$ for $x$ such that the statement with number $n$ translates to ``The statement with Gödel number $n$ is not provable''; in other words, $n$ states ``I am not provable''.
+We can then derive a formula within the system that says ``The statement with Gödel number $x$ is not provable''. Using a diagonalisation argument, we can show that there is a substitution $n$ for $x$ such that the statement with number $n$ translates to ``The statement with Gödel number $n$ is not provable''; in other words, $n$ states ``I am not provable''. We now want to decide whether n is provable in F.
 
 Assume the statement $n$ is provable in F. As $n$ asserts that $n$ is not provable and F is assumed to be sufficiently strong, the negation of $n$ must also be provable, leading a contradiction.
 
@@ -341,7 +344,7 @@ Now assume the negation of $n$ is provable in F. As F is assumed to be consisten
 Despite Gödel's incompleteness theorems, Hilbert's program was a large success: formalism to this day poses the foundation of modern mathematics, in particular the Zermelo-Fraenkel set theory whose consistency is undoubted by most contemporary mathematicians.  
 Formalists do not longer worry about the foundations of mathematics, but rather they are interested in questions like ``Which axioms do I need at least in order to proof this certain theorem?''. The justification of the axioms itself is regarded philosophical work and is often not regarded by mathematicians.
 
-In 1936, Alonzo Church and Alan Turing independently proved the impossibility of a general solution for Hilbert's \textit{Entscheidungsproblem}\footnote{The problem asks for an algorithm that decides whether an input is a valid in first-order logic or not.} (German for ``decision problem'') and the existence of uncomputable functions in a similar way as Gödel proved his incompleteness theorems.
+In 1936, Alonzo Church and Alan Turing independently proved the existence of uncomputable functions and the impossibility of a general solution for Hilbert's \textit{Entscheidungspro\-blem}\footnote{The problem asks for an algorithm that decides whether an input is a valid in first-order logic or not.} (German for ``decision problem'') in a similar way as Gödel proved his incompleteness theorems.
 
 While the last few decades have been comparatively free of controversies, we are currently part of the ongoing digitalisation of mathematics, doubtfully seen by many mathematicians. Proofs and calculations by computers are either regarded an inevitable enrichment or faced with large scepticism. It remains to be seen if both parties will be able to concur, or if we shall witness the next controversy of mathematics.
 
