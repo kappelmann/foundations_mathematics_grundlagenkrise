@@ -245,7 +245,7 @@ Mathematics as an extension of logic; this is the central idea of logicism. Alth
 
 After the discovery of his paradox, Russell began to study the causes that lead to those kind of antinomies\footnote{There were found antinomies similar to Russel's at the same time, which we are not going to discuss (such as the Burali-Forti paradox or Richard's paradox).\cite{russell_self_referentiality}}. This was an important task because Russell needed to protect his future work from the same bitter fate as experienced by Frege. He concluded that ``in all the contradictions there is a common characteristic, which we may describe as self-reference or reflexiveness''\cite[p. 224]{russell_self_referentiality}. As a means of defence, he invented the idea of type theories. 
 
-In general, a type theory is an extension of a formal system which assigns every object a type. Operations on objects can then be restricted in dependenc on involved types.\footnote{For instance, in type-safe programming languages, such as Standard ML or Java, it is not permitted to compare values of different types (e.g.\ integers and strings).} In simple terms, the type theory in Principia Mathematica uses natural numbers as types. A set of type $n$ is then only allowed to contain members of types at most $n-1$. Naturally, this system is not susceptible to antinomies like Russell's as it completely eliminates self-referentiality. 
+In general, a type theory is an extension of a formal system which assigns every object a type. Operations on objects can then be restricted in dependence on involved types.\footnote{For instance, in type-safe programming languages, such as Standard ML or Java, it is not permitted to compare values of different types (e.g.\ integers and strings).} In simple terms, the type theory in Principia Mathematica uses natural numbers as types. A set of type $n$ is then only allowed to contain members of types at most $n-1$. Naturally, this system is not susceptible to antinomies like Russell's as it completely eliminates self-referentiality. 
 
 But Russell recognised that his type theory caused major limitations which made the logical system incapable of representing all of mathematics. In addition, Russell's and Whitehead's attempts in proving the existence of an infinitude of objects using their logical framework failed. Thus, they decided to patch up their system by introducing the \textit{axiom of reducibility} and the \textit{axiom of infinity}; however, these two axioms arguably do not fit the bill.
 
@@ -325,7 +325,7 @@ Note that the axiom has not been exposed to the same extend of criticism as the 
 This axiom is the root of many seemingly paradoxic results, such as the Banach–Tarski paradox, and it was proven being logically independent of the other eight axioms. Nevertheless, it has been accepted by most mathematicians as it is an integral part of many important theorems (e.g.\ every vector space has a basis).
 \end{enumerate}
 \normalsize
-We want to stress that formalists do not assign any fixed semantics to their axioms in principal. The meanings of the axioms (as above) are just given for a better understanding.
+We want to stress that formalists do not assign any fixed semantics to their axioms in principle. The meanings of the axioms (as above) are just given for a better understanding.
 
 Hilbert himself did not focus in finding a new mathematical foundation until 1921 when Hermann Weyl, a former student of Hilbert and formalist, published his paper ``Über die neue Grundlagenkrise der Mathematik'' (German for ``about mathematic's new foundational crisis''). In his paper, Weyl greatly sympathised with Luitzen Brouwer's ideas of intuitionistic mathematics and, to Hilbert's surprise, criticised the pursuit of complete formalisation. Hilbert was dismayed by Weyl's sudden change of stance. He called the intuitionistic idea a ``coup attempt'' which would mitigate mathematics and threaten its most valuable treasures, such as the foundations of set theory.\cite{hilbert_coup}
 \begin{quote}[David Hilbert]
@@ -365,7 +365,7 @@ Let F be a formal system. It is possible to assign every symbol and statement of
 \hline
 \end{tabular}
 \end{center}
-For instance, the unique Gödel number of the statement $(p\land p\vtick)\lor \top$ would then be $83534961$. Using the unique prime factorisation of natural numbers, such a numbering is always possible, as shown by Gödel.\cite{goedel_incompleteness}
+	For instance, the unique Gödel number of the statement $(p\land p\vtick)\lor \top$ would then be $83534961$. Naturally, if our alphabet contains more than ten symbols, we consequently run out of digits for our mapping. Nevertheless, using the unique prime factorisation of natural numbers, such a numbering is always possible (regardless of the alphabet's size), as shown by Gödel.\cite{goedel_incompleteness}
 
 We can then derive a formula within the system that says ``The statement with Gödel number $x$ is not provable''. Using a diagonalisation argument, we can show that there is a substitution $n$ for $x$ such that the statement with number $n$ translates to ``The statement with Gödel number $n$ is not provable''; in other words, $n$ states ``I am not provable''. We now want to decide whether n is provable in F.
 
