@@ -1,0 +1,1 @@
+autocmd BufWritePost Presentation_Foundations_Mathematics_Foundational_Crisis.tex silent exec "!make &> /dev/null &"

@@ -1,3 +1,6 @@
+## build for presentation
+presentation/build
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
