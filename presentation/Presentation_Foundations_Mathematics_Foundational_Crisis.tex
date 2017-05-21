@@ -93,9 +93,10 @@
 }
 
 \usepackage[english]{babel} 
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
 
 \usepackage{graphicx} % Allows including images
+\usepackage{caption}
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 \usepackage{multicol} 
 
@@ -125,102 +126,39 @@
 %----------------------------------------------------------------------------------------
 %	PRESENTATION SLIDES
 %----------------------------------------------------------------------------------------
-\section*{Introduction}
+%\section*{Introduction}
 %------------------------------------------------
 %\begin{frame}
     %\frametitle{}
     %\begin{itemize}[<+->]
-	%\item What is the most exact science of humanity?
-	%\begin{itemize}
-		%\item Well, obviously it is maths, right?
-	%\end{itemize}
-	%\item I shall convince you with rigorous proofs!
-	%\begin{itemize}
-		%\item What is a proof?
-		%\item What is logical?
-	%\end{itemize}
+	%\item Mathematics strives for absolute certainty.
+	%\item For this, we use rigorous proofs.
+	%\item When shall I accept a proof?
 	%\item Can we trust each other?
 	%\item Can we trust a computer?
-    %\end{itemize}
-%\end{frame}
-%\begin{frame}
-    %\frametitle{}
-    %\begin{itemize}[<+->]
-	%\item When do I accept a proof?
 	%\begin{itemize}
-		%\item Do I need to understand every isolated step?
-		%\item Do I need to understand its holistic idea?
-	%\end{itemize}
-	%\item Computer-generated proofs are barely verifiable by hand.
-	%\begin{itemize}
+		%\item Computer-generated proofs are barely verifiable by hand.
 		%\item[$\Rightarrow$] Controversies
 	%\end{itemize}
 	%\item But it is not the first controversy in mathematical history\ldots
     %\end{itemize}
 %\end{frame}
-\begin{frame}
-    \frametitle{}
-    \begin{itemize}[<+->]
-	\item Mathematics strives for absolute certainty.
-	\item For this, we use rigorous proofs.
-	\item When shall I accept a proof?
-	\item Can we trust each other?
-	\item Can we trust a computer?
-	\begin{itemize}
-		\item Computer-generated proofs are barely verifiable by hand.
-		\item[$\Rightarrow$] Controversies
-	\end{itemize}
-	\item But it is not the first controversy in mathematical history\ldots
-    \end{itemize}
-\end{frame}
 %------------------------------------------------
 % Overview slide
 %------------------------------------------------
-
 \begin{frame}
     \frametitle{Overview} 
     %\begin{multicols}{2}
         \tableofcontents
     %\end{multicols}
 \end{frame}
-
-%------------------------------------------------
-%\section{History of Mathematics}
-%------------------------------------------------
-%\subsection{First steps}
-%\begin{frame}
-    %\frametitle{1+1=2}
-    %\begin{itemize}[<+->]
-	%\item How did it begin?
-	%\begin{itemize}
-		%\item One apple and another apple are two apples.
-		%\item One banana and another banana are two bananas.
-		%\item[$\Rightarrow$] One and one is two!
-	%\end{itemize}
-	%\item Maths is about abstraction.
-	%\item Numbers were the first abstraction.
-    %\end{itemize}
-%\end{frame}
-%\begin{frame}
-    %\frametitle{Intuitive Work}
-    %\begin{itemize}[<+->]
-	%\item What also seems quite intuitive?
-	%\begin{itemize}
-		%\item Drawing shapes
-	%\end{itemize}
-	%\item Arithmetic and geometry were the first branches of mathematics.
-	%\item First complex mathematics around 2400 BC in Egypt and Babylonia
-	%\item Maths served as an applied tool.
-	%\begin{itemize}
-		%\item No proofs, but heuristics and pictures
-	%\end{itemize}
-    %\end{itemize}
-%\end{frame}
 %------------------------------------------------
 \section{Causes of the crisis}
 %------------------------------------------------
+\subsection{Ancient Mathematics}
+%------------------------------------------------
 \begin{frame}
-    \frametitle{History}
+    \frametitle{First Steps}
     \begin{itemize}[<+->]
 	\item In the beginning, maths served as an applied tool.
 	\item Ancient Greeks developed the notion of a proof in 600 BC.
@@ -246,8 +184,11 @@
 	\item That, if a straight line falling on two straight lines make the interior angles on the same side less than two right angles, the two straight lines, if produced indefinitely, meet on that side on which are the angles less than the two right angles.''
      \end{enumerate}
 \end{frame}
+%------------------------------------------------
+\subsection{Uncertainties}
+%------------------------------------------------
 \begin{frame}
-    \frametitle{Search for foundations}
+    \frametitle{Search for Foundations}
     \begin{itemize}[<+->]
 	\item Gauß proved the independence of Euclid's fifth postulate in 1813.
 	\begin{itemize}
@@ -259,15 +200,15 @@
 		\item<.-> Geometry by Hilbert and Pasch
 		\item<.-> Predicate logic by Frege
 	\end{itemize}
-	\item Desire for universal and consistent system
+	\item Desire for a universal and consistent system
     \end{itemize}
 \end{frame}
 \begin{frame}
-    \frametitle{Universal systems}
+    \frametitle{Universal Systems}
     \begin{itemize}[<+->]
 	\item Cantor's set theory
 	\begin{itemize}
-		\item \textit{``A set is a gathering together into a whole of definite, distinct objects of our perception or of our thought --- which are called elements of the set.''}\cite{cantor_set}\hfill--- Georg Cantor
+		\item \textit{``A set is a gathering together into a whole of definite, distinct objects of our perception or of our thought --- which are called elements of the set.''}\nocite{cantor_set}\hfill--- Georg Cantor
 		\item Certainly universal, but informal and thus not adequate for a study of consistency
 		\item Nonetheless, it was widely accepted.
 	\end{itemize}
@@ -279,44 +220,132 @@
     \end{itemize}
 \end{frame}
 \begin{frame}
-    \frametitle{Russell's antinomy}
+    \frametitle{Russell's Paradox}
 	Consider \textit{the set of all sets that are not members of themselves}:
 	\begin{equation*}
 		R\coloneqq\{X\mid X\notin X\}
 	\end{equation*}\pause
 	Question: Is R a member of itself? That is, does $R\in R$ hold?\pause\\
 	\vspace{\baselineskip}
-	Answer:\qquad\quad$R\in R \iff R\notin R$, a contradiction!
+	Answer:\hspace{4.3em}$R\in R \iff R\notin R$, a contradiction!
 \end{frame}
 \begin{frame}
-    \frametitle{The begin of the crisis}
+    \frametitle{The Begin of the Crisis}
     \begin{itemize}[<+->]
 	\item Cantor's as well as Frege's system were victims of this paradox.
-	\item \textit{``Hardly anything more unfortunate can befall a scientific writer than to have one of the foundations of his edifice shaken after the work is finished.''\cite{frege_appendix}}\hfill--- Gottlob Frege
-	\item Systems founded on Cantor's set theory were on shaky ground
+	\item \textit{``Hardly anything more unfortunate can befall a scientific writer than to have one of the foundations of his edifice shaken after the work is finished.''\nocite{frege_appendix}}\hfill--- Gottlob Frege
+	\item Systems founded on Cantor's set theory were on shaky ground.
+	\item A new foundation of mathematics had to be found.
     \end{itemize}
 \end{frame}
 %------------------------------------------------
 \section{The Foundational Crisis}
+\begin{frame}
+    \frametitle{The Three Schools of Thought}
+    \begin{itemize}[<+->]
+	\item Three schools of thought tried to establish a new foundation.
+	\begin{itemize}
+		\item<.-> Logicism
+		\item<.-> Intuitionism
+		\item<.-> Formalism
+	\end{itemize}
+    \end{itemize}
+\centering{\includegraphics[height=0.42\textheight]{img/logic_intuit_form.png}\\
+\scriptsize{Source: \url{geopolicraticus.tumblr.com/post/142561195372}}}
+\end{frame}
 %------------------------------------------------
 \subsection{Logicism}
 \begin{frame}
-    \frametitle{}
+    \frametitle{A Foundation Made of Logic}
+    \begin{itemize}[<+->]
+	\item Russell and Whitehead revisited the idea of reducing mathematics to logic, as tried by Frege.	
+	\item Mathematics as an extension of logic
+	\item Only few axioms that must pose fundamental logical principles 
+	\item Chief work: Principia Mathematica
+    \end{itemize}
 \end{frame}
-%------------------------------------------------
-\subsection{Formalism}
 \begin{frame}
-    \frametitle{}
+    \frametitle{Principia Mathematica}
+    \only<1-4>{
+    \begin{itemize}[<+->]
+	\item Type theory to avoid antinomies
+	\item Difficulties in explaining some axioms
+	\begin{itemize}
+		\item<.-> Axiom of reducibility
+		\item<.-> Axiom of infinity
+	\end{itemize}
+	\item Regarded as ``the outstanding example of an unreadable masterpiece.''\nocite{math_experience}
+	\item Nonetheless, many adopted it as a new foundation.
+    \end{itemize}}
+    \only<5>{
+	    \begin{centering}\includegraphics[width=\textwidth]{img/principia_mathematica.png}\end{centering}\\
+	    \scriptsize{Principia Mathematica's infamous proof of $1+1=2$. It was not until page 379 that this proof was possible.}
+    }
 \end{frame}
 %------------------------------------------------
 \subsection{Intuitionism}
 \begin{frame}
+    \frametitle{Proofs with Real Evidence}
+    \begin{itemize}[<+->]
+	\item Mathematics is \textbf{not} reducible to some formal system.
+	\item Mathematics is a constructive process conducted by humans.
+	\item The existence of any mathematical object ist equivalent to the possibility of its construction, according to Brouwer.
+	\begin{itemize}
+		\item[$\Rightarrow$] No antinomies as paradoxical sets cannot be constructed.
+	\end{itemize}
+	\item Consequently, some assumptions of classical logic must be rejected.
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \frametitle{$P\lor\lnot P\equiv\ $?}
+    \begin{itemize}[<+->]
+	\item Intuitionists reject the \textit{law of excluded middle}: $\vdash P\lor\lnot P$\\
+		\begin{centering}
+			``For any proposition P, either P or its negation is true.''
+		\end{centering}
+    \end{itemize}
+	\pause[\thebeamerpauses]
+	\textbf{Proposition:} There exist two irrational numbers $a$ and $b$ such that $a^b$ is rational.\\\pause
+	\vspace{\baselineskip}
+	\textbf{Proof.} It is known that $\sqrt{2}$ is irrational. Let us consider the number $\sqrt{2}^{\sqrt{2}}$.\pause$ $ If it is rational, our statement is proved.\pause$ $ If it is irrational, $(\sqrt{2}^{\sqrt{2}})^{\sqrt{2}}=2$ proves our statement.\hfill$\qed$
+\end{frame}
+\begin{frame}
+    \frametitle{The Price to Pay}
+    \begin{itemize}[<+->]
+	\item Intuitionistic logic aggravates many proofs.
+	\item \textit{``Taking this tertium non datur (law of excluded middle) from the mathematician would be the same as, say, denying the astronomer his telescope and the boxer the use of his fists.''}\nocite{hilbert_tertium_non_datur}\\\hfill--- David Hilbert
+	\item Consequently, only a few scholars adhered to intuitionism.
+    \end{itemize}
+\end{frame}
+%------------------------------------------------
+\subsection{Formalism}
+\begin{frame}
+    \frametitle{Mathematics as a Symbol Modifier}
+    \begin{itemize}[<+->]
+	\item Formalists support the autonomy of mathematics.
+	\item Mathematics shall be based on symbols and axioms that describe syntactical operations on them.
+	\item Mathematics must not justify the existence of its objects as its objects are just meaningless shapes.
+	\item Hilbert, as one of the most renowned mathematicians of given time, was the driving force of formalism.
+    \end{itemize}
+\end{frame}
+\begin{frame}
     \frametitle{}
+    \begin{itemize}[<+->]
+	\item Hilbert initiated a research programme called \textit{Hilbert's program}.
+	\begin{enumerate}
+		\item Formalise system that is able to derive all of mathematics using syntactical operations.
+		\item Prove the system's consistency with metamathematical reasoning.
+	\end{enumerate}
+	\item This wish was shattered by Gödel.
+    \end{itemize}
 \end{frame}
 %------------------------------------------------
 \subsection{Peak and End}
 \begin{frame}
     \frametitle{}
+    \begin{itemize}[<+->]
+	\item Consequently, only a few scholars adhered to intuitionism.
+    \end{itemize}
 \end{frame}
 %------------------------------------------------
 \section{Aftermath and Prospects}
