@@ -306,7 +306,7 @@ This new, improved axiom system, known as \textit{Zermelo-Fraenkel set theory}, 
 In particular, this implies that no set is an element of itself.
     \item \textbf{Axiom of specification:} For every predicate $P(\cdot)$ and every set $A$ there exists a set $B$ containing only the elements of $A$ satisfying $P$.
 \begin{equation*}
-\forall A\,\exists B\,\forall x[x\in B \leftrightarrow \bigl(x\in A \land P(x)\bigr)]
+\forall A\,\exists B\,\forall x\bigl[x\in B \leftrightarrow \bigl(x\in A \land P(x)\bigr)\bigr]
 \end{equation*}
 This allows us to write $B=\{x\in A\mid P(x)\}$. Further, it can be used to prove the existence of the empty set using some existing set A:
 \begin{equation*}
