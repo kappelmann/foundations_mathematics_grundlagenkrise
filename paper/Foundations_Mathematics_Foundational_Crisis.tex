@@ -301,7 +301,7 @@ This new, improved axiom system, known as \textit{Zermelo-Fraenkel set theory}, 
 \begin{enumerate}
     \item \textbf{Axiom of regularity:} Every non-empty set $X$ contains a member $y$ such that $X$ and $y$ are disjoint.
 \begin{equation*}
-\forall X [\exists a ( a \in X) \rightarrow \exists y ( y \in X \land \lnot \exists z (z \in y \land z \in X))]
+\forall X \bigl[\exists a ( a \in X) \rightarrow \exists y \bigl( y \in X \land \lnot \exists z (z \in y \land z \in X)\bigr)\bigr]
 \end{equation*}
 In particular, this implies that no set is an element of itself.
     \item \textbf{Axiom of specification:} For every predicate $P(\cdot)$ and every set $A$ there exists a set $B$ containing only the elements of $A$ satisfying $P$.
