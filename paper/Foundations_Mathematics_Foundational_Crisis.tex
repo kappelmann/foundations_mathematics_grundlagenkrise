@@ -281,14 +281,14 @@ This proof relies on the statement ``either $\sqrt{2}^{\sqrt{2}}$ is rational or
 
 \subsection{Formalism -- Mathematics as a Symbol Modifier}\label{ssec_formalism}
 In contrast to logicists and intuitionists, formalists strongly support the autonomy of mathematics. 
-They believe that mathematics should be solely based on symbols and axioms that describe syntactical operations on them. Mathematics does not need to justify the existence of its objects, as its objects are just shapes free of any meaning unless they are given an interpretation, which, however, is not part of mathematics according to formalists.
+They believe that mathematics should be solely based on symbols and axioms that describe syntactical operations on them. Mathematics does not need to justify the existence of its objects, as its objects are just shapes free of any meaning, unless they are given an interpretation, which, however, is not part of mathematics according to formalists.
 
 Spearheaded by Hilbert, formalism began to flourish during the period of rigorous axiomatisation in the late 19th century (see Section~\ref{ssec_causes}). 
-In 1900, Hilbert listed the proof of the consistency of the axioms of arithmetic in his famous \textit{Hilbert's problems}: a list of 23 unsolved fundamental questions which mathematicians should attack during the coming century. As Hilbert was one of the most renowned mathematicians of given time, this was a driving force behind the study of axiom systems.
+In 1900, Hilbert listed the consistency proof of the axioms of arithmetic in his famous \textit{Hilbert's problems}: a list of 23 unsolved fundamental questions, which mathematicians should attack during the coming century. As Hilbert was one of the most renowned mathematicians of given time, this was a driving force behind the study of axiomatic systems.
 
-One of his fellows was Ernst Zermelo. In 1908, Zermelo published his axiomatic set theory on which he had worked for three years. It was supposed to solve the problems of Cantor's naive set theory that had arisen by Russell's paradox, but Zermelo was not able to proof the consistency of his system and stated that the proof is a distant prospect. This arguably was one of the reasons his work was not accepted as a foundation of mathematics up to 1922 when Adolf Fraenkel and Thoralf Skolem independently improved Zermelo's axiom system. 
+One of his fellows was Ernst Zermelo. In 1908, Zermelo published his axiomatic set theory on which he had worked for three years. His system was supposed to solve the problems of Cantor's naive set theory that had arisen by Russell's paradox; however, Zermelo was not able to proof the consistency of his system and stated that the proof is a distant prospect. This arguably was one of the reasons his work was not accepted as a foundation of mathematics up to 1922, the time Adolf Fraenkel and Thoralf Skolem independently improved Zermelo's axiomatic system.
+This new, improved axiomatic system, known as \textit{Zermelo-Fraenkel set theory}, was eventually able to replace the logical system derived in Principia Mathematica and still poses the foundations of mathematics. Using modern mathematical notation, some of the nine axioms can be formulated as follows:
 
-This new, improved axiom system, known as \textit{Zermelo-Fraenkel set theory}, was eventually able to replace the logical system derived in Principia Mathematica and still poses the foundations of mathematics. Using modern mathematical notation, some of the nine axioms can be formulated as follows:
 \small
 \begin{enumerate}
     \item \textbf{Axiom of regularity:} Every non-empty set $X$ contains a member $y$ such that $X$ and $y$ are disjoint.
@@ -296,15 +296,15 @@ This new, improved axiom system, known as \textit{Zermelo-Fraenkel set theory}, 
 \forall X \bigl[\exists a ( a \in X) \rightarrow \exists y \bigl( y \in X \land \lnot \exists z (z \in y \land z \in X)\bigr)\bigr]
 \end{equation*}
 In particular, this implies that no set is an element of itself.
-    \item \textbf{Axiom of specification:} For every predicate $P(\cdot)$ and every set $A$ there exists a set $B$ containing only the elements of $A$ satisfying $P$.
+    \item \textbf{Axiom of specification:} For every predicate $P(\cdot)$ and every set $A$, there exists a set $B$ containing only the elements of $A$ satisfying $P$.
 \begin{equation*}
 \forall A\,\exists B\,\forall x\bigl[x\in B \leftrightarrow \bigl(x\in A \land P(x)\bigr)\bigr]
 \end{equation*}
-This allows us to write $B=\{x\in A\mid P(x)\}$. Further, it can be used to prove the existence of the empty set using some existing set A:
+This allows us to write $B=\{x\in A\mid P(x)\}$. Further, it can be used to prove the existence of the empty set by using some existing set A:
 \begin{equation*}
 \emptyset\coloneqq\{z\in A\mid (z\in z)\land(z\notin z)\}
 \end{equation*}
-In fact, the axiom of specification is an \textit{axiom schema}, that is an infinite series of axioms, since for every predicate $P(\cdot)$ we get a different statement.
+In fact, the axiom of specification is an \textit{axiom schema}, that is an infinite series of axioms, since we get a different statement for every predicate $P(\cdot)$.
     \item \textbf{Axiom of infinity:} There exists an inductive set $X$ (having infinitely many members).
 \begin{equation*}
 \exists X \left [\emptyset \in X \land \forall y (y \in X \rightarrow y\cup\{y\}  \in X)\right]
@@ -314,7 +314,7 @@ Note that the axiom has not been exposed to the same extend of criticism as the 
 \begin{equation*}
 \forall X \left[ \emptyset \notin X \rightarrow \exists f\,\forall A(A\in X\rightarrow f(A) \in A ) \right]
 \end{equation*}
-This axiom is the root of many seemingly paradoxical results, such as the Banach–Tarski paradox, and it was proven being logically independent of the other eight axioms. Nevertheless, it has been accepted by most mathematicians as it is an integral part of many important theorems (e.g.\ every vector space has a basis).
+This axiom is the root of many seemingly paradoxical results, such as the Banach–Tarski paradox, and it was proven being logically independent of the other eight axioms. Nevertheless, it has been accepted by most mathematicians since it is an integral part of many important theorems (e.g.\ every vector space has a basis).
 \end{enumerate}
 \normalsize
 We want to stress that formalists in principle do not assign any fixed semantics to their axioms. The meanings of the axioms (as above) are just given for a better understanding.
