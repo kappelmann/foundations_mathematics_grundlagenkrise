@@ -173,6 +173,7 @@ In the 19th century, Euclid's Elements had been established as a mathematical sh
 \end{enumerate}
 \end{quote}
 While postulates 1--4 seem fairly intelligible and reasonable, many mathematicians became curious about Euclid's fifth postulate. This postulate, which to this day is known as the \textit{parallel postulate}, seems more complicated than its four predecessors and troubled many geometers for at least a thousand years. Many believed it could be proved as a theorem from the first four postulates, but all attempts to do so failed. 
+
 \begin{figure}[h]
 	\centering
 \scalebox{1.2}{
@@ -201,7 +202,7 @@ While postulates 1--4 seem fairly intelligible and reasonable, many mathematicia
   }
 	\caption{Visualisation of the parallel postulate. If the sum of the interior angles $\alpha$ and $\beta$ is less than 180°, the two straight lines, produced indefinitely, meet on that side.}
 \end{figure}
-Around 1813, Carl Friedrich Gauß worked out that the fifth postulate is in fact independent of the others; that is to say, the parallel postulate as well as its negation can be added to the first four postulates without causing any inconsistencies. While the first case gives us the geometry as postulated by Euclid, the latter revealed a new kind of geometry, commonly referred to as non-Euclidean geometry.
+Around 1813, Carl Friedrich Gauß proved that the fifth postulate is in fact independent of the others, that is to say, the parallel postulate as well as its negation can be added to the first four postulates without causing any inconsistencies. While the first case gives us the geometry as postulated by Euclid, the latter revealed a new kind of geometry, commonly referred to as non-Euclidean geometry.
 
 Though Gauß did not publish his finding, it was rediscovered just a few years later. The announcement had a large impact. Suddenly, Euclid's Elements, and with it, the certainty of mathematics, began to totter; in turn, mathematicians became greatly sceptical towards used systems: Which axioms pose the truth? Which will cause harm? Which are dispensable and which are not? Mathematicians sought for confidence in their systems.
 
@@ -209,13 +210,13 @@ What followed in the late 19th century is a series of rigorous axiomatisation of
 
 While all these efforts certainly consolidated the trust in given systems, there were some major drawbacks. For one, every system demanded its own foundation and thereby a new set of axioms. Further, albeit it was tried to justify defined axioms, the desire of complete certainty was not met due to the lack of consistency proofs. Thus, it was sought for a consistent-proved, universal system of which all branches of mathematics could then be deduced.
 
-One idea of a universal foundation was given by Georg Cantor around 1880. He introduced a non-formalized kind of set theory, now referred to as naive set theory, in which sets and operations on sets are described with natural language. 
+One idea of a universal foundation was given by Georg Cantor around 1880. He introduced a non-formalised kind of set theory, now referred to as naive set theory, in which sets and operations on sets are described with natural language. 
 \begin{quote}[Georg Cantor]
 ``A set is a gathering together into a whole of definite, distinct objects of our perception or of our thought -- which are called elements of the set.''\cite{cantor_set}
 \end{quote}
 Evidently, such an informal description is not adequate for a study of consistency as it leaves room for ambiguities. Nonetheless, many mathematicians took pleasure in Cantor's set theory and used it as a foundation for different systems.
 
-Frege tried to address the issue of a consistent, universal system in his ``Grundgesetze der Arithmetik'' (German for ``fundamental laws of arithmetic''). He was trying to give a common foundation by reducing all of mathematics, in particular Cantor's set theory, to pure logic, removing all mathematical symbolism. His first efforts had not been well received; however, they still caught the attention of Bertrand Russell. Just as Frege was finishing his final work on his \textit{Grundgesetze}, he received a letter from Russell, which should consequently pose the origin of the foundational crisis. Cantor's set theory as well as Frege's work were casualties of \textit{Russell's paradox} discovered in 1901:
+Frege tried to address the issue of a consistent, universal system in his ``Grundgesetze der Arithmetik'' (German for ``fundamental laws of arithmetic''). He tried to give a common foundation by reducing all of mathematics, in particular Cantor's set theory, to pure logic, removing all mathematical symbolism. His first efforts had not been well received; however, they caught the attention of Bertrand Russell. Just as Frege was finishing his final work on his \textit{Grundgesetze} in 1901, he received a letter from Russell, which should consequently pose the origin of the foundational crisis. In his letter, Russell described Frege his newly discovered paradox, now commonly known as \textit{Russell's paradox}, which turned out to overthrow both Cantor's set theory and Frege's work:
 \begin{quote}
 Let us consider \textit{the set of all sets that are not members of themselves} denoted by R. In formal notation:
 \begin{equation*}
@@ -223,7 +224,7 @@ Let us consider \textit{the set of all sets that are not members of themselves} 
 \end{equation*}
 By Cantor's definition, R is indeed a well-defined set.
 We are now interested in whether R is a member of itself, that is if $R\in R$ holds.
-Let us assume that this is indeed the case. Then, by definition of $R$, it follows that $R$ must not be a member of itself, that is $R\notin R$, which contradicts our assumption. Now, let us assume the contrary, namely $R\notin R$. Then, again by definition of $R$, we observe that $R$ must be a member of itself, that is $R\in R$. Hence, we conclude
+Let us assume that this is indeed the case. Then, by definition of $R$, it follows that $R$ must not be a member of itself, that is $R\notin R$, which contradicts our assumption. Now, let us assume the contrary, namely $R\notin R$. Then, again by definition of $R$, we observe that $R$ must be a member of itself, that is $R\in R$. Hence we conclude
 \begin{equation*}
 		R\in R\iff R\notin R
 \end{equation*}
