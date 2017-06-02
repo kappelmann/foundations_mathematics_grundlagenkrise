@@ -1,8 +1,6 @@
 \documentclass{article}
 \usepackage[english]{babel} 
 \usepackage[utf8x]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[autostyle]{csquotes}
 \usepackage[final]{microtype}
 %% Hyperlinks 
 \usepackage[hidelinks]{hyperref}
@@ -325,25 +323,22 @@ Hilbert himself did not focus in finding a new mathematical foundation until 192
 \end{quote}
 Consequently, Hilbert initiated a research programme called \textit{Hilbert's program} in order to defend his formalistic approach to mathematics. He proposed to clarify the foundations of mathematics using a two-step process: first, a formal system from whose axioms all of mathematics can be derived purely syntactically has to be constructed. The system must only use its axioms, which describe permitted syntactic operations. In particular, the system needs to contain rules for logical terms and deduction rules. This complete formalisation goes beyond the kind of formalisation as provided in former formal axiomatisations, which are satisfied with a listing of assumptions of their specific area of interest. Thereby, mathematics becomes a purely mechanical process whose proofs can be verified by an algorithm.
 
-In the second step, it has to be shown that given axioms never lead to formal inconsistency, such as the derivation of the term ``$0=1$''. This validation needs to be conducted outside the system using a metamathematical proof. Hilbert proposed that this proof must be of such an elementary character that no one could doubt its soundness, and thus even intuitionists must accept it. However, neither Hilbert nor anyone else was able to fulfil this wish; not because of a lack of ingenuity, but as it turned out to be unattainable.
+In the second step, it has to be shown that given axioms never lead to formal inconsistency, such as a derivation of the term ``$0=1$''. This validation needs to be conducted outside the system using a metamathematical proof. Hilbert proposed that this proof must be of such an elementary character that no one could doubt its soundness, and thus even intuitionists must accept it. However, neither Hilbert nor anyone else was able to fulfil this wish; not because of a lack of ingenuity, but as it turned out to be unattainable.
 
 \subsection{The Peak and the End of the Crisis}\label{ssec_end_crisis}
-The years after Weyl's change of sides and the consequent initiation of Hilbert's program were characterised by many articles which spread the dispute between the formalistic and intuitionistic schools of thought. On the one hand, intuitionism was criticised being hard to define because its ideas and foundations had been distributed across many papers from Brouwer written only in Dutch. On the other hand, Hilbert's program was not fully developed yet but still under construction.
-
-Many mathematicians, however, agreed with Hilbert's warning of the far-reaching limitations of intuitionistic logic. Together with Hilbert's popularity, this caused many scholars to join Hilbert's program. His prolific fellows achieved many important results, notably the proof of consistency of the law of excluded middle by Wilhelm Ackermann in 1925, which largely strengthened confidence in formalism.
+The years after Weyl's change of sides and the consequent initiation of Hilbert's program were characterised by many articles that spread the dispute between the formalistic and intuitionistic schools of thought. On the one hand, intuitionism was criticised being hard to define since its ideas and foundations had been distributed across many papers from Brouwer written only in Dutch. On the other hand, Hilbert's program was not fully developed yet but still under construction.
+Many mathematicians, however, agreed with Hilbert's warning of the far-reaching limitations of intuitionistic logic. Together with Hilbert's popularity, this caused many scholars to join Hilbert's program. His prolific fellows achieved many important results, notably the consistency proof of the law of excluded middle by Wilhelm Ackermann in 1925, which greatly strengthened confidence in formalism.
 
 The peak of the foundational crisis was reached in 1928. Brouwer boycotted the International Congress of Mathematicians because he solidarised with German mathematicians, whose right of co-determination was dismissed as a result of the first world war. Nevertheless, most Germans still attended the congress, including Hilbert. He consequently was able to present his programme without Brouwer being able to discredit his ideas.
 
-A few days after, Hilbert as one of the major publishers of the prestigious mathematical journal ``Mathematischen Annalen'' decided to exclude Brouwer as a co-publisher without conducting a referendum. This led to confusion and fierce disputes, but in the end Hilbert's wish came true and Brouwer was expelled. Brouwer, in a state of frustration and despair, subsequently stopped publishing articles concerning his intuitionistic ideas; as a result, intuitionism lost its public attention.  
-
-On the other hand, optimism for a complete and consistent formal foundation of mathematics rose; nonetheless, it was surprisingly crushed in 1931 by Gödel's incompleteness theorems.
-
+A few days after, Hilbert, being one of the major publishers of the prestigious mathematical journal ``Mathematischen Annalen'', decided to exclude Brouwer as a co-publisher from the journal without conducting a referendum. This led to confusion and fierce disputes, but in the end Hilbert's wish came true and Brouwer was expelled. Brouwer, in a state of frustration and despair, subsequently stopped publishing articles concerning his intuitionistic ideas; as a result, intuitionism lost its public attention.
+On the other hand, optimism for a complete and consistent formal foundation of mathematics rose. Nonetheless, this optimism was surprisingly crushed in 1931 by Gödel's incompleteness theorems.
 \begin{quote}
-\underline{First Incompleteness Theorem:} Any consistent formal system F rich enough to contain a formalisation of recursive arithmetic is incomplete, that is there are statements of the language of F which can neither be proved nor disproved in F.
+\underline{First Incompleteness Theorem:} Any consistent formal system F rich enough to contain a formalisation of recursive arithmetic is incomplete, that is there are statements of the language of F that can neither be proved nor disproved in F.
 
 \underline{Second Incompleteness Theorem:} Any consistent formal system F rich enough to contain a formalisation of recursive arithmetic cannot prove its own consistency.\footnote{These theorems are the improved versions by John Barkley Rosser. Gödel's original theorems were slightly weaker in that they only applied to $\omega$-consistent systems.\cite[pp.~293--320]{fraenkel}}
 \end{quote}
-These theorems show us that there cannot exist a consistent and complete formal system which is able to prove all of mathematics; hence, they shatter Hilbert's dream and ultimately end the foundational crisis. Ironically, the proof of the theorems is based on self-referentiality within formal systems; something that Hilbert tried to avoid by depriving semantics from mathematics.
+These theorems show us that there does not exist any consistent and complete formal system that is able to prove all of mathematics; hence, they shattered Hilbert's dream and ultimately ended the foundational crisis. Ironically, the proof of the theorems is based on self-referentiality within formal systems, something that Hilbert tried to avoid by depriving semantics from mathematics.
 We want to give a short sketch of a proof for the first theorem:
 \begin{quote}
 Let F be a formal system. It is possible to assign every symbol and statement of F a unique number (called Gödel number). For example, let $\Sigma=\{\top,\bot,p,\vtick,\land,\lor,\lnot,(,)\}$ be the alphabet of a formal system for propositional logic in which every variable is of the form $p\vtick^{\ldots}\vtick$, that is $p,p\vtick,p\vtick\vtick,\ldots$ are variables of the system. We can assign each symbol a unique number using the following mapping:
