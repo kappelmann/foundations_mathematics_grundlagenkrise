@@ -2,6 +2,7 @@
 \usepackage[english]{babel} 
 \usepackage[utf8x]{inputenc}
 \usepackage[final]{microtype}
+\usepackage[bottom]{footmisc}
 %% Hyperlinks 
 \usepackage[hidelinks]{hyperref}
 \hypersetup{
@@ -263,7 +264,7 @@ This stands in stark contrast with classical approaches, in whose the existence 
 \underline{Law of excluded middle:} ``For any proposition P, either P or its negation is true.''\\ 
 In sequent notation: $\vdash P\lor\lnot P$
 \end{quote}
-The demand for constructions results in a temporal aspect of truth and falsity in intuitionistic mathematics. If $P$ is a statement, say the Riemann hypothesis, then the statement $P\lor\lnot P$ lacks a truth-value until there is either a proof for $P$ or a proof for $\lnot P$.
+The demand for constructions results in a temporal aspect of truth and falsity in intuitionistic mathematics. If $P$ is a statement, say, the Riemann hypothesis, then the statement $P\lor\lnot P$ lacks a truth-value until there is either a proof for $P$ or a proof for $\lnot P$.
 
 While intuitionistic mathematics is certainly secure from Russell's paradox -- one simply cannot construct such a paradoxical set -- this security comes with a high price, as many theorems, in particular those dealing with infinity, rely on laws rejected by intuitionists. For example, let us consider the proof of the following proposition:
 \begin{quote}
@@ -288,7 +289,7 @@ In 1900, Hilbert listed the consistency proof of the axioms of arithmetic in his
 
 One of his fellows was Ernst Zermelo. In 1908, Zermelo published his axiomatic set theory on which he had worked for three years. His system was supposed to solve the problems of Cantor's naive set theory that had arisen by Russell's paradox; however, Zermelo was not able to proof the consistency of his system and stated that the proof is a distant prospect. This arguably was one of the reasons his work was not accepted as a foundation of mathematics up to 1922, the time Adolf Fraenkel and Thoralf Skolem independently improved Zermelo's axiomatic system.
 This new, improved axiomatic system, known as \textit{Zermelo-Fraenkel set theory}, was eventually able to replace the logical system derived in Principia Mathematica and still lays the foundations of mathematics. Using modern mathematical notation, some of the nine axioms can be formulated as follows:
-
+\newpage
 \small
 \begin{enumerate}
     \item \textbf{Axiom of regularity:} Every non-empty set $X$ contains a member $y$ such that $X$ and $y$ are disjoint.
@@ -326,7 +327,7 @@ Hilbert himself did not focus in finding a new mathematical foundation until 192
 Consequently, Hilbert initiated a research programme called \textit{Hilbert's programme} in order to defend his formalistic approach to mathematics. He proposed to clarify the foundations of mathematics using a two-step process: First, a formal system from whose axioms all of mathematics can be derived purely syntactically has to be constructed. This system must only use its axioms, which describe permitted syntactic operations, and must not rely on human reason. 
 In particular, the system needs to contain rules for logical laws. This complete formalisation goes beyond former formal axiomatisations, which are satisfied with a listing of assumptions for their specific area of interest. As an example, the nine axioms of Zermelo-Fraenkel set theory are insufficient for Hilbert's endeavour, since they do not contain any logical deduction rules, such as the rule of \textit{modus ponens}, and thus the system is still dependent on human reason. This dependency on human reason is removed in Hilbert's programme by including syntactic rules for logical laws. Thereby, mathematics becomes a purely mechanical process -- a meaningless symbolic game -- whose proofs can be verified by an algorithm.
 
-In the second step, it has to be shown that given axioms never lead to formal inconsistency, such as a derivation of the term ``$0=1$''. This step is necessary since the axioms can be chosen arbitrarily, and thus the syntactic game may be faulty\footnote{One should compare this with the approach of logicism, which seeks for absolute truths in its axioms and consequently renounces a proof of consistency.}. The validation needs to be conducted outside the system using a metamathematical proof. Hilbert proposed that this proof must be of such an elementary character that no one could doubt its soundness, and thus even intuitionists must accept it. However, neither Hilbert nor anyone else was able to fulfil this wish; not because of a lack of ingenuity, but as it turned out to be unattainable.
+In the second step, it has to be shown that given axioms never lead to formal inconsistency, such as a derivation of the term ``$0=1$''. This step is necessary since the axioms can be chosen arbitrarily, and thus the syntactic game may be faulty\footnote{One should note the difference between this approach and logicism, which seeks for absolute truths in its axioms and consequently renounces a proof of consistency.}. The validation needs to be conducted outside the system using a metamathematical proof. Hilbert proposed that this proof must be of such an elementary character that no one could doubt its soundness, and thus even intuitionists must accept it. However, neither Hilbert nor anyone else was able to fulfil this wish; not because of a lack of ingenuity, but as it turned out to be unattainable.
 
 \subsection{The Peak and the End of the Crisis}\label{ssec_end_crisis}
 The years after Weyl's change of sides and the consequent initiation of Hilbert's programme were characterised by many articles that spread the dispute between the formalistic and intuitionistic schools of thought. On the one hand, intuitionism was criticised being hard to define since its ideas and foundations had been distributed across many papers from Brouwer written only in Dutch. On the other hand, Hilbert's programme was not fully developed yet but still under construction.
