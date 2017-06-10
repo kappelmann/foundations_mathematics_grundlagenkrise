@@ -1,96 +1,7 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Beamer Presentation
-% LaTeX Template
-% Version 1.0 (10/11/12)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND THEMES
-%----------------------------------------------------------------------------------------
-
 \documentclass{beamer}
+\usepackage{appendixnumberbeamer}
 
-\mode<presentation>{% The Beamer class comes with a number of default slide themes
-% which change the colors and layouts of slides. Below this is a list
-% of all the themes, uncomment each in turn to see what they look like.
-
-%\usetheme{default}
-%\usetheme{AnnArbor}
-%\usetheme{Antibes}
-%\usetheme{Bergen}
-%\usetheme{Berkeley}
-\usetheme[compress]{Berlin}
-%\usetheme{Boadilla}
-%\usetheme{CambridgeUS}
-%\usetheme{Copenhagen}
-%\usetheme{Darmstadt}
-%\usetheme{Dresden}
-%\usetheme{Frankfurt}
-%\usetheme{Goettingen}
-%\usetheme{Hannover}
-%\usetheme{Ilmenau}
-%\usetheme{JuanLesPins}
-%\usetheme{Luebeck}
-%\usetheme{Madrid}
-%\usetheme{Malmoe}
-%\usetheme{Marburg}
-%\usetheme{Montpellier}
-%\usetheme{PaloAlto}
-%\usetheme{Pittsburgh}
-%\usetheme{Rochester}
-%\usetheme{Singapore}
-%\usetheme{Szeged}
-%\usetheme{Warsaw}
-
-% As well as themes, the Beamer class has a number of color themes
-% for any slide theme. Uncomment each of these in turn to see how it
-% changes the colors of your current slide theme.
-
-%\usecolortheme{albatross}
-%\usecolortheme{beaver}
-%\usecolortheme{beetle}
-%\usecolortheme{crane}
-%\usecolortheme{dolphin}
-%\usecolortheme{dove}
-%\usecolortheme{fly}
-%\usecolortheme{lily}
-%\usecolortheme{orchid}
-%\usecolortheme{rose}
-%\usecolortheme{seagull}
-%\usecolortheme{seahorse}
-%\usecolortheme{whale}
-%\usecolortheme{wolverine}
-
-\makeatother
-\setbeamertemplate{footline}
-{
-  \leavevmode%
-  \hbox{%
-  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
-    \usebeamerfont{author in head/foot}\insertshortauthor
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{subsection in head/foot}%
-    \usebeamerfont{title in head/foot}\insertshorttitle
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{title}%
-    \usebeamerfont{institute in head/foot}\insertshortinstitute
-  \end{beamercolorbox}}%
-  \vskip0pt%
-}
-\makeatletter
-
-%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
-%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
-
-\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
-}
+\mode<presentation>{\usetheme[subsectionpage=progressbar,block=fill,numbering=none]{metropolis}}
 
 \usepackage[english]{babel} 
 \usepackage[utf8]{inputenc}
@@ -106,74 +17,103 @@
 \usepackage{amssymb}
 \usepackage{mathpartir}
 
-%----------------------------------------------------------------------------------------
-%	TITLE PAGE
-%----------------------------------------------------------------------------------------
+% Coloured boxes
+\usepackage{tcolorbox}
+\colorlet{alert}{mLightBrown}
+\newtcolorbox{alertbox}
+{standard jigsaw, opacityback=0,colframe=alert}
+\newtcolorbox{tbox}
+{standard jigsaw, opacityback=0,opacityframe=0}
 
-\title[Mathematical Foundations and the Foundational Crisis]{Foundations of Mathematics\\and the Foundational Crisis} % The short title appears at the bottom of every slide, the full title is only on the title page
+\title{Foundations of Mathematics and the Foundational Crisis} % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author{Kevin Kappelmann} % Your name
-\institute[TUM] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
-{Technical University of Munich}
+\institute[TUM]{Technical University of Munich}
 \date{\today} % Date, can be changed to a custom date
 
 \begin{document}
 
-\begin{frame}
-\titlepage % Print the title page as the first slide
+\maketitle
+
+\begin{frame}{Overview}
+	\setbeamertemplate{section in toc}[sections numbered]
+	\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3.2em\rlap{\hskip-2em\inserttocsectionnumber.\inserttocsubsectionnumber}\inserttocsubsection\par}
+	\tableofcontents
 \end{frame}
 
-%----------------------------------------------------------------------------------------
-%	PRESENTATION SLIDES
-%----------------------------------------------------------------------------------------
-%\section*{Introduction}
-%------------------------------------------------
-%\begin{frame}
-    %\frametitle{}
-    %\begin{itemize}[<+->]
-	%\item Mathematics strives for absolute certainty.
-	%\item For this, we use rigorous proofs.
-	%\item When shall I accept a proof?
-	%\item Can we trust each other?
-	%\item Can we trust a computer?
-	%\begin{itemize}
-		%\item Computer-generated proofs are barely verifiable by hand.
-		%\item[$\Rightarrow$] Controversies
-	%\end{itemize}
-	%\item But it is not the first controversy in mathematical history\ldots
-    %\end{itemize}
-%\end{frame}
-%------------------------------------------------
-% Overview slide
-%------------------------------------------------
-\begin{frame}
-    \frametitle{Overview} 
-    %\begin{multicols}{2}
-        \tableofcontents
-    %\end{multicols}
-\end{frame}
 %------------------------------------------------
 \section{Causes of the Crisis}
 %------------------------------------------------
-\begin{frame}
-    \frametitle{Search for Foundations}
-    \begin{itemize}[<+->]
-	\item For over 2000 years, Euclid's Elements had been regarded as a work of timeless certainty.
-	\item But in 1813, Gauß proved the independence of Euclid's parallel postulate.
-	\begin{itemize}
-		\item[$\Rightarrow$] Scepticism towards used systems
-	\end{itemize}
-	\item Rigorous axiomatisation of mathematical branches in the late 19th century
-	\begin{itemize}
-		\item<.-> Arithmetic of natural numbers by Peano
-		\item<.-> Geometry by Hilbert and Pasch
-		\item<.-> Predicate logic by Frege
-	\end{itemize}
-	\item Desire for a universal and consistent system
-    \end{itemize}
+\begin{frame}{Euclid's Elements -- A Work of Timeless Certainty}
+	\only<1>{\includegraphics[width=\textwidth]{img/elements.png}}
+	\only<2-4>{
+	\only<2>{\centerline{Given a line $\ell$ and a point $P$, there exists}\centerline{\alert{one line through $P$ parallel to $\ell$.}}}
+	\only<3>{\centerline{Given a line $\ell$ and a point $P$, there exists}\centerline{\alert{no line through $P$ parallel to $\ell$.}}}
+	\only<4>{\centerline{Given a line $\ell$ and a point $P$, there exist}\centerline{\alert{at least two lines through $P$ parallel to $\ell$.}}}
+	\vspace{\baselineskip}
+	\begin{columns}[T,onlytextwidth]
+	 \begin{column}{.33\textwidth}
+	  \only<3>{
+		\begin{alertbox}
+		\centering\includegraphics[width=\textwidth]{img/geo_elip.png}\\Elliptic
+		\end{alertbox}
+	  }
+	  \only<4>{
+		\begin{tbox}
+		\centering\includegraphics[width=\textwidth]{img/geo_elip.png}\\Elliptic
+		\end{tbox}
+	  }
+	 \end{column}
+	 \begin{column}{.34\textwidth}
+	  \only<2>{
+		\begin{alertbox}
+			\centering\includegraphics[width=\textwidth]{img/geo_eucl.png}\\Euclidean
+		\end{alertbox}
+	  }
+	  \only<3-4>{
+		\begin{tbox}
+			\centering\includegraphics[width=\textwidth]{img/geo_eucl.png}\\Euclidean
+		\end{tbox}
+	  }
+	 \end{column}
+	 \begin{column}{.33\textwidth}
+	  \only<4>{
+		\begin{alertbox}
+			\centering\includegraphics[width=\textwidth]{img/geo_hyp.png}\\Hyperbolic
+		\end{alertbox}
+	  }
+	 \end{column}
+	\end{columns}
+	}
+	\only<5->{
+	\only<5>{\centerline{Given a line $\ell$ and a point $P$, there exist}\centerline{\alert{\textbf{?} many lines through $P$ parallel to $\ell$.}}}
+	\only<6>{\centerline{\alert{Which axioms represent the truth?}}}
+	\vspace{\baselineskip}
+	\begin{alertbox}
+	\begin{columns}[T,onlytextwidth]
+	 \begin{column}{.33\textwidth}
+		\centering\includegraphics[width=0.73\textwidth]{img/geo_elip.png}\\Elliptic
+	 \end{column}
+	 \begin{column}{.34\textwidth}
+		\centering\includegraphics[width=0.73\textwidth]{img/geo_eucl.png}\\Euclidean
+	 \end{column}
+	 \begin{column}{.33\textwidth}
+		\centering\includegraphics[width=0.73\textwidth]{img/geo_hyp.png}\\Hyperbolic
+	 \end{column}
+	\end{columns}
+	\end{alertbox}
+	}
 \end{frame}
-\begin{frame}
-    \frametitle{Universal Systems}
+\begin{frame}{Search for Foundations}
+	\begin{itemize}[<+->]
+		\item Arithmetic of natural numbers by Peano
+		\item Geometry by Hilbert and Pasch
+		\item Predicate logic by Frege
+	\end{itemize}
+	\pause[\thebeamerpauses]
+	\centering \alert{Desire for a universal and consistent system}
+\end{frame}
+\begin{frame}{Universal Systems}
     \begin{itemize}[<+->]
 	\item Cantor's set theory
 	\begin{itemize}
@@ -188,8 +128,7 @@
 	\item And then came Russell\ldots
     \end{itemize}
 \end{frame}
-\begin{frame}
-    \frametitle{Russell's Paradox}
+\begin{frame}{Russell's Paradox}
 	Consider \textit{the set of all sets that are not members of themselves}:
 	\begin{equation*}
 		R\coloneqq\{X\mid X\notin X\}
@@ -198,8 +137,7 @@
 	\vspace{\baselineskip}
 	Answer:\hspace{4.3em}$R\in R \iff R\notin R$, a contradiction!
 \end{frame}
-\begin{frame}
-    \frametitle{The Begin of the Crisis}
+\begin{frame}{The Begin of the Crisis}
     \begin{itemize}[<+->]
 	\item Cantor's as well as Frege's system were victims of this paradox.
 	\item \textit{``Hardly anything more unfortunate can befall a scientific writer than to have one of the foundations of his edifice shaken after the work is finished.''\nocite{frege_appendix}}\hfill-- Gottlob Frege
@@ -209,8 +147,7 @@
 \end{frame}
 %------------------------------------------------
 \section{The Foundational Crisis}
-\begin{frame}
-    \frametitle{The Three Schools of Thought}
+\begin{frame}{The Three Schools of Thought}
     \begin{itemize}[<+->]
 	\item Three schools of thought tried to establish a new foundation.
 	\begin{itemize}
@@ -224,8 +161,7 @@
 \end{frame}
 %------------------------------------------------
 \subsection{Logicism}
-\begin{frame}
-    \frametitle{A Foundation Made of Logic}
+\begin{frame}{A Foundation Made of Logic}
     \begin{itemize}[<+->]
 	\item Russell and Whitehead revisited Frege's idea of reducing mathematics to logic.	
 	\item Mathematics is regarded as an extension of logic.
@@ -236,8 +172,7 @@
 	\item Chief work: Principia Mathematica
     \end{itemize}
 \end{frame}
-\begin{frame}
-    \frametitle{Principia Mathematica}
+\begin{frame}{Principia Mathematica}
     \only<1-4>{
     \begin{itemize}[<+->]
 	\item Type theory to avoid antinomies
@@ -256,8 +191,7 @@
 \end{frame}
 %------------------------------------------------
 \subsection{Intuitionism}
-\begin{frame}
-    \frametitle{Proofs with Real Evidence}
+\begin{frame}{Proofs with Real Evidence}
     \begin{itemize}[<+->]
 	\item Mathematics is \textbf{not} reducible to some formal system.
 	\item Mathematics is a constructive process conducted by humans.
@@ -268,8 +202,7 @@
 	\item Consequently, some assumptions of classical logic must be rejected.
     \end{itemize}
 \end{frame}
-\begin{frame}
-    \frametitle{$P\lor\lnot P\equiv\ $?}
+\begin{frame}{$P\lor\lnot P\equiv\ $?}
     \begin{itemize}[<+->]
 	\item Intuitionists reject the \textit{law of excluded middle}: $\vdash P\lor\lnot P$\\
 		\begin{centering}
@@ -281,8 +214,7 @@
 	\vspace{\baselineskip}
 	\textbf{Proof.} It is known that $\sqrt{2}$ is irrational. Let us consider the number $\sqrt{2}^{\sqrt{2}}$.\pause$ $ If it is rational, our statement is proved.\pause$ $ If it is irrational, $(\sqrt{2}^{\sqrt{2}})^{\sqrt{2}}=2$ proves our statement.\hfill$\qed$
 \end{frame}
-\begin{frame}
-    \frametitle{The Price to Pay}
+\begin{frame}{The Price to Pay}
     \begin{itemize}[<+->]
 	\item Intuitionistic logic complicates many proofs.
 	\item \textit{``Taking this tertium non datur (law of excluded middle) from the mathematician would be the same as, say, denying the astronomer his telescope and the boxer the use of his fists.''}\nocite{hilbert_tertium_non_datur}\\\hfill-- David Hilbert
@@ -291,16 +223,14 @@
 \end{frame}
 %------------------------------------------------
 \subsection{Formalism}
-\begin{frame}
-    \frametitle{Mathematics as a Symbolic Game}
+\begin{frame}{Mathematics as a Symbolic Game}
     \begin{itemize}[<+->]
 	\item Formalists support the autonomy of mathematics.
-	\item Mathematics shall be based on symbols and axioms that describe syntactical operations on symbols.
+	\item Mathematics shall be based on symbols and axioms that describe syntactic operations on symbols.
 	\item Mathematics does not need to justify the existence of its objects since its objects are just meaningless shapes.
     \end{itemize}
 \end{frame}
-\begin{frame}
-    \frametitle{Hilbert's Dream}
+\begin{frame}{Hilbert's Dream}
     \begin{itemize}[<+->]
 	\item Hilbert feared the crippling effect of intuitionistic logic.
 	\item To protect mathematics, he initiated a research programme called \textit{Hilbert's programme} that consists of two steps:
@@ -313,8 +243,7 @@
 \end{frame}
 %------------------------------------------------
 \subsection{Peak and End}
-\begin{frame}
-    \frametitle{The Peak of the Crisis}
+\begin{frame}{The Peak of the Crisis}
     \begin{itemize}[<+->]
 	\item In 1928, Brouwer boycotted the International Congress of Mathematicians.
 	\item Hilbert presented his programme, without Brouwer being able to discredit his ideas.
@@ -323,8 +252,7 @@
 	\item Optimism for a complete and consistent formal system grew\ldots
     \end{itemize}
 \end{frame}
-\begin{frame}
-    \frametitle{The End of the Crisis}
+\begin{frame}{The End of the Crisis}
 \begin{columns}
  \begin{column}{.49\textwidth}
     \begin{itemize}[<+->]
@@ -342,8 +270,7 @@
 \end{frame}
 %------------------------------------------------
 \section{Aftermath and Prospects}
-\begin{frame}
-    \frametitle{Modern Mathematics}
+\begin{frame}{Modern Mathematics}
     \begin{itemize}[<+->]
 	\item To this day, formalism poses the foundation of mathematics.
 	\begin{itemize}
@@ -353,8 +280,7 @@
 	\item The justification of foundations is often regarded philosophical work.
     \end{itemize}
 \end{frame}
-\begin{frame}
-    \frametitle{The Next Crisis?}
+\begin{frame}{The Next Crisis?}
     \begin{itemize}[<+->]
 	\item Digitisation of mathematics
 	\item Can we trust proofs by computers?
@@ -363,7 +289,7 @@
     \end{itemize}
 \end{frame}
 %------------------------------------------------
-\section*{}
+%\section*{}
 %------------------------------------------------
 \begin{frame}
 	\center
@@ -373,8 +299,16 @@
 	\scriptsize{Source: \url{maa.org/sites/default/files/pdf/upload\_library/22/Allendoerfer/1980/0025570x.di021111.02p0048m.pdf}}
 \end{frame}
 %----------------------------------------------------------------------------------------
+\begin{frame}[allowframebreaks]{References}
+  \bibliography{../paper/sources.bib}
+  \bibliographystyle{abbrv}
+\end{frame}
 
-\newpage
-\bibliographystyle{plain}
-\bibliography{../../paper/sources.bib}
+\begin{frame}[allowframebreaks]{Image sources}
+\begin{itemize}
+\item Euclid's Elements: \url{math.ubc.ca/~cass/Euclid/papyrus/tha.jpg}
+\item Geometries: \url{upload.wikimedia.org/wikipedia/commons/thumb/7/78/Noneuclid.svg/2000px-Noneuclid.svg.png}
+\end{itemize}
+\end{frame}
+
 \end{document} 

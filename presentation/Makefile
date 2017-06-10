@@ -1,12 +1,11 @@
-BUILD_DIR=build
 TARGET=Presentation_Foundations_Mathematics_Foundational_Crisis
 
 .PHONY: all clean watch
 
-OPTIONS=-gg -bibtex -auxdir=$(BUILD_DIR) -outdir=$(BUILD_DIR) -pdf
+OPTIONS=-bibtex -pdf -pdflatex="pdflatex --shell-escape"
 
 all:
-	pdflatex $(OPTIONS) $(TARGET).tex && cp $(BUILD_DIR)/$(TARGET).pdf .
+	latexmk $(OPTIONS) $(TARGET).tex
 
 clean:
-	rm -rf $(BUILD_DIR)/*
+	rm -rf *.aux *.bbl *.blg *.fdb_latexmk *.fls *.lof *.log *.lot *.out *.gnuplot *.table *.toc
