@@ -336,14 +336,14 @@ The peak of the foundational crisis was reached in 1928. Brouwer boycotted the I
 A few days after, Hilbert, being one of the major publishers of the prestigious mathematical journal ``Mathematischen Annalen'', decided to exclude Brouwer as a co-publisher from the journal without conducting a referendum. This led to confusion and fierce disputes, but in the end Hilbert's wish came true and Brouwer was expelled. Brouwer, in a state of frustration and despair, subsequently stopped publishing articles concerning his intuitionistic ideas; as a result, intuitionism lost its public attention.
 On the other hand, optimism for a complete and consistent formal foundation of mathematics rose. Nonetheless, this optimism was surprisingly crushed in 1931 by Gödel's incompleteness theorems.
 \begin{quote}
-\underline{First Incompleteness Theorem:} Any consistent formal system F rich enough to contain a formalisation of recursive arithmetic is incomplete, that is there are statements of the language of F that can neither be proved nor disproved in F.
+\underline{First Incompleteness Theorem:} Any consistent formal system $F$ within which a certain amount of elementary arithmetic can be carried out is incomplete, that is there are statements of the language of $F$ that can neither be proved nor disproved in $F$.
 
-\underline{Second Incompleteness Theorem:} Any consistent formal system F rich enough to contain a formalisation of recursive arithmetic cannot prove its own consistency.\footnote{These theorems are the improved versions by John Barkley Rosser. Gödel's original theorems were slightly weaker in that they only applied to $\omega$-consistent systems.\cite[pp.~293--320]{fraenkel}}
+\underline{Second Incompleteness Theorem:} Any consistent formal system $F$ within which a certain amount of elementary arithmetic can be carried out cannot prove its own consistency.\footnote{These theorems are the improved versions by John Barkley Rosser. Gödel's original theorems were slightly weaker in that they only applied to $\omega$-consistent systems.\cite[pp.~293--320]{fraenkel}}
 \end{quote}
 These theorems show us that there does not exist any consistent and complete formal system that is able to prove all of mathematics; hence, they shattered Hilbert's dream and ultimately ended the foundational crisis. Ironically, the proof of the theorems is based on self-referentiality within formal systems, something that Hilbert tried to avoid by depriving semantics from mathematics.
 We want to give a short sketch of a proof for the first theorem:
 \begin{quote}
-Let F be a formal system. It is possible to assign every symbol and statement of F a unique number (called Gödel number). For example, let $\Sigma=\{\top,\bot,p,\vtick,\land,\lor,\lnot,(,)\}$ be the alphabet of a formal system for propositional logic in which every variable is of the form $p\vtick^{\ldots}\vtick$, that is $p,p\vtick,p\vtick\vtick,\ldots$ are variables of the system. We can assign each symbol a unique number using the following mapping:
+Let $F$ be a formal system. It is possible to assign every symbol and statement of $F$ a unique number (called Gödel number). For example, let $\Sigma=\{\top,\bot,p,\vtick,\land,\lor,\lnot,(,)\}$ be the alphabet of a formal system for propositional logic in which every variable is of the form $p\vtick^{\ldots}\vtick$, that is $p,p\vtick,p\vtick\vtick,\ldots$ are variables of the system. We can assign each symbol a unique number using the following mapping:
 
 \begin{center}
 \begin{tabular}{| c | c | c | c | c | c | c | c | c |}
@@ -354,11 +354,11 @@ Let F be a formal system. It is possible to assign every symbol and statement of
 \end{center}
 For instance, the unique Gödel number of the statement $(p\land p\vtick)\lor \top$ would then be $83534961$. Naturally, if our alphabet contains more than ten symbols, we consequently run out of digits for our mapping. Nevertheless, using the unique prime factorisation of natural numbers, such a numbering is always possible (regardless of the alphabet's size), as shown by Gödel.\cite{goedel_incompleteness}
 
-We can then derive a formula within $F$ that says ``The statement with Gödel number $x$ is not provable''. Using a diagonalisation argument, we can show that there is a substitution $n$ for $x$ such that the statement with number $n$ translates to ``The statement with Gödel number $n$ is not provable''; in other words, $n$ states ``I am not provable''. We now want to decide whether n is provable in F.
+We can then derive a formula within $F$ that says ``The statement with Gödel number $x$ is not provable''. Using a diagonalisation argument, we can show that there is a substitution $n$ for $x$ such that the statement with number $n$ translates to ``The statement with Gödel number $n$ is not provable''; in other words, $n$ states ``I am not provable''. We now want to decide whether n is provable in $F$.
 
-Assume that the statement $n$ is provable in F. As $n$ asserts that $n$ is not provable and F is assumed to be sufficiently strong, the negation of $n$ must also be provable, leading to a contradiction.
+Assume that the statement $n$ is provable in $F$. As $n$ asserts that $n$ is not provable and $F$ is assumed to be sufficiently strong, the negation of $n$ must also be provable, leading to a contradiction.
 
-Now assume that the negation of $n$ is provable in F. As F is assumed to be consistent, there must be no Gödel number $m$ that proves $n$ in F. But the negation of $n$ is stating that there is indeed a proof for $n$; thus, F asserts both the non-existence of a proof for n a well as the existence of such a proof.
+Now assume that the negation of $n$ is provable in $F$. As $F$ is assumed to be consistent, there must be no Gödel number $m$ that proves $n$ in F. But the negation of $n$ is stating that there is indeed a proof for $n$; thus, $F$ asserts both the non-existence of a proof for n a well as the existence of such a proof.
 \end{quote}
 
 \section{Aftermath and Prospects}
