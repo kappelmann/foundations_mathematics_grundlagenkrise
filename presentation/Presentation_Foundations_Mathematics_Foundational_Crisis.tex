@@ -47,9 +47,9 @@
 \begin{frame}{Euclid's Elements -- A Work of Timeless Certainty}
 	\only<1>{\includegraphics[width=\textwidth]{img/elements.png}}
 	\only<2-4>{
-	\only<2>{\centerline{Given a line $\ell$ and a point $P$, there exists}\centerline{\alert{one line through $P$ parallel to $\ell$.}}}
-	\only<3>{\centerline{Given a line $\ell$ and a point $P$, there exists}\centerline{\alert{no line through $P$ parallel to $\ell$.}}}
-	\only<4>{\centerline{Given a line $\ell$ and a point $P$, there exist}\centerline{\alert{at least two lines through $P$ parallel to $\ell$.}}}
+	\only<2>{\centerline{Given a line $\ell$ and a point $P$ not lying on $\ell$, there exists}\centerline{\alert{one line through $P$ parallel to $\ell$.}}}
+	\only<3>{\centerline{Given a line $\ell$ and a point $P$ not lying on $\ell$, there exists}\centerline{\alert{no line through $P$ parallel to $\ell$.}}}
+	\only<4>{\centerline{Given a line $\ell$ and a point $P$ not lying on $\ell$, there exist}\centerline{\alert{at least two lines through $P$ parallel to $\ell$.}}}
 	\vspace{\baselineskip}
 	\begin{columns}[T,onlytextwidth]
 	 \begin{column}{.33\textwidth}
@@ -86,7 +86,7 @@
 	\end{columns}
 	}
 	\only<5->{
-	\only<5>{\centerline{Given a line $\ell$ and a point $P$, there exist}\centerline{\alert{\textbf{?} many lines through $P$ parallel to $\ell$.}}}
+	\only<5>{\centerline{Given a line $\ell$ and a point $P$ not lying on $\ell$, there exist}\centerline{\alert{\textbf{?} many lines through $P$ parallel to $\ell$.}}}
 	\only<6>{\centerline{\alert{Which axioms represent the truth?}}}
 	\vspace{\baselineskip}
 	\begin{alertbox}
@@ -206,7 +206,7 @@ Three schools of thought tried to establish a new foundation.
 	\item Regarded as ``the outstanding example of an unreadable masterpiece''\nocite{math_experience} 
     \end{itemize}}
     \only<4>{
-	\centerline{Prcinipia Mathematica's infamous proof of $1+1=2$}
+	\centerline{Principia Mathematica's infamous proof of $1+1=2$}
 	\vspace{.5\baselineskip}
 	\centering\includegraphics[width=\textwidth]{img/principia_mathematica.png}}
 \end{frame}
@@ -266,9 +266,9 @@ Intuitionistic logic complicates many proofs.
 	\begin{columns}[T,onlytextwidth]
 	 \begin{column}{.65\textwidth}
 	    \begin{itemize}
-		\item<1-> Formalists support the autonomy of mathematics.
-		\item<3-> Mathematics shall be based on symbols and axioms that describe syntactic operations on symbols.
-		\item<4-> Mathematics does not need to justify the existence of its objects since its objects are just meaningless shapes.
+		\item<1-> Mathematics shall be based on symbols and axioms that describe syntactic operations on symbols.
+		\item<3-> Mathematics does not need to justify the existence of its objects since its objects are just meaningless shapes.
+		\item<4-> The system's consistency must be verified.
 	    \end{itemize}
 	 \end{column}
 	 \begin{column}{.3\textwidth}
@@ -277,67 +277,68 @@ Intuitionistic logic complicates many proofs.
 	 \end{column}
 	\end{columns}
 \end{frame}
-\begin{frame}{Hilbert's Dream}
-    \begin{itemize}[<+->]
-	\item Hilbert feared the crippling effect of intuitionistic logic.
-	\item To protect mathematics, he initiated a research programme called \textit{Hilbert's programme} that consists of two steps:
-	\begin{enumerate}
-		\item Formalise a system that is able to derive all of mathematics using syntactical operations
-		\item Prove the system's consistency with metamathematical reasoning
-	\end{enumerate}
-	\item The dream of a complete and consistent mathematical system
-    \end{itemize}
+\begin{frame}{Hilbert's Programme}
+\emph{Hilbert's programme} consists of two steps:
+\pause
+\begin{enumerate}[<+->]
+	\item Formalise a system that is able to derive all of mathematics using syntactical operations
+	\item Prove the system's consistency with metamathematical reasoning
+\end{enumerate}
+\visible<4>{\centerline{\alert{The dream of a complete and consistent mathematical system}}}
 \end{frame}
 %------------------------------------------------
 \subsection{Peak and End}
 \begin{frame}{The Peak of the Crisis}
+In 1928, the peak of the crisis was reached.
+\pause
     \begin{itemize}[<+->]
-	\item In 1928, Brouwer boycotted the International Congress of Mathematicians.
-	\item Hilbert presented his programme, without Brouwer being able to discredit his ideas.
-	\item A few days after, Hilbert excluded Brouwer as a co-publisher from the journal ``Mathematischen Annalen''.
-	\item Brouwer, in a state of frustration and despair, subsequently stopped publishing intuitionistic articles.
-	\item Optimism for a complete and consistent formal system grew\ldots
+	\item Brouwer boycotted the \textit{International Congress of Mathematicians}.
+	\item Hilbert excluded Brouwer as a co-publisher from the journal ``Mathematischen Annalen''.
+	\item Brouwer stopped publishing intuitionistic articles.
     \end{itemize}
+\pause[\thebeamerpauses]
+Optimism for a complete and consistent formal system grew\ldots
 \end{frame}
 \begin{frame}{The End of the Crisis}
-\begin{columns}[T,onlytextwidth]
-
- \begin{column}{.49\textwidth}
-    \begin{itemize}[<+->]
-	\item \ldots but then came Gödel.
-	\item In 1931, he proved that there is no sufficiently strong, complete, and consistent formal system.
-    \end{itemize}
+\vspace{\baselineskip}
+\begin{columns}[c,onlytextwidth]
+ \begin{column}{.75\textwidth}
+\ldots but then came Gödel.\\
+\visible<2->{In 1931, he ended the crisis with his two \emph{incompleteness theorems}.}
  \end{column}
- \begin{column}{.49\textwidth}
-  \centering\includegraphics[height=0.3\textheight]{img/goedel.jpg}\\
-		\scriptsize{Source: \url{newyorker.com/tech/elements/waiting-for-godel}}
+ \begin{column}{.25\textwidth}
+  \centering\includegraphics[height=0.35\textheight]{img/goedel.jpg}
  \end{column}
 \end{columns}
-	\visible<3->{\small{\begin{theorem}[First Incompleteness Theorem] Any consistent formal system rich enough to contain a formalisation of recursive arithmetic is incomplete.\end{theorem}}}
-	\visible<4->{\small{\begin{theorem}[Second Incompleteness Theorem] Any consistent formal system rich enough to contain a formalisation of recursive arithmetic cannot prove its own consistency.\end{theorem}}}
+	\visible<3->{\small{\begin{theorem}[First Incompleteness Theorem] Any consistent formal system within which a certain amount of elementary arithmetic can be carried out is incomplete.\end{theorem}}}
+	\visible<4->{\small{\begin{theorem}[Second Incompleteness Theorem] Any consistent formal system within which a certain amount of elementary arithmetic can be carried out cannot prove its own consistency.\end{theorem}}}
 \end{frame}
 %------------------------------------------------
 \section{Aftermath and Prospects}
 \begin{frame}{Modern Mathematics}
-    \begin{itemize}[<+->]
-	\item To this day, formalism poses the foundation of mathematics.
-	\begin{itemize}
-		\item<.-> Zermelo-Fraenkel set theory (ZFC) as established foundation
-	\end{itemize}
-	\item Most modern mathematicians do not deal with foundational research but try to extend a specific branch of mathematics.
-	\item The justification of foundations is often regarded philosophical work.
-    \end{itemize}
+To this day, formalism poses the foundation of mathematics.
+\pause
+\begin{itemize}
+	\item Zermelo-Fraenkel set theory (ZFC) as established foundation
+\end{itemize}
+\pause
+Most mathematicians do not deal with foundational research.
+\pause
+\begin{quote}
+``The typical working mathematician is a Platonist on weekdays and a formalist on Sundays.''\nocite{math_experience}\\\hfill-- The Mathematical Experience
+\end{quote}
 \end{frame}
 \begin{frame}{The Next Crisis?}
+Digitisation of mathematics
+\pause
     \begin{itemize}[<+->]
-	\item Digitisation of mathematics
-	\item Can we trust proofs by computers?
 	\item Some see it as an inevitable enrichment; others face it with distrust.
-	\item Are we part of the next mathematical crisis?
+	\item Can we trust proofs by computers?
     \end{itemize}
+\pause[\thebeamerpauses]
+\vspace{\baselineskip}
+\centerline{\Large\alert{Are we part of the next mathematical crisis?}}
 \end{frame}
-%------------------------------------------------
-%\section*{}
 %------------------------------------------------
 \begin{frame}
 	\center
@@ -360,6 +361,7 @@ Intuitionistic logic complicates many proofs.
 \item Drawing Hands: \url{mcescher.com/wp-content/uploads/2013/10/LW355-MC-Escher-Drawing-Hands-1948.jpg}
 \item Schools of Thought: \url{geopolicraticus.tumblr.com/post/142561195372}
 \item Schools of Thought (comic): \url{maa.org/sites/default/files/pdf/upload\_library/22/Allendoerfer/1980/0025570x.di021111.02p0048m.pdf}
+\item Gödel: \url{newyorker.com/tech/elements/waiting-for-godel}
 \end{itemize}
 \end{frame}
 
