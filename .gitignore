@@ -1,5 +1,7 @@
 ## build for presentation
 presentation/build
+## img for presentation
+presentation/img
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
