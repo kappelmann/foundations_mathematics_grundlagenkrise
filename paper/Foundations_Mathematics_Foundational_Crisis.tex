@@ -50,6 +50,7 @@
 \put(0,0){\line(0,1){10}}
 \end{picture}
 }
+\hspace{-0.8em}
 }
 
 \pagestyle{plain}
@@ -73,7 +74,7 @@
 \RenewDocumentEnvironment{quote}{o}
   {\oldquote}
   {\IfValueT{#1}{\par\nobreak
-   \hfill-- #1}\endoldquote\addvspace{\smallskipamount}}
+   \hfill--- #1}\endoldquote\addvspace{\smallskipamount}}
 
 % Line breaks after paragraph
 \usepackage[parfill]{parskip}
@@ -97,7 +98,7 @@
 \newgeometry{margin=1.5in}
 \newpage
 \section*{Preface}
-Although -- or maybe even because -- mathematics is probably the most well-conceived and exact science of mankind, it has not been free of scepticism and controversies. At its heart, mathematics deals with the discovery of unchangeable, everlasting truths. For this, we use rigorous proofs. But what is it that we call a proof?
+Although---or maybe even because---mathematics is probably the most well-conceived and exact science of mankind, it has not been free of scepticism and controversies. At its heart, mathematics deals with the discovery of unchangeable, everlasting truths. For this, we use rigorous proofs. But what is it that we call a proof?
 
 One might define a proof as a coherent chain of logical arguments leading from a set of premises to a conclusion. This definition, however, raises many new questions. What deserves to be called coherent? When is an argument logical? Does everyone follow the same rules of logic? Which premises are there to begin with?
 
@@ -128,7 +129,7 @@ First evidence for more complex mathematics dates back to around 2400 BC\@. Egyp
 The idea of demonstrating conclusions using coherent arguments, and thereby the development of the notion of a proof, was one of the great achievements of ancient Greece.
 Beginning with Thales in 600 BC, mathematics as a means of exploring everlasting truths began to rise. Again, to no surprise, proofs where focused on arithmetic and geometry, which both seemed to consist of unquestionable verities.
 
-In 500 BC, the Pythagoreans did not only discover one of the most famous theorems in mathematics -- the Pythagorean theorem\righttriangle -- but to our larger interest experienced the first noteworthy mathematical controversy. They were in firm belief that all numbers were commensurable, that is for every pair of non-zero real numbers $a$ and $b$, the ratio $\frac{a}{b}$ is a rational number. It allegedly was the work of Hippasus who dismissed this ideal by proving the existence of irrational numbers. Legend has it that Hippasus was sentenced to death by drowning for the discovery of this unbearable truth. What remains as a fact is that Pythagorean mathematics changed drastically after this discovery.
+In 500 BC, the Pythagoreans did not only discover one of the most famous theorems in mathematics---the Pythagorean theorem\righttriangle---but to our larger interest experienced the first noteworthy mathematical controversy. They were in firm belief that all numbers were commensurable, that is for every pair of non-zero real numbers $a$ and $b$, the ratio $\frac{a}{b}$ is a rational number. It allegedly was the work of Hippasus who dismissed this ideal by proving the existence of irrational numbers. Legend has it that Hippasus was sentenced to death by drowning for the discovery of this unbearable truth. What remains as a fact is that Pythagorean mathematics changed drastically after this discovery.
 
 Meanwhile, the Greek philosopher Zeno of Elea devised four paradoxes, now commonly known as Zeno's paradoxes, which mainly deal with the illusion of motion. The first paradox, referred to as \textit{Achilles and the Tortoise}, can be recounted as follows:
 \begin{quote}\label{zeno_paradox}
@@ -153,7 +154,7 @@ Infinitesimal calculus, these days simply known as calculus, is the study of con
 \begin{quote}
 ``A DISCOURSE Addressed to an Infidel MATHEMATICIAN\@. WHEREIN It is examined whether the Object, Principles, and Inferences of the modern Analysis are more distinctly conceived, or more evidently deduced, than Religious Mysteries and Points of Faith''
 \end{quote}
-In addition to this uncertainty, when Newton and Leibniz first published their results, there was great controversy over which mathematician deserved credit. These factors ultimately caused what we shall call the second controversy of mathematics, which divided English-speaking mathematicians from continental European mathematicians for many years. None\-theless, despite all criticisms, infinitesimal calculus kept being used as a successful means of calculation -- its sound foundations were formalised 150 years later by Cauchy and Weierstrass.
+In addition to this uncertainty, when Newton and Leibniz first published their results, there was great controversy over which mathematician deserved credit. These factors ultimately caused what we shall call the second controversy of mathematics, which divided English-speaking mathematicians from continental European mathematicians for many years. None\-theless, despite all criticisms, infinitesimal calculus kept being used as a successful means of calculation---its sound foundations were formalised 150 years later by Cauchy and Weierstrass.
 
 \section{The Foundational Crisis}
 While controversies like that of the Pythagoreans or the infinitesimal calculus certainly influenced the development of modern mathematics, they do not deserve to be called a proper crisis, since they were restricted to a small part of mathematics or did not cause an exceptional impact on mathematical foundations. An exceptional impact, however, was achieved by the foundational crisis of mathematics, which started in 1902 with Russell's paradox and ended in 1931 with a twist by Kurt Gödel and his incompleteness theorems.
@@ -209,7 +210,7 @@ What followed in the late 19th century is a series of rigorous axiomatisation of
 
 One idea of a universal foundation was given by Georg Cantor around 1880. He introduced a non-formalised kind of set theory, now referred to as naive set theory, in which sets and operations on sets are described with natural language. 
 \begin{quote}[Georg Cantor]
-``A set is a gathering together into a whole of definite, distinct objects of our perception or of our thought -- which are called elements of the set.''\cite{cantor_set}
+``A set is a gathering together into a whole of definite, distinct objects of our perception or of our thought---which are called elements of the set.''\cite{cantor_set}
 \end{quote}
 Evidently, such an informal description is not adequate for a study of consistency as it leaves room for ambiguities. Nonetheless, many mathematicians took pleasure in Cantor's set theory and used it as a foundation for different systems.
 
@@ -233,7 +234,7 @@ Though Frege's work did not contain a definition of sets, it was not difficult f
 \end{quote}
 It was beyond all doubt that Frege's undertaking was dismissed and, even more shocking, the widely established foundation of mathematics, Cantor's naive set theory, was shattered. Mathematics was broken at its core, and thus a new, consistent foundation had to be found. A Herculean task, as it turned out, which was tackled by three different schools of thought, which we shall discuss next.
 
-\subsection{Logicism -- A Foundation Made of Logic}\label{ssec_logicism}
+\subsection{Logicism---A Foundation Made of Logic}\label{ssec_logicism}
 The central idea of logicism is to build a consistent foundation by reducing all of mathematics to pure logic; in this way, mathematics becomes a mere extension of logic. This reduction naturally ends when reaching the logical laws of human reasoning. The a priori use of these laws, such as the rule of \textit{modus ponens}\footnote{If P implies Q and P is asserted to be true, then Q must be true. In sequent notation: $P\rightarrow Q, P\vdash Q$}, must be philosophically and logically justified such that no uncertainty remains. By this reduction to unquestionable, logical axioms, it is hoped to obtain a consistent foundation strong enough to prove all mathematical truths. This endeavour, as first tried by Frege, was revisited by Russell and Alfred Whitehead in their famous three-volume work ``Principia Mathematica'' published in 1910--1913.
 
 After the discovery of his paradox, Russell began to study the causes that lead to those kind of antinomies\footnote{There were found antinomies similar to Russel's at the same time, which we are not going to discuss (such as the Burali-Forti paradox or Richard's paradox).\cite[pp.~5--10]{fraenkel}}. This was an important task since Russell needed to protect his future work from the same bitter fate as experienced by Frege. He concluded that ``in all the contradictions there is a common characteristic, which we may describe as self-reference or reflexiveness''\cite[p. 224]{russell_self_referentiality}. As a means of defence, he invented type theories. 
@@ -250,9 +251,9 @@ While Russell's and Whitehead's general intention was widely advocated, Principi
 	\includegraphics[width=0.8\textwidth]{img/principia_mathematica.png}
 	\caption{Principia Mathematica's infamous proof of $1+1=2$. It was not until page 379 that this proof was possible.}
 \end{figure}
-Nonetheless, the criticisms did not completely debase Russell's and Whitehead's work, but many adopted it as a new mathematical foundation up to 1931 -- the time Gödel once and for all invalidated Russell's and Whitehead's intentions. Yet others were fairly dissatisfied. Among them were the advocates of intuitionism who we shall discuss next.
+Nonetheless, the criticisms did not completely debase Russell's and Whitehead's work, but many adopted it as a new mathematical foundation up to 1931---the time Gödel once and for all invalidated Russell's and Whitehead's intentions. Yet others were fairly dissatisfied. Among them were the advocates of intuitionism who we shall discuss next.
 
-\subsection{Intuitionism -- Proofs With Real Evidence}\label{ssec_intuitionism}
+\subsection{Intuitionism---Proofs With Real Evidence}\label{ssec_intuitionism}
 In contrast to logicism, intuitionism rejects the idea that mathematics is completely reducible to some formal system. Intuitionists do not believe that mathematics is existent in a world independent of mankind, but rather it is regarded as the result of constructive mental activities of humans and thereby deemed to only exist in humans' minds. In other words, mathematics is based on and conducted by human intuition.
 
 According to Brouwer, the founder of intuitionism, the existence of any mathematical object is equivalent to the possibility of its construction.
@@ -264,7 +265,7 @@ In sequent notation: $\vdash P\lor\lnot P$
 \end{quote}
 The demand for constructions results in a temporal aspect of truth and falsity in intuitionistic mathematics. If $P$ is a statement, say, the Riemann hypothesis, then the statement $P\lor\lnot P$ lacks a truth-value until there is either a proof for $P$ or a proof for $\lnot P$.
 
-While intuitionistic mathematics is certainly secure from Russell's paradox -- one simply cannot construct such a paradoxical set -- this security comes with a high price, as many theorems, in particular those dealing with infinity, rely on laws rejected by intuitionists. For example, let us consider the proof of the following proposition:
+While intuitionistic mathematics is certainly secure from Russell's paradox---one simply cannot construct such a paradoxical set---this security comes with a high price, as many theorems, in particular those dealing with infinity, rely on laws rejected by intuitionists. For example, let us consider the proof of the following proposition:
 \begin{quote}
 \textbf{Proposition:} There exist two irrational numbers $a$ and $b$ such that $a^b$ is rational.
 \vspace{-2em}
@@ -272,13 +273,13 @@ While intuitionistic mathematics is certainly secure from Russell's paradox -- o
 	It is known that $\sqrt{2}$ is irrational. Let us consider the number $\sqrt{2}^{\sqrt{2}}$. If it is rational, our statement is proved. If it is irrational, $(\sqrt{2}^{\sqrt{2}})^{\sqrt{2}}=2$ proves our statement.
 \end{proof}
 \end{quote}
-This proof relies on the statement ``either $\sqrt{2}^{\sqrt{2}}$ is rational or it is irrational'' -- an instance of the law of excluded middle -- thus, it is non-constructive and rejected by intuitionists, which seek for more clarity by proving that $\sqrt{2}^{\sqrt{2}}$ is in fact rational (or irrational). Complications like this are the reason that the number of scholars who adhere to intuitionism has been staying fairly small.
+This proof relies on the statement ``either $\sqrt{2}^{\sqrt{2}}$ is rational or it is irrational''---an instance of the law of excluded middle---thus, it is non-constructive and rejected by intuitionists, which seek for more clarity by proving that $\sqrt{2}^{\sqrt{2}}$ is in fact rational (or irrational). Complications like this are the reason that the number of scholars who adhere to intuitionism has been staying fairly small.
 
 \begin{quote}[David Hilbert]
 ``Taking this tertium non datur (law of excluded middle) from the mathematician would be the same as, say, denying the astronomer his telescope and the boxer the use of his fists.''\cite{hilbert_tertium_non_datur}
 \end{quote}
 
-\subsection{Formalism -- Mathematics as a Symbolic Game}\label{ssec_formalism}
+\subsection{Formalism---Mathematics as a Symbolic Game}\label{ssec_formalism}
 As opposed to logicists and intuitionists, formalists strongly support the autonomy of mathematics. 
 They believe that mathematics should be solely based on symbols and axioms that describe syntactic operations on symbols. In stark contrast to logicists, formalists believe that mathematics does not need to justify the existence and semantic validity of its axioms and objects, since formalistic mathematics just deals with shapes free of any meaning, unless they are given an interpretation, which, however, is not part of mathematics according to formalists.
 
@@ -322,7 +323,7 @@ Hilbert himself did not focus in finding a new mathematical foundation until 192
 ``No one shall expel us from the paradise that Cantor has created.''\cite{hilbert_paradise}
 \end{quote}
 Consequently, Hilbert initiated a research programme called \textit{Hilbert's programme} in order to defend his formalistic approach to mathematics. He proposed to clarify the foundations of mathematics using a two-step process: First, a formal system from whose axioms all of mathematics can be derived purely syntactically has to be constructed. This system must only use its axioms, which describe permitted syntactic operations, and must not rely on human reason. 
-In particular, the system needs to contain rules for logical laws. This complete formalisation goes beyond former formal axiomatisations, which are satisfied with a listing of assumptions for their specific area of interest. As an example, the nine axioms of Zermelo-Fraenkel set theory are insufficient for Hilbert's endeavour, since they do not contain any logical deduction rules, such as the rule of \textit{modus ponens}, and thus the system is still dependent on human reason. This dependency on human reason is removed in Hilbert's programme by including syntactic rules for logical laws. Thereby, mathematics becomes a purely mechanical process -- a meaningless symbolic game -- whose proofs can be verified by an algorithm.
+In particular, the system needs to contain rules for logical laws. This complete formalisation goes beyond former formal axiomatisations, which are satisfied with a listing of assumptions for their specific area of interest. As an example, the nine axioms of Zermelo-Fraenkel set theory are insufficient for Hilbert's endeavour, since they do not contain any logical deduction rules, such as the rule of \textit{modus ponens}, and thus the system is still dependent on human reason. This dependency on human reason is removed in Hilbert's programme by including syntactic rules for logical laws. Thereby, mathematics becomes a purely mechanical process---a meaningless symbolic game---whose proofs can be verified by an algorithm.
 
 In the second step, it has to be shown that given axioms never lead to formal inconsistency, such as a derivation of the term ``$0=1$''. This step is necessary since the axioms can be chosen arbitrarily, and thus the syntactic game may be faulty\footnote{One should note the difference between this approach and logicism, which seeks for absolute truths in its axioms and consequently renounces a proof of consistency.}. The validation needs to be conducted outside the system using a metamathematical proof. Hilbert proposed that this proof must be of such an elementary character that no one could doubt its soundness, and thus even intuitionists must accept it. However, neither Hilbert nor anyone else was able to fulfil this wish; not because of a lack of ingenuity, but as it turned out to be unattainable.
 
@@ -366,7 +367,7 @@ In 1936, Alonzo Church and Alan Turing independently proved the existence of unc
 Despite Gödel's incompleteness theorems, Hilbert's programme was a great success: Formalism to this day lays the foundation of modern mathematics; in particular, the Zermelo-Fraenkel set theory, whose consistency is undoubted by most contemporary mathematicians, has been widely established.
 In contrast to Hilbert's fellows, formalists no longer worry about the foundations of mathematics but rather are interested in questions like ``What is the minimum set of axioms that I need to prove this certain theorem?''. The justification of the axioms itself is regarded philosophical work and is usually not regarded by mathematicians. In fact, most modern mathematicians do not even deal with the foundations of mathematics anymore. Instead, they are getting more and more specialised in one single branch of mathematics in order to extend its limits.
 
-Albeit there have been some minor controversies in the past few decades -- for instance, about the axiom of choice (see Section~\ref{ssec_formalism}) -- modern mathematics has been comparatively free of disputations. However, this may not be a perpetual state. We are currently part of the ongoing digitalisation of mathematics, and it thus seems that mathematics will prospectively form an inextricable symbiosis with computer science. Yet proofs and calculations by computers are either regarded an inevitable enrichment or faced with distrust by mathematicians. It remains to be seen if both parties will be able to concur, or if we shall witness the next controversy of mathematics.
+Albeit there have been some minor controversies in the past few decades---for instance, about the axiom of choice (see Section~\ref{ssec_formalism})---modern mathematics has been comparatively free of disputations. However, this may not be a perpetual state. We are currently part of the ongoing digitalisation of mathematics, and it thus seems that mathematics will prospectively form an inextricable symbiosis with computer science. Yet proofs and calculations by computers are either regarded an inevitable enrichment or faced with distrust by mathematicians. It remains to be seen if both parties will be able to concur, or if we shall witness the next controversy of mathematics.
 
 \newpage
 \microtypesetup{protrusion=false}
