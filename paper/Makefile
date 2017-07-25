@@ -1,15 +1,22 @@
-BUILD_DIR=build
-TARGET=Foundations_Mathematics_Foundational_Crisis
+FILE := Foundations_Mathematics_Foundational_Crisis
+OUT  := build
 
-.PHONY: all clean watch
+.PHONY: pdf
+pdf:
+	latexmk -interaction=nonstopmode -outdir=$(OUT) -pdf -halt-on-error $(FILE)
 
-OPTIONS=-bibtex -pdf -pdflatex="pdflatex --shell-escape"
-
-all:
-	latexmk $(OPTIONS) $(TARGET).tex
-force:
-	latexmk -gg $(OPTIONS) $(TARGET).tex
+.PHONY: watch
 watch:
-	latexmk -pvc $(OPTIONS) $(TARGET).tex
+	latexmk -interaction=nonstopmode -outdir=$(OUT) -pdf -pvc -halt-on-error $(FILE)
+
+.PHONY: clean
 clean:
-	rm -rf *.aux *.bbl *.blg *.fdb_latexmk *.fls *.lof *.log *.lot *.out *.gnuplot *.table *.toc
+	rm -rf $(filter-out $(OUT)/$(FILE).pdf, $(wildcard $(OUT)/*))
+
+.PHONY: purge
+purge:
+	rm -rf $(OUT)
+
+.PHONY: start
+start:
+	gnome-terminal -x "bash" -c "make watch" &
