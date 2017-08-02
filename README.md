@@ -7,3 +7,5 @@ This work is licensed under [CC BY 3.0](https://creativecommons.org/licenses/by/
 Kevin Kappelmann  
 E-mail: kevin@kappelmann.me  
 Website: https://kappelmann.me  
+
+Tags: Intuitionism, Formalism, Logicism
